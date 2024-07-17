@@ -1,14 +1,18 @@
 @import url('./assets/css/typofraph.scss');
 
+
+
 :root {
   --bg-base: #F4EFE9;
   --text: rgb(0, 0, 0);
   --font-family:"IBM Plex Sans Arabic",sans-serif;
+  --secondary :#9FAE9B;
 }
 
-*,body {
+*,body , html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-family);
+  font-family: var(--font-family) !important;
 }
+
