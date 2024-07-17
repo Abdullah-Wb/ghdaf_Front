@@ -20,11 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./main-apps/main-apps.module').then(m => m.MainAppsModule)
   }
 
-<<<<<<< HEAD
 
-  
-=======
->>>>>>> 1721f3aec57a6a5cbc73c5dba105cdbd0bae3aaf
 ];
 
 @NgModule({
