@@ -3,9 +3,11 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
 
+
 :root {
   --bg-base: #F4EFE9;
   --text: rgb(0, 0, 0);
+  --text-light: rgb(0, 0, 0);
   --font-family:"IBM Plex Sans Arabic",sans-serif;
   --secondary :#9FAE9B;
 }
@@ -17,3 +19,6 @@
   font-family: var(--font-family) !important;
 }
 
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

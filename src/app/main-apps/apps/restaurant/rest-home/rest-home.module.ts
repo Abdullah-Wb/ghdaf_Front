@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AppsRoutingModule } from './apps-routing.module';
+import { RestHomeRoutingModule } from './rest-home-routing.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    AppsRoutingModule
+    RestHomeRoutingModule
   ]
 })
-export class AppsModule { }
+export class RestHomeModule { }

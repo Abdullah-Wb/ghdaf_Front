@@ -14,6 +14,11 @@ import { MapComponent } from './map/map.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ButtonComponent,
+    InputComponent,
+    MapComponent
   ]
 })
 export class SharedComponentsModule { }
