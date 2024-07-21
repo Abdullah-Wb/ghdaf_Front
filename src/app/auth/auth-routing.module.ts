@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
     path: 'not-found',
     component: NotFoundComponent
   },
+  {
+    path: 'sign-up',
+    component:SignUpComponent
+  },
+
   {
     path: '',
     redirectTo: '/src/app/login/login.component',
