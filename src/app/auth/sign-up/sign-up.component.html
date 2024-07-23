@@ -44,23 +44,22 @@
   <!-- ------------------------ مطعم ----------------------------------- -->
   <div *ngIf="type == 1">
     <div class="signup-big">
-      <form action="#" style="direction: rtl;">
+      <form [formGroup]="formData" (ngSubmit)="submit()" style="direction: rtl;">
         <!-- <div style="display: flex ;flex-direction: column; height: 100%;"> -->
-        <input type="email" placeholder=" اسم المطعم">
-
-        <input type="password" placeholder="اسم المسؤول ">
-        <input type="file" accept="img" placeholder=" صورة شعار المطعم">
-        <input type="password" placeholder="رقم الهاتف">
-        <input type="file" placeholder="السجل التجاري">
-        <input type="password" placeholder=" عنوان المطعم">
-        <input type="file" placeholder="الشهادة الصحية ">
-        <input type="password" placeholder="كلمة المرور">
-        <input type="text" placeholder="الموقع">
-        <input type="password" placeholder="تاكيد كلمة المرور">
-        <input type="file" accept="img" placeholder="صورة  المطعم">
-        <input type="file" accept="img" placeholder=" صورة مسؤول المطعم">
-        <input type="password" placeholder="كلمة المرور">
-        <input type="email" placeholder=" وصف المطعم">
+        <input formControlName="company_name" type="text" placeholder=" اسم المطعم">
+        <input  formControlName="manager_name" type="text" placeholder="اسم المسؤول ">
+        <!-- <input formControlName="" type="file" accept="img" placeholder=" صورة شعار المطعم"> -->
+        <input formControlName="phone" type="text" placeholder="رقم الهاتف">
+        <!-- <input formControlName="" type="file" placeholder="السجل التجاري"> -->
+        <!-- <input formControlName="" type="password" placeholder=" عنوان المطعم"> -->
+        <!-- <input formControlName="" type="file" placeholder="الشهادة الصحية "> -->
+        <input formControlName="password" type="password" placeholder="كلمة المرور">
+        <!-- <input formControlName="" type="text" placeholder="الموقع"> -->
+        <!-- <input formControlName="" type="password" placeholder="تاكيد كلمة المرور"> -->
+        <!-- <input formControlName="" type="file" accept="img" placeholder="صورة  المطعم"> -->
+        <!-- <input formControlName="" type="file" accept="img" placeholder=" صورة مسؤول المطعم"> -->
+        <input formControlName="email" type="email" placeholder="الايميل ">
+        <input formControlName="description"  type="text" placeholder=" وصف المطعم">
 
         <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;width: 600px;">
           <a href="#"> هل لديك حساب؟ تسجيل الدخول</a>

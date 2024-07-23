@@ -8,7 +8,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OtpComponent } from './otp/otp.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,13 +17,17 @@ import { FormsModule } from '@angular/forms';
     LogoutComponent,
     NotFoundComponent,
     SignUpComponent,
-    OtpComponent
+    OtpComponent,
+
+
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+
   ]
 })
 export class AuthModule { }
