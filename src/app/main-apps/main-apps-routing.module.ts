@@ -56,6 +56,7 @@ const routes: Routes = [
 {path: 'rest-wallet',
   loadChildren: () => import('./apps/restaurant/rest-wallet/rest-wallet.module').then(m => m.RestWalletModule)
 }
+
 //-------------------------------------------
 ];
 

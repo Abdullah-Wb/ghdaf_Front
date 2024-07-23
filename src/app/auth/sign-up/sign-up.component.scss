@@ -29,10 +29,15 @@ button:active {
 }
 
 
-
-
-form {
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
   background-color: var(--bg-base);
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,6 +137,7 @@ width: 50%;
 
 
 .overlay-right {
+bottom: 0;
   right: 0;
   transform: translateX(0);
   h2{
@@ -143,7 +149,7 @@ width: 50%;
 
 
 .signup-big{
-
+  background-size: cover;
   display: flex;
   justify-content:space-around ;
   flex-wrap: wrap;
@@ -166,9 +172,80 @@ width: 50%;
 
 @media only screen and (max-width: 600px) {
   .overlay-container {
-    display: none;
+     width: 100%;
   }
   .sign-in-container{
-    width: 100%;
+
+    display: none;
   }
+}
+
+
+input {
+  background-color: #ffffff;
+  border: none;
+  padding: 1% 15px;
+  margin: 12px 0;
+  width: 40%; //عرض
+  border-radius: 10px;
+  text-align: right;
+  height: 70%;
+
+}
+
+textarea {
+  background-color: #ffffff;
+  border: none;
+  padding: 1% 15px;
+  margin: 12px 0;
+  width: 45%; //عرض
+  border-radius: 10px;
+  text-align: right;
+  height: 10%x;
+  ;
+}
+
+
+.radio-container {
+  display: flex;
+  align-items: center; /* Aligns radio buttons vertically */
+}
+
+.radio-container input[type="radio"] {
+  display: none; /* Hide the actual radio buttons */
+}
+
+.radio-container label {
+  position: relative; /* Needed for pseudo-element styling */
+  padding: 10px 15px; /* Adjust padding as needed */
+  border-radius: 50%; /* Creates a circle */
+  cursor: pointer; /* Makes the label clickable */
+}
+
+.radio-container label:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px; /* Adjust circle size as needed */
+  height: 16px; /* Adjust circle size as needed */
+  border-radius: 50%;
+  border: 2px solid #ccc; /* Adjust border color */
+  background-color: #fff; /* Adjust background color */
+}
+
+.radio-container input[type="radio"]:checked + label:before {
+  background-color: #ccc; /* Change background color on selection */
+}
+.type-user{
+  display: flex;
+  justify-content:space-between;
+  margin: 10px;
+ button{
+  margin: 10px;
+  border-radius: 10%;
+
+ }
 }
