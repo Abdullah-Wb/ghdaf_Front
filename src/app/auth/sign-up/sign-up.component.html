@@ -1,1 +1,144 @@
-<p>sign-up works!</p>
+<div class="root">
+
+  <div class="container w-100 ">
+
+    <div class="form-container sign-in-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+          <img src="../../../assets/________-01.png" alt="ghdaf Logo" width="150">
+          <h2>اهلا بك في منصة غدف</h2>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="overlay-container">
+
+
+
+
+  <h1 style="padding:1px;">انشاء حساب</h1>
+  <h6>أدخل البريد الالكتروني وكلمة المرور الخاصة بك لتسجيل الدخول</h6>
+
+
+
+
+  <!-- ********************************************* -->
+  <div style="display: flex; flex-direction: column;" *ngIf="type == null">
+    <h6>ادخل نوع المستخدم</h6>
+    <div class="type-user">
+      <button (click)="selectType(1)">مطعم</button>
+      <button (click)="selectType(2) ">جمعية</button>
+    </div>
+  </div>
+
+
+
+
+  <!-- ------------------------ مطعم ----------------------------------- -->
+  <div *ngIf="type == 1">
+    <div class="signup-big">
+      <form [formGroup]="formData" (ngSubmit)="submit()" style="direction: rtl;">
+        <!-- <div style="display: flex ;flex-direction: column; height: 100%;"> -->
+        <input formControlName="company_name" type="text" placeholder=" اسم المطعم">
+        <input  formControlName="manager_name" type="text" placeholder="اسم المسؤول ">
+        <!-- <input formControlName="" type="file" accept="img" placeholder=" صورة شعار المطعم"> -->
+        <input formControlName="phone" type="text" placeholder="رقم الهاتف">
+        <!-- <input formControlName="" type="file" placeholder="السجل التجاري"> -->
+        <!-- <input formControlName="" type="password" placeholder=" عنوان المطعم"> -->
+        <!-- <input formControlName="" type="file" placeholder="الشهادة الصحية "> -->
+        <input formControlName="password" type="password" placeholder="كلمة المرور">
+        <!-- <input formControlName="" type="text" placeholder="الموقع"> -->
+        <!-- <input formControlName="" type="password" placeholder="تاكيد كلمة المرور"> -->
+        <!-- <input formControlName="" type="file" accept="img" placeholder="صورة  المطعم"> -->
+        <!-- <input formControlName="" type="file" accept="img" placeholder=" صورة مسؤول المطعم"> -->
+        <input formControlName="email" type="email" placeholder="الايميل ">
+        <input formControlName="description"  type="text" placeholder=" وصف المطعم">
+
+        <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;width: 600px;">
+          <a href="#"> هل لديك حساب؟ تسجيل الدخول</a>
+
+          <button>تسجيل الدخول</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
+
+      </form>
+    </div>
+
+
+
+
+
+
+
+    <!-- // -->
+
+  </div>
+
+  <!-- ----------------------------- جمعية --------------------------------- -->
+  <div *ngIf="type == 2">
+    <div class="signup-big">
+      <form action="#" style="direction: rtl;">
+        <!-- <div style="display: flex ;flex-direction: column; height: 100%;"> -->
+        <input type="email" placeholder=" اسم الجمعية">
+
+        <input type="password" placeholder="اسم المسؤول ">
+        <input type="password" placeholder="رقم الهاتف">
+        <input type="file" placeholder="السجل التجاري">
+        <input type="password" placeholder=" عنوان الجمعية">
+        <input type="password" placeholder="كلمة المرور">
+        <input type="text" placeholder="الموقع">
+        <input type="password" placeholder="تاكيد كلمة المرور">
+        <input type="file" accept="img" placeholder="صورة  الجمعية">
+        <input type="file" accept="img" placeholder=" صورة مسؤول الجمعية">
+        <input type="password" placeholder="كلمة المرور">
+        <input type="email" placeholder=" وصف الجمعية" style="direction: rtl;">
+
+        <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;width: 600px;">
+          <a href="#"> هل لديك حساب؟ تسجيل الدخول</a>
+
+          <button>تسجيل الدخول</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
+
+      </form>
+    </div>
+
+
+
+
+
+
+
+    <!-- // -->
+
+  </div>
+
+
+</div>
+
+
+
+
+
+<!-- <h6>دخل معلومات انشاء الحسا</h6> -->

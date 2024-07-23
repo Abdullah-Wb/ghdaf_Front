@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MainAppsRoutingModule } from './main-apps-routing.module';
@@ -11,7 +11,8 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
   declarations: [
     HeaderComponent,
     FooterComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    // shared-Component
   ],
   imports: [
     CommonModule,

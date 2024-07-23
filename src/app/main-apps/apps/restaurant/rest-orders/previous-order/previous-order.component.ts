@@ -7,9 +7,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreviousOrderComponent implements OnInit {
 
-  constructor() { }
+
+
+arr:any
+  constructor() {
+
+    // this.arr=[
+
+    //  { order-number:'name-one',
+    //   total-price:11,
+    //  amount:44,
+    //  },
+
+
+    
+
+
+
+
+
+
+
+    // ]
+   }
 
   ngOnInit(): void {
   }
 
 }
+
+
+// <tr>
+// <th>رقم الطلب</th>
+// <th>السعر الاجمالي</th>
+// <th>الكمية الاجمالية</th>
+// <th>عدد المنتجات</th>
+// <th>حالة الطلب</th>
+// <th>اعادة الطلب</th>
+// </tr>

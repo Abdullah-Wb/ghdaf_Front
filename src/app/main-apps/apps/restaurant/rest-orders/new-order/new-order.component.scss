@@ -1,0 +1,132 @@
+.formm {
+
+  // border: 2px solid #d01922;
+  padding-top: 2%;
+  width: 60%;
+
+  
+
+}
+.container {
+
+  display: flex;
+  justify-content: flex-start;
+  // background-color: brown;
+  flex-direction:row-reverse;
+  justify-content: space-evenly;
+}
+.sub {
+
+  border-radius: 10px;
+  border: 1px solid #9FAE9B;
+  background-color: #9FAE9B;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  text-align: center;
+  width: 40%;
+}
+
+button {
+  border-radius: 10px;
+  border: 1px solid #9FAE9B;
+  background-color: #9FAE9B;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+input {
+  background-color: #ffffff;
+  border: none;
+  padding: 1% 15px;
+  margin: 12px 0;
+  width: 40%; //عرض
+  border-radius: 10px;
+  text-align: right;
+  height: 10%;
+
+}
+
+textarea {
+  background-color: #ffffff;
+  border: none;
+  padding: 1% 15px;
+  margin: 12px 0;
+  width: 45%; //عرض
+  border-radius: 10px;
+  text-align: right;
+  height: 10%x;
+  ;
+}
+
+form {
+  // background-color: #d01922;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  direction: rtl;
+  // background-color: aqua;
+}
+table {
+    
+  border-collapse: collapse;
+  border-radius: 20px;
+  background-color: #FAF9F2;
+  width: 100%;
+
+}
+
+td, th {
+ 
+  text-align: left;
+  padding: 8px;
+
+}
+td{
+  border-top: 1px solid #dddddd;
+}
+button{
+  border: none;
+  background: none;
+
+}
+button:active  .bi bi-trash{
+transform: scale(0.95);
+color: #a91d10;
+}
+.class-button {
+  border-radius: 10px;
+  border: 1px solid #9FAE9B;
+  background-color: #9FAE9B;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  
+
+}
+a {
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+  
+}
+th{
+color: #fff;}
