@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { OtpComponent } from './otp/otp.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'sign-up',
     component:SignUpComponent
+  },
+  {
+    path: 'OTP',
+    component:OtpComponent
   },
 
   {

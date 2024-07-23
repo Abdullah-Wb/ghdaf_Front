@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { OtpComponent } from './otp/otp.component';
 
 
 @NgModule({
@@ -13,11 +15,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     LoginComponent,
     LogoutComponent,
     NotFoundComponent,
-    SignUpComponent
+    SignUpComponent,
+    OtpComponent
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    NgbModule
   ]
 })
 export class AuthModule { }

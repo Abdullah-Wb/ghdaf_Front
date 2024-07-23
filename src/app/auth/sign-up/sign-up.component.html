@@ -1,57 +1,155 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+
 <div class="root">
 
-    <div class="container w-100 ">
-  
-      <div class="form-container sign-in-container">
-        <form action="#">
-          <br>
-          <br>
-          <h1 style="padding: 50px;">انشاء حساب</h1>
-          <h6>أدخل البريد الالكتروني وكلمة المرور الخاصة بك لتسجيل الدخول</h6>
-          <br>
-          <div class="signup-big">
-           
-            <input type="email" placeholder="البريد الاكتروني">
-            <input type="password" placeholder="كلمة المرور" />
-            <input type="email" placeholder="البريد الاكتروني">
-            <input type="password" placeholder="كلمة المرور" />
-            <input type="email" placeholder="البريد الاكتروني">
-            <input type="password" placeholder="كلمة المرور" />
-            <input type="email" placeholder="البريد الاكتروني">
-            <input type="password" placeholder="كلمة المرور" />
-            <input type="email" placeholder="البريد الاكتروني">
-            <input type="password" placeholder="كلمة المرور" />
-            <div class="input-group mb-3">
-              <input type="file" class="form-control" id="inputGroupFile02">
-              
-            </div>
-          </div>
-          <a href="#">هل نسيت كلمة المرور؟</a> <!--بعدين نضيف الرابط-->
-          <button>تسجيل الدخول</button>
-          <a href="#"> هل لديك حساب؟ تسجيل الدخول</a> <!--بعدين نضيف الرابط-->
-        </form>
-      </div>
-  
-  
-  
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-right">
-            <img src="../../../assets/________-01.png" alt="ghdaf Logo" width="150">
-            <h2>اهلا بك في منصة غدف</h2>
-          </div>
+  <div class="container w-100 ">
+
+    <div class="form-container sign-in-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+          <img src="../../../assets/________-01.png" alt="ghdaf Logo" width="150">
+          <h2>اهلا بك في منصة غدف</h2>
+
+
+
         </div>
       </div>
     </div>
-  
-  
   </div>
+</div>
+
+
+
+<div class="overlay-container">
+
   
-  <!-- <footer>
-  <p>
-    Created with <i class="fa fa-heart"></i> by
-    <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-    - Read how I created this and how you can join the challenge
-    <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
-  </p>
-  </footer> -->
+
+
+    <h1 style="padding:1px;">انشاء حساب</h1>
+    <h6>أدخل البريد الالكتروني وكلمة المرور الخاصة بك لتسجيل الدخول</h6>
+
+    
+
+
+      <!-- ********************************************* -->
+      <div style="display: flex; flex-direction: column;" id="dd">
+
+        <h6>ادخل نوع المستخدم</h6>
+        <div class="type-user">
+          <button (click)="onButtonClick()" id="one">مطعم</button>
+          <button (click)="onButtonClicke() " id="two" >جمعية</button>
+        </div>
+      </div>
+      <!-- ********************************************** -->
+
+      <!-- ///////////////////////////////////////////////////////////////////////////// -->
+
+      <!-- ///////////////////////////////////////////////// -->
+
+
+
+      <!-- ----------------------------------------------------------- -->
+      <div *ngIf="testrest == true">
+        <div class="signup-big">
+        <form action="#" style="direction: rtl;">
+          <!-- <div style="display: flex ;flex-direction: column; height: 100%;"> -->
+        <input type="email" placeholder=" اسم المطعم" >
+     
+        <input type="password" placeholder="اسم المسؤول ">
+        <input type="file" accept="img" placeholder=" صورة شعار المطعم">
+        <input type="password" placeholder="رقم الهاتف" >
+        <input type="file" placeholder="السجل التجاري">
+        <input type="password" placeholder=" عنوان المطعم" >
+        <input type="file" placeholder="الشهادة الصحية ">
+        <input type="password" placeholder="كلمة المرور" >
+        <input type="text" placeholder="الموقع">
+        <input type="password" placeholder="تاكيد كلمة المرور" >
+        <input type="file" accept="img" placeholder="صورة  المطعم" >
+        <input type="file" accept="img" placeholder=" صورة مسؤول المطعم">
+        <input type="password" placeholder="كلمة المرور">
+        <input type="email" placeholder=" وصف المطعم" >
+
+        <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;width: 600px;">
+        <a href="#"> هل لديك حساب؟ تسجيل الدخول</a>
+     
+      <button>تسجيل الدخول</button>
+    </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+      
+   
+    </form>
+    </div>
+
+
+
+
+
+
+
+  <!-- // -->
+
+    </div>
+    <!-- -------------------------------------------------------------- -->
+    <div *ngIf="testorg == true">
+      <div class="signup-big">
+      <form action="#" style="direction: rtl;">
+        <!-- <div style="display: flex ;flex-direction: column; height: 100%;"> -->
+      <input type="email" placeholder=" اسم الجمعية" >
+   
+      <input type="password" placeholder="اسم المسؤول ">
+      <input type="password" placeholder="رقم الهاتف" >
+      <input type="file" placeholder="السجل التجاري">
+      <input type="password" placeholder=" عنوان الجمعية" >
+      <input type="password" placeholder="كلمة المرور" >
+      <input type="text" placeholder="الموقع">
+      <input type="password" placeholder="تاكيد كلمة المرور" >
+      <input type="file" accept="img" placeholder="صورة  الجمعية" >
+      <input type="file" accept="img" placeholder=" صورة مسؤول الجمعية">
+      <input type="password" placeholder="كلمة المرور">
+      <input type="email" placeholder=" وصف الجمعية" style="direction: rtl;">
+
+      <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;width: 600px;">
+      <a href="#"> هل لديك حساب؟ تسجيل الدخول</a>
+   
+    <button>تسجيل الدخول</button>
+  </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    
+ 
+  </form>
+  </div>
+
+
+
+
+
+
+
+<!-- // -->
+
+  </div>
+
+
+
+    <!--  -->
+ 
+</div>
+
+
+
+
+
+<!-- <h6>دخل معلومات انشاء الحسا</h6> -->
