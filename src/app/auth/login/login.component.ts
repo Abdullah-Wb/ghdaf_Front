@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { auth } from 'src/app/constant/Routes';
+import { ImpApiService } from 'src/app/services/imp-api.service';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  login_form = {
+    email: null,
+    password: null,
+  };
+  constructor(private impApiService:ImpApiService) {
+    
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  
+  
+  
 }
+ngOnInit(): void {
+   
+}
+login(){
+  this.impApiService.post(auth.login,this.login_form).subscribe(data=>{
+
+    console.log(data)
+  })
+}}

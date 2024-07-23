@@ -1,42 +1,45 @@
 <div class="root">
 
   <div class="container w-100 ">
-  
-  <div class="form-container sign-in-container">
-    <form action="#">
-      <h1>تسجيل الدخول</h1>
-      <h6>أدخل البريد الالكتروني وكلمة المرور الخاصة بك لتسجيل الدخول</h6>
-      <br>
-      <input type="email" placeholder="البريد الاكتروني" />
-      <input type="password" placeholder="كلمة المرور" />
-      <a href="#">هل نسيت كلمة المرور؟</a> <!--بعدين نضيف الرابط-->
-      <button>تسجيل الدخول</button>
-      <a href="#"> هل لديك حساب؟ تسجيل الدخول</a> <!--بعدين نضيف الرابط-->
-    </form>
-  </div>
-  
-  
-  
-  <div class="overlay-container">
-    <div class="overlay">
-      <div class="overlay-panel overlay-right">
-        <img src="../../../assets/________-01.png" alt="ghdaf Logo" width="150">
-        <h2>اهلا بك في منصة غدف</h2>
+
+    <div class="form-container sign-in-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+          <img src="../../../assets/________-01.png " alt="ghdaf Logo" width="170" height="100">
+          <h2>اهلا بك في منصة غدف</h2>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
+
+
+
+    <div class="overlay-container form" >
+      
+        <h1>تسجيل الدخول</h1>
+        <h6>أدخل البريد الالكتروني وكلمة المرور الخاصة بك لتسجيل الدخول</h6>
+        <br>
+        <input  [(ngModel)]="login_form.email" type="email" placeholder="البريد الاكتروني" />
+        <input  [(ngModel)]="login_form.password" type="password" placeholder="كلمة المرور" />
+        <a href="#">هل نسيت كلمة المرور؟</a> <!--بعدين نضيف الرابط-->
+        <button  (click)="login()">تسجيل الدخول</button>
+        <a href="#"> هل لديك حساب؟ تسجيل الدخول</a> <!--بعدين نضيف الرابط-->
+     
+    </div>
+    
+
+    <!-- <a routerLink="./auth/OTP">تسجيل الدخول</a> -->
+
+
+
+
+  <!-- </div>
   
-  
-  </div>
-  
-  <!-- <footer>
+  <footer>
   <p>
     Created with <i class="fa fa-heart"></i> by
     <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
     - Read how I created this and how you can join the challenge
     <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
   </p>
-  </footer> -->
-  
-  
+  </footer>
+   -->

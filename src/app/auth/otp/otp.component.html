@@ -1,0 +1,74 @@
+
+ 
+ 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+      
+      <body>
+          <div class="container" id="container">
+              <div class="form-container sign-in-container">
+                  <form action="#">
+                      <h1> التحقق<br> <br></h1>
+      
+                      
+    <div class="input-container">
+      <input type="text" class="circle-input" placeholder="_">
+      <span class="spacer"></span>
+      <input type="text" class="circle-input" placeholder=" _">
+      <span class="spacer"></span>
+      <input type="text" class="circle-input" placeholder="_">
+      <span class="spacer"></span>
+      <input type="text" class="circle-input" placeholder="_">
+    </div>
+  
+                      <button>ادخال</button>
+                  </form>
+              </div>
+              <div class="overlay-container">
+                  <div class="overlay">
+      
+                      <div class="overlay-panel overlay-right">
+                          <h1>اهلا بك في منصة غدف</h1>
+                          <img src="gg.png" alt="ghdaf Logo" height="150" width="200">
+      
+      
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <script>
+              const inputs = document.getElementById("inputs");
+                  
+                  inputs.addEventListener("input", function (e) {
+                    const target = e.target;
+                    const val = target.value;
+                  
+                    if (isNaN(val)) {
+                      target.value = "";
+                      return;
+                    }
+                  
+                    if (val != "") {
+                      const next = target.nextElementSibling;
+                      if (next) {
+                        next.focus();
+                      }
+                    }
+                  });
+                  
+                  inputs.addEventListener("keyup", function (e) {
+                    const target = e.target;
+                    const key = e.key.toLowerCase();
+                  
+                    if (key == "backspace" || key == "delete") {
+                      target.value = "";
+                      const prev = target.previousElementSibling;
+                      if (prev) {
+                        prev.focus();
+                      }
+                      return;
+                    }
+                  });
+          </script>
+      </body>
+      

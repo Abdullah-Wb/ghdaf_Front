@@ -1,0 +1,196 @@
+// table {
+    
+//     border-collapse: collapse;
+//     border-radius: 10%;
+//   border: none;
+//     width: 100%;
+//   }
+  
+//   td, th {
+//     border: 1px solid #dddddd;
+//     text-align: left;
+//     padding: 8px;
+//   }
+  
+//   tr:nth-child(even) {
+//     background-color: #dddddd;
+//   }
+  //
+  // table {
+  //   font-family: arial, sans-serif;
+  //   border-collapse: collapse;
+  //   width: 100%;
+  // }
+  
+  // td, th {
+  //   border: 1px solid #dddddd;
+  //   text-align: left;
+  //   padding: 8px;
+  // }
+  
+  // tr:nth-child(even) {
+  //   background-color: #dddddd;
+  // }
+  //// here
+  
+
+
+
+// .step-wizard-list{
+
+   
+//     color: #333;
+//     list-style-type: none;
+    
+//     display: flex;
+//     padding: 60px 10px;
+//     position: relative;
+//     z-index: 10;
+// }
+
+// .step-wizard-item{
+//     padding: 0 20px;
+//     flex-basis: 0;
+//     -webkit-box-flex: 1;
+//     -ms-flex-positive:1;
+//     flex-grow: 1;
+//     max-width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     text-align: center;
+//     min-width: 170px;
+//     position: relative;
+// }
+// .step-wizard-item + .step-wizard-item:after{
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     top: 19px;
+//     background: #384F3F;
+//     width: 100%;
+//     height: 2px;
+//     transform: translateX(-50%);
+//     z-index: -10;
+// }
+// .progress-count{
+//     height: 40px;
+//     width:40px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     border-radius: 50%;
+//     font-weight: 600;
+//     margin: 0 auto;
+//     position: relative;
+//     z-index:10;
+//     color: transparent;
+// }
+// .progress-count:after{
+//     content: "";
+//     height: 40px;
+//     width: 40px;
+//     background: #384F3F;
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     border-radius: 50%;
+//     z-index: -10;
+// }
+// .progress-count:before{
+//     content: "";
+//     height: 10px;
+//     width: 20px;
+//     border-left: 3px solid #fff;
+//     border-bottom: 3px solid #fff;
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -60%) rotate(-45deg);
+//     transform-origin: center center;
+// }
+// .progress-label{
+//     font-size: 14px;
+//     font-weight: 600;
+//     margin-top: 10px;
+// }
+// .current-item .progress-count:before,
+// .current-item ~ .step-wizard-item .progress-count:before{
+//     display: none;
+// }
+// .current-item ~ .step-wizard-item .progress-count:after{
+//     height:10px;
+//     width:10px;
+// }
+// .current-item ~ .step-wizard-item .progress-label{
+//     opacity: 0.5;
+// }
+// .current-item .progress-count:after{
+//     background: #fff;
+//     border: 2px solid #384F3F;
+// }
+// .current-item .progress-count{
+//     color: #384F3F;
+// }
+// button {
+//   border-radius: 10px;
+//   border: 1px solid #9FAE9B;
+//   background-color: #9FAE9B;
+//   color: #FFFFFF;
+//   font-size: 12px;
+//   font-weight: bold;
+//   padding: 12px 45px;
+//   letter-spacing: 1px;
+//   text-transform: uppercase;
+//   transition: transform 80ms ease-in;
+// }
+
+// button:active {
+//   transform: scale(0.95);
+// }
+// a {
+//   color: #333;
+//   font-size: 14px;
+//   text-decoration: none;
+//   margin: 15px 0;
+// }
+table {
+  border-collapse: collapse; /* Removes default table border spacing */
+  width: 70%; /* Adjust table width as needed */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+.p-table{
+  display: flex;
+  justify-content: space-between;
+  flex-direction:column;
+  width:80%;
+  direction:rtl
+  
+}
+  th, td {
+    border: 5px solid var( --bg-base); /* Adds borders to cells */
+    padding: 8px; /* Adjust cell padding */
+     /* Align text to the left */
+   
+  }
+  
+  th {
+    background-color: #9FAE9B; /* Set background color for header row */
+    font-weight: bold; /* Make header text bold */
+  }
+  td{
+    background-color: #ffffff;
+    flex-wrap: wrap;
+    max-width: 30%;
+  }
+
+.kk{
+  display: flex;
+  justify-content: space-between;
+  flex-direction:column;
+  padding-top: 3%;
+  
+}

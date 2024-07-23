@@ -37,13 +37,13 @@ button.ghost {
   border-color: #FFFFFF;
 }
 
-form {
+.form {
   background-color: var(--bg-base);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 50px;
+  padding: 22px 50px;
   height: 100%;
   text-align: center;
 }
@@ -52,10 +52,11 @@ input {
   background-color: #ffffff;
   border: none;
   padding: 3% 15px;
-  margin: 8px 0;
-  width: 100%; //عرض
+  margin: 12px 0;
+  width: 50%; //عرض
   border-radius: 10px;
   text-align: right;
+  height: 8px;
 }
 
 .container {
@@ -158,4 +159,3 @@ input {
     width: 100%;
   }
 }
-
