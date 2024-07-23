@@ -1,17 +1,52 @@
 <div class="header">
-    <a href="#home"  class="header-right"> <img src="../../../../assets/________-01.png" alt=" Logo"></a>
-    <div class="list" >
-      <a class="active" href ="home.html">الرئيسية</a>
+  <a href="#home" class="header-right"> <img src="../../../../assets/________-01.png" alt=" Logo"></a>
+  <div class="list">
 
-      <a href ="user.html">المستخدمين</a>
-      <a href ="mapee.html">الخرائط</a>
-      <a href ="request.html">طلبات المستخدمين</a>
-
+    <div  class="d-inline-block">
+      <button type="button" class="btn " id="dropdownBasic1" >
+        <a routerLink="./admin-home/dash-list">الرئيسية</a>
+      </button>
 
     </div>
-   <div class="out">
-    <a href ="order.html" >تسجيل الخروج</a>
+
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn " id="dropdownBasic1" ngbDropdownToggle>
+      طلبات المستخدمين
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button class="text-right" ngbDropdownItem><a routerLink="./users-orders/new-users-orders"> طلبات انشاء حساب</a> </button>
+        <button class="text-right" ngbDropdownItem><a routerLink="./users-orders/wallet-request">طلبات السحب من المحفظة</a></button>
+        <button class="text-right" ngbDropdownItem><a routerLink="./users-orders/document-request">طلب تغيير المستندات</a></button>
+        <button class="text-right" ngbDropdownItem><a routerLink="./users-orders/tickets">التذكرة</a></button>
+
+      </div>
     </div>
+
+    <div  class="d-inline-block">
+      <button type="button" class="btn " id="dropdownBasic1" >
+        <a routerLink="./admin-maps/map">الخرائط</a>
+      </button>
+
+    </div>
+
+
+    <div  class="d-inline-block">
+      <button type="button" class="btn " id="dropdownBasic1" >
+         <a routerLink="./users/user-table">المستخدمين</a>
+      </button>
+
+    </div>
+
+    <div  class="d-inline-block">
+      <button type="button" class="btn " id="dropdownBasic1" >
+         <a routerLink="./all-orders/order-table">الطلبات</a>
+      </button>
+
+    </div>
+
+
   </div>
-
-
+  <div class="out">
+    <a routerLink="">تسجيل الخروج</a>
+  </div>
+</div>
