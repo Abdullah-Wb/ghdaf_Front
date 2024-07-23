@@ -1,6 +1,6 @@
 /* Style the header with a grey background and some padding */
 .header {
-    overflow: hidden;
+    // overflow: hidden;
     background-color: #ffffff;
     padding: 5px 10px;
     width: 100%;
@@ -72,4 +72,8 @@
  .out{
     display: flex ;
     gap: 20px;
+ }
+
+ .text-right{
+  text-align: right;
  }

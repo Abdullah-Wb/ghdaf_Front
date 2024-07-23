@@ -47,28 +47,24 @@ button:active {
   text-align: center;
 }
 
- form {
+input {
+  background-color: #ffffff;
+  height: 10%;
+  border: none;
+  padding: 3% 15px;
+  margin: 8px 0;
+  width: 40%; //عرض
+  border-radius: 10px;
+  text-align: right;
+  .input-group{
+width: 50%;
 
-  display: flex;
-
-  justify-content: center;
-justify-content: space-between;
-flex-wrap: wrap;
-  padding: 0 30px;
-  height: 100%;
-  text-align: center;
+}
+.input-group-text{width: 3%;
 }
 
-// input {
-//   background-color: #ffffff;
-//   height: 10%;
-//   border: none;
-//   padding: 3% 15px;
-//   margin: 8px 0;
-//   width: 40%; //عرض
-//   border-radius: 10px;
-//   text-align: right;
-// }
+}
+.form-control{align-content: center; width: 30%;}
 .container {
   background-color: #fff;
   border-radius: 10px;
@@ -94,7 +90,16 @@ flex-wrap: wrap;
   z-index: 2;
 }
 
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
 
+  z-index: 100;
+}
 
 
 
@@ -170,7 +175,7 @@ bottom: 0;
      width: 100%;
   }
   .sign-in-container{
-  
+
     display: none;
   }
 }
