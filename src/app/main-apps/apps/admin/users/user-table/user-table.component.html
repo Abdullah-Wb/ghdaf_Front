@@ -1,0 +1,32 @@
+<div class="container mt-4" dir="rtl">
+
+  <h2>المستخدمين</h2>
+
+  <table dir="rtl">
+    <tr>
+      <th class="color-had">نوع المستخدم</th>
+      <th class="color-had">اسم المنصة</th>
+      <th class="color-had">اسم مسؤول المنصة</th>
+      <th class="color-had">رقم الهاتف</th>
+      <th class="color-had">عرض التفاصيل</th>
+      <th class="color-had">التفعيل</th>
+      <!-- <th class="color-had">العمر</th> -->
+    </tr>
+
+    <tr *ngFor="let i of arr_userTable">
+      <td>{{i.user_type}}</td>
+      <td>{{i.platform_name}}</td>
+      <td>{{i.admin_name}}</td>
+      <td>{{i.num}}</td>
+
+      <td><a routerLink=""><i class="bi bi-eye"></i></a></td>
+      <td>
+        <label class="toggle-switch">
+          <input type="checkbox" >
+          <span class="slider"></span>
+        </label>
+      </td>
+      <!-- <td>{{i.age}}</td> -->
+    </tr>
+    <!-- اول صف-->
+

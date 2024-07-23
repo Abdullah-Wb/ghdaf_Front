@@ -5,6 +5,7 @@ import { MainAppsRoutingModule } from './main-apps-routing.module';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
   ],
   imports: [
     CommonModule,
-    MainAppsRoutingModule
+    MainAppsRoutingModule,
+    NgbDropdownModule
   ]
 })
 export class MainAppsModule { }
