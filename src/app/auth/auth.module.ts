@@ -8,6 +8,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OtpComponent } from './otp/otp.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { OtpComponent } from './otp/otp.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ]
 })
 export class AuthModule { }

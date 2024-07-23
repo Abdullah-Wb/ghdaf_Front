@@ -13,21 +13,21 @@
 
 
 
-    <div class="overlay-container">
-      <form action="#">
+    <div class="overlay-container form" >
+      
         <h1>تسجيل الدخول</h1>
         <h6>أدخل البريد الالكتروني وكلمة المرور الخاصة بك لتسجيل الدخول</h6>
         <br>
-        <input type="email" placeholder="البريد الاكتروني" />
-        <input type="password" placeholder="كلمة المرور" />
+        <input  [(ngModel)]="login_form.email" type="email" placeholder="البريد الاكتروني" />
+        <input  [(ngModel)]="login_form.password" type="password" placeholder="كلمة المرور" />
         <a href="#">هل نسيت كلمة المرور؟</a> <!--بعدين نضيف الرابط-->
-        <button>تسجيل الدخول</button>
+        <button  (click)="login()">تسجيل الدخول</button>
         <a href="#"> هل لديك حساب؟ تسجيل الدخول</a> <!--بعدين نضيف الرابط-->
-      </form>
+     
     </div>
     
 
- 
+    <!-- <a routerLink="./auth/OTP">تسجيل الدخول</a> -->
 
 
 

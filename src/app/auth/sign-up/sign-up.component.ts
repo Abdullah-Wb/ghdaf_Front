@@ -8,20 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class SignUpComponent implements OnInit {
-  testrest:boolean=false;
-  testorg:boolean=false;
-  onButtonClick( ){
-    this.testrest=true
-    
-  }
-  onButtonClicke( ){
-    this.testorg=true
-    
-  }
-  
+  type = null
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectType(type) {
+    this.type = type
   }
 
 }
