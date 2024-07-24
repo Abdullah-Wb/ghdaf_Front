@@ -19,7 +19,7 @@
       <td>{{i.admin_name}}</td>
       <td>{{i.num}}</td>
 
-      <td><a routerLink="../user-table" (click)="openModal(content)"><i class="bi bi-eye"></i></a></td>
+      <td><a  (click)="openModal(content)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
 
       <ng-template #content let-modal>
         <div class="modal-header">
