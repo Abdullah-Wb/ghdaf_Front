@@ -1,45 +1,44 @@
+
+
+.profile-button {
+  background:var(--secondary);
+  box-shadow: none;
+  border: none
+}
+
+.profile-button:hover {
+  background: #384F3F
+}
+
+.profile-button:focus {
+  background:#384F3F;
+  box-shadow: none
+}
+
+.profile-button:active {
+  background: #384F3F;
+  box-shadow: none
+}
+
+.back:hover {
+  color: #384F3F;
+  cursor: pointer
+}
+
+.labels {
+  font-size: 11px
+}
+
+.add-experience:hover {
+  background: #384F3F;
+  color: #fff;
+  cursor: pointer;
+  border: solid 1px #BA68C8
+}
 .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-   align-items: center;
-    width: 90%;
-   
-    padding-top:2%;
+  margin-top: 50px;
+  padding-top: 10px;
 }
-.logo{
-
+input{
+  border: none;
 }
-.about{}
-.ubdat{}
-.wallet{
-    background-color: #9FAE9B;
-}
-table {
-  margin: 2px,2px;
-    border-collapse: collapse; /* Removes default table border spacing */
-    width: 100%; /* Adjust table width as needed */
-    text-decoration: none;
-    th, td {
-      border: 1px solid #ddd; /* Adds borders to cells */
-      padding: 8px; /* Adjust cell padding */
-      text-align: left; /* Align text to the left */
-      border: none;
-    }
-    
-    th {
-      background-color: #f2f2f2; /* Set background color for header row */
-      font-weight: bold; /* Make header text bold */
-    }
-  }
-  input {
-    background-color: #ffffff;
-    border: none;
-    padding: 3% 15px;
-
-    width: 50%; //عرض
-    border-radius: 10px;
-    text-align: right;
-    height: 8px;
-  }
