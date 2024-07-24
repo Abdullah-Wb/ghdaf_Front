@@ -8,6 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class OrderTableComponent implements OnInit {
   arr_allOrder: any
+  select = "تم التوصيل"
   constructor(private modalService: NgbModal) {
     this.arr_allOrder = [
       {
@@ -33,6 +34,11 @@ export class OrderTableComponent implements OnInit {
       }
 
     ]
+
+
+    this.arr_allOrder = this.arr_allOrder.filter((d)=>{
+      return d.Order_status == this.select
+    })
 
 
 

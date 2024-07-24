@@ -15,9 +15,42 @@ export class NewUsersOrdersComponent implements OnInit {
         user_type: 'جمعية',
         admin_name: 'غسان',
         num: '05977387',
-        order_status: 'تحت المراجعة',
+        order_status: 'تحت المعالجة ',
+
+      },
+      {
+        platform_name: 'البر',
+        user_type: 'جمعية',
+        admin_name: 'غسان',
+        num: '05977387',
+        order_status: 'مفعل',
+
+      },
+      {
+        platform_name: 'البر',
+        user_type: 'جمعية',
+        admin_name: 'غسان',
+        num: '05977387',
+        order_status: 'مرفوض',
+
+      },
+      {
+        platform_name: 'البر',
+        user_type: 'جمعية',
+        admin_name: 'غسان',
+        num: '05977387',
+        order_status: 'غير مفعل ',
+
+      },
+      {
+        platform_name: 'البر',
+        user_type: 'جمعية',
+        admin_name: 'غسان',
+        num: '05977387',
+        order_status: ' مجمد',
 
       }
+
     ]
   }
 
