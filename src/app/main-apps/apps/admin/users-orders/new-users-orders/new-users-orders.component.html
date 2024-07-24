@@ -1,69 +1,44 @@
 <!-- <app-button text="تسجيل" type="btn-danger"></app-button>
 
 <app-input></app-input> -->
+<div class="container g-4">
+  <h2>طلبات انشاء الحساب</h2>
 
-<h2 >طلبات انشاء الحساب</h2>
-
-<table dir="rtl">
+  <table dir="rtl">
     <tr>
       <th class="color-had">اسم المنصة</th>
-        <th class="color-had">نوع المستخدم</th>
-        <th class="color-had">اسم مسؤول المنصة</th>
-        <th class="color-had">رقم الهاتف</th>
-        <th class="color-had">حالة الطلب</th>
-        <th class="color-had">عرض التفاصيل</th>
+      <th class="color-had">نوع المستخدم</th>
+      <th class="color-had">اسم مسؤول المنصة</th>
+      <th class="color-had">رقم الهاتف</th>
+      <th class="color-had">حالة الطلب</th>
+      <th class="color-had">عرض التفاصيل</th>
     </tr>
 
-    <tr>
-        <td > <input type="text" placeholder="اكتب هنا"></td>
-        <td > <input type="text" placeholder="اكتب هنا"></td>
-        <td > <input type="text" placeholder="اكتب هنا"></td>
-        <td > <input type="text" placeholder="اكتب هنا"></td>
-        <td>
+    <tr *ngFor="let i of arr_newOrder">
+      <td>{{i.platform_name}} </td>
+      <td>{{i.user_type}} </td>
+      <td>{{i.admin_name}} </td>
+      <td>{{i.num}} </td>
+      <td>{{i.order_status}} </td>
+      <td><a routerLink="../new-users-orders" (click)="openModal(content)"><i class="bi bi-eye"></i></a></td>
 
-        </td>
-        <td><i class="bi bi-eye"></i></td>
     </tr>
-            <!-- اول صف-->
+    <!-- اول صف-->
+  </table>
 
-    <tr>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-
-        <td>
-
-        </td>
-        <td><i class="bi bi-eye"></i></td>
-    </tr>
-    <!--  ثاني صف-->
-
-    <tr>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-
-        <td>
-
-        </td>
-        <td><i class="bi bi-eye"></i></td>
-    </tr>
-    <!-- ثالث صف -->
-
-    <tr>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-      <td > <input type="text" placeholder="اكتب هنا"></td>
-
-        <td>
-
-        </td>
-        <td><i class="bi bi-eye"></i></td>
-    </tr>
-    <!-- رابع صف -->
-</table>
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">معلومات المستخدم</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
 
 
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+    </div>
+  </ng-template>
+  
+</div>

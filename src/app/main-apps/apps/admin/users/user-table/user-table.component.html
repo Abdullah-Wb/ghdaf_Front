@@ -19,14 +19,29 @@
       <td>{{i.admin_name}}</td>
       <td>{{i.num}}</td>
 
-      <td><a routerLink=""><i class="bi bi-eye"></i></a></td>
+      <td><a routerLink="../user-table" (click)="openModal(content)"><i class="bi bi-eye"></i></a></td>
+
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">معلومات المستخدم</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+        </div>
+      </ng-template>
+
       <td>
         <label class="toggle-switch">
-          <input type="checkbox" >
+          <input type="checkbox">
           <span class="slider"></span>
         </label>
       </td>
       <!-- <td>{{i.age}}</td> -->
     </tr>
     <!-- اول صف-->
-

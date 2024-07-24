@@ -17,11 +17,11 @@ input{
 }
 
 .color-had{
-  background: #9FAE9B;
+  background: var(--secondary);
 }
 
 table,th,td{
-  border: 1px solid #ddd;
+  border: 1px solid var(--table);
   direction: rtl;
 }
 
@@ -29,6 +29,10 @@ th,td
 {
   padding: 20px;
   text-align: center;
+  border: 5px solid var(--bg-base);
+  background: var(--third);
+
+
 }
 
 

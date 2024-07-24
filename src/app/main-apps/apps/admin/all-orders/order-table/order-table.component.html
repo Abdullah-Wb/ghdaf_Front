@@ -1,26 +1,54 @@
-<h2>الطلبات</h2>
+<div class="container mt-4" dir="rtl">
 
-<table dir="rtl">
-  <tr>
-    <th class="color-had">اسم المطعم</th>
-    <th class="color-had">السعر الاجمالي</th>
-    <th class="color-had">الكمية الاجمالية</th>
-    <th class="color-had">عدد المنتجات</th>
-    <th class="color-had">حالة الطلب</th>
-    <th class="color-had">عرض الطلب</th>
-  </tr>
 
-  <tr>
-    <td> <input type="text" disabled></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td>منتهي الصلاحية </td>
-    <td><i class="bi bi-eye"></i></td>
-  </tr>
-  <!-- اول صف-->
+  <h2>الطلبات</h2>
 
-  <tr>
+  <table dir="rtl">
+    <tr>
+      <th class="color-had">اسم المطعم</th>
+      <th class="color-had">السعر الاجمالي</th>
+      <th class="color-had">الكمية الاجمالية</th>
+      <th class="color-had">عدد المنتجات</th>
+      <th class="color-had">حالة الطلب</th>
+      <th class="color-had">عرض الطلب</th>
+    </tr>
+
+    <tr *ngFor="let i of arr_allOrder">
+      <td>{{i.rest_name}}</td>
+      <td>{{i.total_price}}</td>
+      <td>{{i.total_quantity}}</td>
+      <td>{{i.Num_products}}</td>
+      <td>{{i.Order_status}}</td>
+      <!-- <td>منتهي الصلاحية </td> -->
+      <td><a routerLink="../order-table" (click)="openModal(content)"><i class="bi bi-eye"></i></a></td>
+    </tr>
+
+  </table>
+</div>
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">معلومات الطلب</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+  </div>
+</ng-template>
+
+
+
+
+
+<!-- اول صف-->
+
+<!-- <tr>
     <td> <input type="text"></td>
     <td> <input type="text"></td>
     <td> <input type="text"></td>
@@ -28,7 +56,8 @@
     <td>محذوف</td>
     <td><i class="bi bi-eye"></i></td>
   </tr>
-  <!--  ثاني صف-->
+
+   ثاني صف
 
   <tr>
     <td> <input type="text"></td>
@@ -38,7 +67,7 @@
     <td>تم التوصيل</td>
     <td><i class="bi bi-eye"></i></td>
   </tr>
-  <!-- ثالث صف -->
+  ثالث صف
 
   <tr>
     <td> <input type="text"></td>
@@ -48,5 +77,4 @@
     <td></td>
     <td><i class="bi bi-eye"></i></td>
   </tr>
-  <!-- رابع صف -->
-</table>
+  رابع صف -->

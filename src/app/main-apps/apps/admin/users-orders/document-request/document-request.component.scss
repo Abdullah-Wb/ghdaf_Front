@@ -19,17 +19,24 @@ i{
 }
 
 .color-had{
-  background: #9FAE9B;
+  background: var(--secondary);
+}
+
+i{
+color: var(--icons);
 }
 
 table,th,td{
-  border: 1px solid #ddd;
+  border: 5px solid var(--bg-base);
 }
 
 th,td
 {
   padding: 10px;
   text-align: center;
+  background: var(--third);
+  
+
 }
 
 

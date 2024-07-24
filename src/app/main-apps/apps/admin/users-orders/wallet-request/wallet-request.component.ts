@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-wallet-request',
@@ -6,10 +7,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wallet-request.component.scss']
 })
 export class WalletRequestComponent implements OnInit {
+  arr_wallet: any
+  constructor(private modalService: NgbModal) {
+    this.arr_wallet = [
+      {
+        rest_name: 'البيك',
+        wallet_num: 12,
+        wallet_balance: 2480,
+        num: '055555433',
+      },
+      {
+        rest_name: 'الطازج',
+        wallet_num: 19,
+        wallet_balance: 2180,
+        num: '055555773',
+      }
 
-  constructor() { }
+    ]
+  }
 
   ngOnInit(): void {
   }
-
+  openModal(modal) {
+    this.modalService.open(modal, { centered: true })
+  }
 }
