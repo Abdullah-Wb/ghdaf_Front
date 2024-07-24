@@ -1,53 +1,59 @@
-<h2> طلبات السحب من المحفظة  </h2>
+<div class="container g-4" dir="rtl">
 
-<table dir="rtl">
-  <tr>
-    <th class="color-had">اسم المطعم</th>
-    <th class="color-had">رقم المحفظة</th>
-    <th class="color-had">رصيد المحفظة</th>
-    <th class="color-had">رقم الهاتف</th>
-    <th class="color-had">قبول</th>
-    <th class="color-had">رفض</th>
-  </tr>
+  <h2> طلبات السحب من المحفظة </h2>
 
-  <tr>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td><i class="bi bi-check2-square"></i></td>
-    <td><i class="bi bi-x-square"></i></td>
-  </tr>
-  <!-- اول صف-->
+  <table dir="rtl">
+    <tr>
+      <th class="color-had">اسم المطعم</th>
+      <th class="color-had">رقم المحفظة</th>
+      <th class="color-had">رصيد المحفظة</th>
+      <th class="color-had">رقم الهاتف</th>
+      <th class="color-had">قبول</th>
+      <th class="color-had">رفض</th>
+    </tr>
 
-  <tr>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td><i class="bi bi-check2-square"></i></td>
-    <td><i class="bi bi-x-square"></i></td>
-  </tr>
-  <!--  ثاني صف-->
+    <tr *ngFor="let i of arr_wallet">
+      <td>{{i.rest_name}} </td>
+      <td>{{i.wallet_num}} </td>
+      <td>{{i.wallet_balance}} </td>
+      <td>{{i.num}} </td>
+      <td><a routerLink="../document-request" (click)="openModal(content)"><i class="bi bi-check2-square"></i></a></td>
+      <td><a routerLink="../document-request" (click)="openModal(contentx)"><i class="bi bi-x-square"></i></a></td>
+    </tr>
+    <!-- اول صف-->
 
-  <tr>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td><i class="bi bi-check2-square"></i></td>
-    <td><i class="bi bi-x-square"></i></td>
-  </tr>
-  <!-- ثالث صف -->
+  </table>
 
-  <tr>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td><i class="bi bi-check2-square"></i></td>
-    <td><i class="bi bi-x-square"></i></td>
-  </tr>
-  <!-- رابع صف -->
-</table>
+  <!-- الموافقة -->
+  <ng-template #content let-modal >
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">تم قبول طلب العميل</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
 
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+    </div>
+  </ng-template>
+
+<!-- الرفض -->
+  <ng-template #contentx let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">سبب الرفض</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+    </div>
+  </ng-template>
+
+</div>

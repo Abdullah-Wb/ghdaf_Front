@@ -7,8 +7,6 @@ table{
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-
-
 }
 input{
   border: 0;
@@ -16,21 +14,21 @@ input{
 
 i{
   font-size: 30px;
+  color: var(--icons);
 }
 
 .color-had{
-  background: #9FAE9B;
+  background: var(--secondary);
 }
 
 table,th,td{
-  border: 1px solid #ddd;
+  border: 5px solid var(--bg-base);
 }
 
 th,td
 {
   padding: 10px;
   text-align: center;
+  background: var(--third);
+
 }
-
-
-

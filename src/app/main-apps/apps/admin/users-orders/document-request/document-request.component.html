@@ -12,45 +12,47 @@
       <th class="color-had">رفض</th>
     </tr>
 
-    <tr>
-      <td> <input type="text" placeholder="اكتب هنا"></td>
-      <td> <input type="text" placeholder="اكتب هنا"></td>
-      <td> <input type="text" placeholder="اكتب هنا"></td>
-      <td> <input type="text" placeholder="اكتب هنا"></td>
-      <td><i class="bi bi-check2-square"></i></td>
-      <td><i class="bi bi-x-square"></i></td>
+    <tr *ngFor="let i of arr_userOrd">
+      <td>{{i.Platform_type}}</td>
+      <td>{{i.Platform_name}}</td>
+      <td>{{i.Platform_num}}</td>
+      <td>{{i.Documents}}</td>
+      <td><a routerLink="../document-request" (click)="openModal(content)"><i class="bi bi-check2-square"></i></a></td>
+      <td><a routerLink="../document-request" (click)="openModal(contentx)"><i class="bi bi-x-square"></i></a></td>
     </tr>
     <!-- اول صف-->
 
-    <tr>
-      <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td><i class="bi bi-check2-square"></i></td>
-    <td><i class="bi bi-x-square"></i></td>
-  </tr>
-  <!--  ثاني صف-->
+  </table>
+<!-- الموافقة -->
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">تم قبول طلب العميل</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
 
-  <tr>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td><i class="bi bi-check2-square"></i></td>
-    <td><i class="bi bi-x-square"></i></td>
-  </tr>
-  <!-- ثالث صف -->
 
-  <tr>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td> <input type="text" placeholder="اكتب هنا"></td>
-    <td><i class="bi bi-check2-square"></i></td>
-    <td><i class="bi bi-x-square"></i></td>
-  </tr>
-  <!-- رابع صف -->
-</table>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+    </div>
+  </ng-template>
+
+<!-- الرفض -->
+  <ng-template #contentx let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">سبب الرفض</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+    </div>
+  </ng-template>
 
 </div>

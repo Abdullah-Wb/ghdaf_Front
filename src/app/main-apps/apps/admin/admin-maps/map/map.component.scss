@@ -1,0 +1,25 @@
+.pernt{
+  background: black;
+  width: 200px;
+  height: 200px;
+}
+
+.active_map{
+  width: 200px;
+  height: 200px;
+display: flex;
+flex-flow: column-reverse;
+justify-content: center;
+justify-content: center;
+align-items: center;
+background: red;
+}
+.child{
+  background: gold;
+  width: 290px;
+  height: 150px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
