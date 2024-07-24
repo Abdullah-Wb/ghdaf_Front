@@ -6,8 +6,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dash-list.component.scss']
 })
 export class DashListComponent implements OnInit {
+  arr_dash:any
+  constructor() {
+    this.arr_dash =[
+      {
+        title: 'عدد المستخدمين',
+        num: '058734387',
+        icon:"bi bi-people-fill"
+      },
+      {
+        title: 'عدد المستخدمين',
+        num: '058734387',
+        icon:"bi bi-people-fill"
+      },
+      {
+        title: 'عدد المستخدمين',
+        num: '058734387',
+        icon:"bi bi-people-fill"
+      },
+      {
+        title: 'عدد المستخدمين',
+        num: '058734387',
+        icon:"bi bi-people-fill"
+      },
 
-  constructor() { }
+
+    ]
+   }
 
   ngOnInit(): void {
   }
