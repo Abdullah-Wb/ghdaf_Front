@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -21,7 +22,8 @@ import { TokenInterceptorInterceptor } from './services/token-interceptor.interc
    NgbModule,
 
    HttpClientModule,
-   FormsModule
+   FormsModule,
+   BrowserAnimationsModule
   ],
   providers: [
     {
