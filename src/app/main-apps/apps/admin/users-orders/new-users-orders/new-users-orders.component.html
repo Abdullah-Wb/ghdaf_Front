@@ -20,7 +20,7 @@
       <td>{{i.admin_name}} </td>
       <td>{{i.num}} </td>
       <td>{{i.order_status}} </td>
-      <td><a routerLink="../new-users-orders" (click)="openModal(content)"><i class="bi bi-eye"></i></a></td>
+      <td><a  (click)="openModal(content)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
 
     </tr>
     <!-- اول صف-->
@@ -40,5 +40,5 @@
       <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
     </div>
   </ng-template>
-  
+
 </div>

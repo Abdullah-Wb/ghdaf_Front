@@ -2,8 +2,8 @@
 
 
   <h2>الطلبات</h2>
-
-  <table dir="rtl"> 
+  <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
+  <table dir="rtl">
     <tr>
       <th class="color-had">اسم المطعم</th>
       <th class="color-had">السعر الاجمالي</th>
@@ -20,7 +20,7 @@
       <td>{{i.Num_products}}</td>
       <td>{{i.Order_status}}</td>
       <!-- <td>منتهي الصلاحية </td> -->
-      <td><a routerLink="../order-table" (click)="openModal(content)"><i class="bi bi-eye"></i></a></td>
+      <td><a (click)="openModal(content)"><i class="bi bi-eye" style="cursor:pointer;"></i></a></td>
     </tr>
 
   </table>

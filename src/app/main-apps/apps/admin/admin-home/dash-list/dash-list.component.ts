@@ -11,22 +11,22 @@ export class DashListComponent implements OnInit {
     this.arr_dash =[
       {
         title: 'عدد المستخدمين',
-        num: '058734387',
+        num: '55',
         icon:"bi bi-people-fill"
       },
       {
         title: 'عدد المستخدمين',
-        num: '058734387',
+        num: '150',
         icon:"bi bi-people-fill"
       },
       {
         title: 'عدد المستخدمين',
-        num: '058734387',
+        num: '120',
         icon:"bi bi-people-fill"
       },
       {
         title: 'عدد المستخدمين',
-        num: '058734387',
+        num: '12',
         icon:"bi bi-people-fill"
       },
 
