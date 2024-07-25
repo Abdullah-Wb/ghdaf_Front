@@ -20,7 +20,7 @@
       <td>{{i.admin_name}} </td>
       <td>{{i.num}} </td>
       <td>{{i.order_status}} </td>
-      <td><a  (click)="openModal(content)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
+      <td><a (click)="openModal(content)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
 
     </tr>
     <!-- اول صف-->
@@ -33,8 +33,72 @@
     </div>
     <div class="modal-body">
 
+      <div style="margin-top: 5px; padding-top: 2px;background-color:var(--bg-bace)">
 
-    </div>
+        <div class="container rounded  mt-5 mb-5   " style="direction: rtl;background-color: #f8f7f5aa;">
+          <div class="row">
+            <div style="justify-content: center;align-items: center ;display: flex; padding:20px ;">
+              <h4>اهلا بك</h4>
+            </div>
+
+            <div class="col-md-3 border-right">
+              <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
+                  width="150px"
+                  src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
+                  class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span>
+                </span></div>
+            </div>
+            <div class="col-md-5 border-right">
+              <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4 class="text-right"> معلومات الحساب</h4>
+                </div>
+                <div class="row mt-2">
+                  <div class="col-md-6"><label class="labels">اسم المسؤول الثلاثي</label><input type="text"
+                      class="form-control" placeholder="first name" value=""></div>
+                  <div class="col-md-6"><label class="labels">اسم المطعم</label><input type="text" class="form-control"
+                      value="" placeholder="surname"></div>
+
+                </div>
+                <form action="">
+                  <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels"> رقم الهاتف</label><input type="text"
+                        class="form-control" placeholder="enter phone number" value=""></div>
+                    <div class="col-md-12"><label class="labels"> الايميل</label><input type="text" class="form-control"
+                        placeholder="enter address line 1" value=""></div>
+                    <div class="col-md-12"><label class="labels"> </label><input type="text" class="form-control"
+                        placeholder="enter address line 2" value=""></div>
+                    <div class="col-md-12"><label class="labels">رقم الحساب البنكي</label><input type="text"
+                        class="form-control" placeholder="enter address line 2" value=""></div>
+                    <div class="col-md-12"><label class="labels">صورة المطعم</label><input type="text"
+                        class="form-control" placeholder="enter address line 2" value=""></div>
+                    <div class="col-md-12"><label class="labels">صورة المسؤول </label><input type="text"
+                        class="form-control" placeholder="enter address line 2" value=""></div>
+                    <div class="col-md-12"><label class="labels"> صورة شعار المطعم</label><input type="text"
+                        class="form-control" placeholder="enter email id" value=""></div>
+                    <div class="col-md-12"><label class="labels">وصف المطعم</label><input type="text"
+                        class="form-control" placeholder="education" value=""></div>
+                  </div>
+
+                  <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">الموقع </label><input type="text" class="form-control"
+                        placeholder="country" value=""></div>
+                    <div class="col-md-6"><label class="labels">وصف الموقع</label><input type="text"
+                        class="form-control" value="" placeholder="state"></div>
+                  </div>
+                  
+                </form>
+              </div>
+            </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
 
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>

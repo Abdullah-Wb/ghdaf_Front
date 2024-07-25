@@ -51,7 +51,7 @@ export class NewUsersOrdersComponent implements OnInit {
 
       }
 
-    ]
+    ] 
   }
 
   ngOnInit(): void {

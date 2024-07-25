@@ -8,6 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class OrderTableComponent implements OnInit {
   arr_allOrder: any
+  arr_detils: any
   select = "تم التوصيل"
   constructor(private modalService: NgbModal) {
     this.arr_allOrder = [
@@ -35,6 +36,17 @@ export class OrderTableComponent implements OnInit {
 
     ]
 
+    this.arr_detils = [
+      {
+        ord_name: 'بيتزاء',
+        quantity: 10,
+        price: '100',
+        pord_date: '12/12/2024',
+        exp_date: '13/12/2024',
+        order_image: '',
+      }
+    ]
+
 
     this.arr_allOrder = this.arr_allOrder.filter((d)=>{
       return d.Order_status == this.select
@@ -49,6 +61,6 @@ export class OrderTableComponent implements OnInit {
   }
 
   openModal(modal) {
-    this.modalService.open(modal, { centered: true })
+    this.modalService.open(modal, { size: 'xl' })
   }
 }

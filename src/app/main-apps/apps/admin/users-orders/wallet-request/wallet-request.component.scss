@@ -17,7 +17,7 @@ input{
 i{
   font-size: 30px;
   color: var(--icons);
-  
+
 }
 
 .color-had{
@@ -35,6 +35,16 @@ th,td
   text-align: center;
   background: var(--third);
 
+}
+.input_err {
+  display: flex;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+}
+.modal-header{
+  background: var(--secondary);
 }
 
 
