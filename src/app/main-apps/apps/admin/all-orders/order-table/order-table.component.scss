@@ -7,8 +7,6 @@ table{
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-
-
 }
 input{
   border: 0;
@@ -36,6 +34,13 @@ a{
   border: 0;
   color:var(--eye_color);
  }
+.btn{
+  background: var(--secondary);
+}
+// .btn-close{
+//   color: #ffffff;
+//   background-color: red;
+// }
 
 
 

@@ -29,7 +29,7 @@
 
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">معلومات الطلب</h4>
+    <h4 class="title" id="modal-basic-title">معلومات الطلب</h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body">
@@ -39,7 +39,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <div class="container mt-4" dir="rtl">
+              <div class="container mt-6" dir="rtl">
 
                 <h2>تفاصيل الطلب</h2>
                 <table dir="rtl">
@@ -56,9 +56,13 @@
                     <td>{{i.ord_name}}</td>
                     <td>{{i.quantity}}</td>
                     <td>{{i.price}}</td>
-                    <td type="date">{{i.pord_date}}</td>
+                    <td>{{i.pord_date}}</td>
                     <td> {{i.exp_date}}</td>
-                    <td>{{i.Order_image}}</td>
+                    <td>
+                      <div class="order_image">
+                      <i [class]="i.order_image"></i></div>
+                    </td>
+
                   </tr>
 
                 </table>

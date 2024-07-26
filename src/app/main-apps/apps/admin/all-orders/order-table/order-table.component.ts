@@ -35,7 +35,7 @@ export class OrderTableComponent implements OnInit {
       }
 
     ]
-
+//pup-up
     this.arr_detils = [
       {
         ord_name: 'بيتزاء',
@@ -43,8 +43,44 @@ export class OrderTableComponent implements OnInit {
         price: '100',
         pord_date: '12/12/2024',
         exp_date: '13/12/2024',
-        order_image: '',
-      }
+        order_image:"bi bi-images",
+      },
+      {
+        ord_name: 'بيتزاء',
+        quantity: 10,
+        price: '100',
+        pord_date: '12/12/2024',
+        exp_date: '13/12/2024',
+        order_image:"bi bi-images",
+      },
+      {
+        ord_name: 'بيتزاء',
+        quantity: 10,
+        price: '100',
+        pord_date: '12/12/2024',
+        exp_date: '13/12/2024',
+        order_image:"bi bi-images",
+      },
+      {
+        ord_name: 'بيتزاء',
+        quantity: 10,
+        price: '100',
+        pord_date: '12/12/2024',
+        exp_date: '13/12/2024',
+        order_image:"bi bi-images",
+      },
+      {
+        ord_name: 'بيتزاء',
+        quantity: 10,
+        price: '100',
+        pord_date: '12/12/2024',
+        exp_date: '13/12/2024',
+        order_image:"bi bi-images",
+      },
+
+
+
+
     ]
 
 
