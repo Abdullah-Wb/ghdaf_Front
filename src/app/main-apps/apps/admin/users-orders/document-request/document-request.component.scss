@@ -1,6 +1,7 @@
 h2{
   text-align: center;
   font-size: xx-large;
+  padding: 20px;
 }
 
 table{
@@ -35,9 +36,21 @@ th,td
   padding: 10px;
   text-align: center;
   background: var(--third);
-  
-
+}
+.input_err {
+  display: flex;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+}
+.modal-header{
+  background: var(--secondary);
 }
 
-
-
+.typ_status{
+  background-color: var(--third);
+  color: var(--icons);
+  padding: 5px;
+  border-radius: 5px;
+}

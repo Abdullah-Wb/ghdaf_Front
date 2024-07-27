@@ -2,6 +2,14 @@
 
   <h2> طلب تغيير المستندات الرسمية </h2>
 
+  <select class="typ_status" name="" id="">
+    <option value="">اختر نوع المستندت</option>
+    <option value="1">الكل</option>
+    <option value="2">شهادة صحية</option>
+    <option value="3">سجل تجاري</option>
+   
+  </select>
+
   <table dir="rtl">
     <tr>
       <th class="color-had">اسم المنصة</th>
@@ -17,8 +25,9 @@
       <td>{{i.Platform_name}}</td>
       <td>{{i.Platform_num}}</td>
       <td>{{i.Documents}}</td>
-      <td><a routerLink="../document-request" (click)="openModal(content)"><i class="bi bi-check2-square"></i></a></td>
-      <td><a routerLink="../document-request" (click)="openModal(contentx)"><i class="bi bi-x-square"></i></a></td>
+      <td><a (click)="openModal(content)"><i class="bi bi-check2-square" style="cursor: pointer;"></i></a></td>
+      <td><a (click)="openModal(contentx)"><i class="bi bi-x-square" style="cursor: pointer;"></i></a></td>
+
     </tr>
     <!-- اول صف-->
 
@@ -47,6 +56,7 @@
     </div>
     <div class="modal-body">
 
+      <input class="input_err" type="text" id="input_err" placeholder="ادخل سبب الرفض" dir="rtl">
 
     </div>
 

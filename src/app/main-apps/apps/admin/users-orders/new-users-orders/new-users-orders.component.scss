@@ -1,34 +1,134 @@
-h2{
+h2 {
   text-align: center;
   font-size: xx-large;
+  padding: 20px;
 }
 
-table{
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the right */
+  gap: 15px; /* Space between input and select */
+}
+
+#myInput {
+  direction: rtl;
+  background-color: var(--third);
+  border-radius: 5px;
+  background-image: url('https://www.w3schools.com/howto/searchicon.png'); /* Add a search icon to input */
+  background-position: right 10px center; /* Position the search icon on the right */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 40px 12px 20px;
+  border: 1px solid var(--bg-base);
+  margin-bottom: 0px; /* Remove space below the input */
+  box-sizing: border-box; /* Ensure padding and width are included in total width */
+}
+
+input[type="text"]::placeholder {
+  text-align: right; /* Align placeholder text to the right */
+}
+
+.typ_status {
+  background-color: var(--third);
+  color: var(--icons);
+  padding: 10px; /* Adjust padding to match the input */
+  border-radius: 5px;
+  height: 46px; /* Adjust height to match the input */
+  margin: 0 10px 0 0;
+}
+
+
+table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
 }
-input{
+
+input {
   border: 0;
 }
 
-i{
+i {
   font-size: 30px;
   color: var(--icons);
 }
 
-.color-had{
+.color-had {
   background: var(--secondary);
 }
 
-table,th,td{
+table,
+th,
+td {
   border: 5px solid var(--bg-base);
 }
 
-th,td
-{
+th,
+td {
   padding: 10px;
   text-align: center;
   background: var(--third);
+}
+
+.size_img{
+height: 100px;
+width: 100px;
+padding: 10px;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
 
 }
+
+
+.header {
+  background: var(--secondary);
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center;
+  height: 70px;
+  padding: 15px;
+
+}
+.close_btn{
+background-color: inherit;
+border: none;
+outline: none;
+font-size: 30px;
+}
+
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: var(--third);
+}
+
+.btn {
+  background: var(--secondary);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.design_info {
+  margin-top: 5px;
+  padding-top: 2px;
+  background-color: var(--bg-base)
+}
+.container_1{
+  direction: rtl;
+  background-color: #f8f5f5aa;
+}
+
+
+

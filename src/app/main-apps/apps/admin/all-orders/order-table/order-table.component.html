@@ -1,9 +1,18 @@
-<div class="container mt-4" dir="rtl">
+<div class="container mt-4" >
 
 
   <h2>الطلبات</h2>
+  <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
+  <select class="typ_status" name="" id="">
+    <option value="">اختر حالة الطلب</option>
+    <option value="1">الكل</option>
+    <option value="2">تم التوصيل</option>
+    <option value="3">محذوف</option>
+    <option value="4">منتهي الصلاحية</option>
 
-  <table dir="rtl"> 
+  </select>
+
+  <table dir="rtl">
     <tr>
       <th class="color-had">اسم المطعم</th>
       <th class="color-had">السعر الاجمالي</th>
@@ -20,7 +29,7 @@
       <td>{{i.Num_products}}</td>
       <td>{{i.Order_status}}</td>
       <!-- <td>منتهي الصلاحية </td> -->
-      <td><a routerLink="../order-table" (click)="openModal(content)"><i class="bi bi-eye"></i></a></td>
+      <td><a (click)="openModal(content)"><i class="bi bi-eye" style="cursor:pointer;"></i></a></td>
     </tr>
 
   </table>
@@ -29,11 +38,50 @@
 
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">معلومات الطلب</h4>
+    <h4 class="title" id="modal-basic-title">معلومات الطلب</h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body">
 
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="container mt-6" dir="rtl">
+
+                <h2>تفاصيل الطلب</h2>
+                <table dir="rtl">
+                  <tr>
+                    <th class="color-had">اسم المنتج</th>
+                    <th class="color-had">الكمية </th>
+                    <th class="color-had">السعر</th>
+                    <th class="color-had">تاريخ الانتاج </th>
+                    <th class="color-had">تاريخ الانتهاء </th>
+                    <th class="color-had">صورة المنتج</th>
+                  </tr>
+
+                  <tr *ngFor="let i of arr_detils">
+                    <td>{{i.ord_name}}</td>
+                    <td>{{i.quantity}}</td>
+                    <td>{{i.price}}</td>
+                    <td>{{i.pord_date}}</td>
+                    <td> {{i.exp_date}}</td>
+                    <td>
+                      <div class="order_image">
+                      <i [class]="i.order_image"></i></div>
+                    </td>
+
+                  </tr>
+
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 
@@ -41,7 +89,6 @@
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
   </div>
 </ng-template>
-
 
 
 

@@ -8,6 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class OrderTableComponent implements OnInit {
   arr_allOrder: any
+  arr_detils: any
   select = "تم التوصيل"
   constructor(private modalService: NgbModal) {
     this.arr_allOrder = [
@@ -34,6 +35,53 @@ export class OrderTableComponent implements OnInit {
       }
 
     ]
+//pup-up
+    this.arr_detils = [
+      {
+        ord_name: 'بيتزاء',
+        quantity: 10,
+        price: '100',
+        pord_date: '12/12/2024',
+        exp_date: '13/12/2024',
+        order_image:"bi bi-images",
+      },
+      {
+        ord_name: 'بيتزاء',
+        quantity: 10,
+        price: '100',
+        pord_date: '12/12/2024',
+        exp_date: '13/12/2024',
+        order_image:"bi bi-images",
+      },
+      {
+        ord_name: 'بيتزاء',
+        quantity: 10,
+        price: '100',
+        pord_date: '12/12/2024',
+        exp_date: '13/12/2024',
+        order_image:"bi bi-images",
+      },
+      {
+        ord_name: 'بيتزاء',
+        quantity: 10,
+        price: '100',
+        pord_date: '12/12/2024',
+        exp_date: '13/12/2024',
+        order_image:"bi bi-images",
+      },
+      {
+        ord_name: 'بيتزاء',
+        quantity: 10,
+        price: '100',
+        pord_date: '12/12/2024',
+        exp_date: '13/12/2024',
+        order_image:"bi bi-images",
+      },
+
+
+
+
+    ]
 
 
     this.arr_allOrder = this.arr_allOrder.filter((d)=>{
@@ -49,6 +97,6 @@ export class OrderTableComponent implements OnInit {
   }
 
   openModal(modal) {
-    this.modalService.open(modal, { centered: true })
+    this.modalService.open(modal, { size: 'xl' })
   }
 }
