@@ -1,0 +1,53 @@
+// .card{
+
+
+
+// justify-content: center;
+// direction: rtl;
+
+
+// }
+// card-body{
+//   display: flex;
+
+// justify-content: center;
+// align-content: center;
+// flex-direction: row;
+
+// }
+// .container{
+//   direction: rtl;
+//   margin: 10px;
+
+
+// }
+button{
+  background-color: var(--secondary);
+  margin-top: 5px;
+  padding: 5px;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
+// .d{
+//   justify-content: end;
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+.contanertwo{
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+gap: 20px;
+
+}
+.contanerone{
+  margin: 10px;
+
+}
+
+p{
+  font-size: medium;
+}

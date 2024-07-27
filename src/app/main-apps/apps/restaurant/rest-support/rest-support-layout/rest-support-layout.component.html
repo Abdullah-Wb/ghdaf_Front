@@ -1,0 +1,33 @@
+
+<div style="margin-top: 5px; padding-top: 2px;">
+
+
+    <div class="container rounded  mt-5 mb-5 " style="direction: rtl;background-color: #f8f7f5aa;">
+  <form action="action_page.php">
+
+    <label for="country">نوع التذكرة </label>
+    <select id="type" name="type"  (onchange)="getSelectValue()">
+      <option value="1">   بخصوص طلب</option>
+      <option value="2"> اخرى</option>
+    </select>
+
+    <div id="order">
+    <label for="fname">رقم الطلب</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+  </div>
+
+    <div id="other">
+    <label for="lname">  عنوان التذكرة</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+  </div>
+
+
+    <label for="subject"> الوصف</label>
+    <textarea id="subject" name="subject" placeholder="ادخل وصف التذكرة" style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+</div>
+

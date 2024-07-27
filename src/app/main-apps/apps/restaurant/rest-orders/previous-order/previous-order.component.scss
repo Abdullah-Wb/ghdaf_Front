@@ -1,17 +1,17 @@
 // table {
-    
+
 //     border-collapse: collapse;
 //     border-radius: 10%;
 //   border: none;
 //     width: 100%;
 //   }
-  
+
 //   td, th {
 //     border: 1px solid #dddddd;
 //     text-align: left;
 //     padding: 8px;
 //   }
-  
+
 //   tr:nth-child(even) {
 //     background-color: #dddddd;
 //   }
@@ -21,27 +21,27 @@
   //   border-collapse: collapse;
   //   width: 100%;
   // }
-  
+
   // td, th {
   //   border: 1px solid #dddddd;
   //   text-align: left;
   //   padding: 8px;
   // }
-  
+
   // tr:nth-child(even) {
   //   background-color: #dddddd;
   // }
   //// here
-  
+
 
 
 
 // .step-wizard-list{
 
-   
+
 //     color: #333;
 //     list-style-type: none;
-    
+
 //     display: flex;
 //     padding: 60px 10px;
 //     position: relative;
@@ -160,7 +160,7 @@ table {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  
+
 }
 .p-table{
   display: flex;
@@ -168,15 +168,15 @@ table {
   flex-direction:column;
   width:80%;
   direction:rtl
-  
+
 }
   th, td {
     border: 5px solid var( --bg-base); /* Adds borders to cells */
     padding: 8px; /* Adjust cell padding */
      /* Align text to the left */
-   
+
   }
-  
+
   th {
     background-color: #9FAE9B; /* Set background color for header row */
     font-weight: bold; /* Make header text bold */
@@ -192,5 +192,5 @@ table {
   justify-content: space-between;
   flex-direction:column;
   padding-top: 3%;
-  
+
 }

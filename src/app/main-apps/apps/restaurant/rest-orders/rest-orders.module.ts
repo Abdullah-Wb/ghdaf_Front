@@ -5,7 +5,7 @@ import { RestOrdersRoutingModule } from './rest-orders-routing.module';
 import { CurrentOrderComponent } from './current-order/current-order.component';
 import { PreviousOrderComponent } from './previous-order/previous-order.component';
 import { NewOrderComponent } from './new-order/new-order.component';
-
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { NewOrderComponent } from './new-order/new-order.component';
   ],
   imports: [
     CommonModule,
-    RestOrdersRoutingModule
+    RestOrdersRoutingModule,
+    MatStepperModule
   ]
 })
 export class RestOrdersModule { }
