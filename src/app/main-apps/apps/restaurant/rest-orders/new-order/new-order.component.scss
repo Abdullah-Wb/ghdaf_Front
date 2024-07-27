@@ -4,9 +4,11 @@
   padding-top: 2%;
   width: 60%;
 
-  
+
 
 }
+
+
 .container {
 
   display: flex;
@@ -35,7 +37,7 @@ button {
   border-radius: 10px;
   border: 1px solid #9FAE9B;
   background-color: #9FAE9B;
-  color: #FFFFFF;
+
   font-size: 12px;
   font-weight: bold;
   padding: 12px 45px;
@@ -58,6 +60,17 @@ input {
   text-align: right;
   height: 10%;
 
+
+}
+#type{
+  background-color: #ffffff;
+  border: none;
+  padding: 1% 15px;
+  margin: 12px 0;
+  width: 40%; //عرض
+  border-radius: 10px;
+  text-align: right;
+  height: 10%;
 }
 
 textarea {
@@ -82,7 +95,7 @@ form {
   // background-color: aqua;
 }
 table {
-    
+
   border-collapse: collapse;
   border-radius: 20px;
   background-color: #FAF9F2;
@@ -91,7 +104,7 @@ table {
 }
 
 td, th {
- 
+
   text-align: left;
   padding: 8px;
 
@@ -118,7 +131,7 @@ color: #a91d10;
   padding: 12px 45px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  
+
 
 }
 a {
@@ -126,7 +139,14 @@ a {
   font-size: 14px;
   text-decoration: none;
   margin: 15px 0;
-  
+
 }
-th{
-color: #fff;}
+
+
+thead{
+  color: rgb(0, 0, 0);
+}
+tbody{
+color: black;
+
+}

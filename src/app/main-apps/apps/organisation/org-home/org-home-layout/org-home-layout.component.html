@@ -1,0 +1,121 @@
+<!--
+<div style=" display: flex;justify-content: center;">
+  <h1 style="padding: 20px;">اهلا بك في منصة غدف</h1>
+
+</div> -->
+
+
+<!-- <div style="display: flex; justify-content:flex-start;d; margin: 10px;"*ngFor="let i of arr_userOrd">
+
+<div class="card" style="width: 18rem;" >
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+</div>
+</div>
+
+</div> -->
+
+<!-- <div class="container">
+<div class="d"> -->
+<!--
+    <h2>الطلبات المتاحة</h2> -->
+<!--
+<div *ngFor="let i of arr_userOrd">
+
+
+        <div class="card" style="width: 20%;"  >
+
+          <img src="../../../assets/________-01.png "  alt="..." style="margin: 3%;">
+            <div style="padding-right:30px  ;direction: rtl;">
+            <h5 class="card-title"></h5>
+            <p class="card-text"> </p>
+            <div style="display: flex;">
+              <p class="text-amount">عددالوجبات </p>
+              <p class="card-amount"> </p>
+            </div>
+            <button>اطلب الآن</button>
+          </div>
+
+        </div>
+</div>
+        </div>
+
+        </div> -->
+
+        <div class="contanerone">
+          <h1 style="margin-left: 680px; padding-top: 30px;">اهلا بك في منصة غدف</h1>
+          <div style="direction: rtl;padding: 30px;"><h2>الطلبات المتاحة</h2></div>
+          <div class="contanertwo" >
+
+
+            <div style="width: 300px ; direction: rtl; padding-top: 20px;background-color: #ffffff; border-radius: 10px;"*ngFor="let i of arr_userOrd" >
+            <div style=" direction: rtl ;border-radius: 10px; ;padding: 20px; " >
+              <img src="../../../../../../assets/________-01.png" class="card-img-top" alt="..."><br>
+              <div style="display: flex;">
+                <p class="text-amount">اسم المطعم: </p><br>
+                <p class="card-amount"> {{i. name_rest}}</p>
+              </div>
+              <div style="display: flex;">
+                <p class="text-amount">عدد الوجبات:  </p><br>
+                <p class="card-amount"> {{i.amount}}</p>
+              </div>
+              <div style="display: flex;">
+                <p class="text-amount">السعر: </p><br>
+                <p class="card-amount"> {{i.price}}</p>
+              </div>
+              <button>اطلب الآن</button>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <button (click)="openModal(content)">dd</button>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">معلومات الدفع</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+
+
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+  </div>
+</ng-template> -->
