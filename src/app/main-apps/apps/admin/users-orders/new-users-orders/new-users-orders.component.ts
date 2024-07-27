@@ -17,7 +17,6 @@ export class NewUsersOrdersComponent implements OnInit {
         admin_name: 'غسان',
         num: '05977387',
         order_status: 'تحت المعالجة ',
-
       },
       {
         platform_name: 'البر',
