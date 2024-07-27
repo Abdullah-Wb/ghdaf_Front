@@ -1,37 +1,105 @@
-h2{
+h2 {
   text-align: center;
   font-size: xx-large;
+  padding: 20px;
 }
 
-table{
+table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
 }
-input{
+
+input {
   border: 0;
 }
 
-i{
+i {
   font-size: 30px;
   color: var(--icons);
 }
 
-.color-had{
+.color-had {
   background: var(--secondary);
 }
 
-table,th,td{
+table,
+th,
+td {
   border: 5px solid var(--bg-base);
 }
 
-th,td
-{
+th,
+td {
   padding: 10px;
   text-align: center;
   background: var(--third);
+}
+
+.typ_status{
+  background-color: var(--third);
+  color: var(--icons);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.size_img{
+height: 100px;
+width: 100px;
+padding: 10px;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
 
 }
-.modal-header{
+
+
+.header {
+  background: var(--secondary);
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center;
+  height: 70px;
+  padding: 15px;
+
+}
+.close_btn{
+background-color: inherit;
+border: none;
+outline: none;
+font-size: 30px;
+}
+
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: var(--third);
+}
+
+.btn {
   background: var(--secondary);
 }
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.design_info {
+  margin-top: 5px;
+  padding-top: 2px;
+  background-color: var(--bg-base)
+}
+.container_1{
+  direction: rtl;
+  background-color: #f8f5f5aa;
+}
+
+
+

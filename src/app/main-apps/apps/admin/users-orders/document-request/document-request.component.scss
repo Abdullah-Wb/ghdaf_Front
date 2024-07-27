@@ -47,5 +47,9 @@ th,td
   background: var(--secondary);
 }
 
-
-
+.typ_status{
+  background-color: var(--third);
+  color: var(--icons);
+  padding: 5px;
+  border-radius: 5px;
+}

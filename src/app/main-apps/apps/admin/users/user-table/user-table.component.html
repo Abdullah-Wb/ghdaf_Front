@@ -28,11 +28,112 @@
         </div>
         <div class="modal-body">
 
+          <div class="design_info">
 
-        </div>
+            <div class="container_1 rounded">
+
+            <div class="row">
+
+                <h1 >اهلا بك</h1>
+
+                <div class="col-md-3 border-right">
+
+                  <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img class="rounded-circle mt-5" width="150px"
+                      src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
+                      class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span>
+                    </span>
+                  </div>
+
+                </div>
+
+                <div class="col-md-5 border-right">
+
+                  <div class="p-3 py-5">
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                      <h4 class="text-right">معلومات الحساب</h4>
+                    </div>
+
+                    <div *ngFor="let i of arr_info">
+
+
+                  <div class="row mt-2">
+
+                    <div class="col-md-6">
+                      <label class="labels">اسم المسؤول الثلاثي</label>
+                      <input type="text" class="form-control" value="{{i.admin_name}}" readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="labels">اسم المنصة</label>
+                      <input type="text"class="form-control" value="{{i.Platform_name}}" readonly>
+                    </div>
+
+                  </div>
+
+                  <form action="">
+
+                    <div class="row mt-3">
+
+                      <div class="col-md-12">
+                        <label class="labels"> رقم الهاتف</label>
+                        <input type="number"class="form-control" value="{{i.Platform_num}}" readonly>
+                      </div>
+
+                      <div class="col-md-12">
+                        <label class="labels"> الايميل</label>
+                        <input type="email"class="form-control" value="{{i.email}}" readonly>
+                     </div>
+
+                      <div class="col-md-12">
+                        <label class="labels">رقم الحساب البنكي</label>
+                        <input type="text"class="form-control" value="{{i.bank}}" readonly>
+                        </div>
+
+                      <div class="col-md-12"><label class="labels">صورة المطعم</label>
+                        <img class="size_img" [src]="i.plat_image" alt="">
+                      </div>
+
+                      <div class="col-md-12"><label class="labels">صورة المسؤول </label>
+                        <img class="size_img" [src]="i.admin_image" alt="">
+                      </div>
+
+                      <div class="col-md-12">
+                        <label class="labels"> صورة شعار المطعم</label>
+                        <img class="size_img" [src]="i.plat_logo" alt="">
+                      </div>
+
+                      <div class="col-md-12">
+                        <label class="labels">الموقع</label>
+                        <input type="text" class="form-control" value="{{i.address}}" readonly>
+                      </div>
+
+                      <div class="col-md-12">
+                        <label class="labels">الوصف</label>
+                        <textarea type="text"class="form-control" value="{{i.Description}}" readonly></textarea>
+                      </div>
+
+                    </div>
+                        </form>
+                      </div>
+
+                  </div>
+              </div>
+            </div>
+
+
+
+
+
+            </div>
+
+          </div>
+          </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+          <button type="button" class="btn btn-outline-dark ed_btn" (click)="modal.close('Save click')">رفض الطلب</button>
+          <button type="button" class="btn btn-outline-dark ed_btn" (click)="modal.close('Save click')">قبول الطلب</button>
         </div>
       </ng-template>
 

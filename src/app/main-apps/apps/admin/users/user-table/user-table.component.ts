@@ -8,6 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class UserTableComponent implements OnInit {
   arr_userTable: any
+  arr_info: any
   constructor(private modalService: NgbModal) {
 
     this.arr_userTable = [
@@ -25,6 +26,23 @@ export class UserTableComponent implements OnInit {
       },
 
     ]
+
+    this.arr_info = [
+      {
+        admin_name:'ALI',
+        Platform_name:'البر',
+        Platform_num: '059099122',
+        email: 'ab@gmail.com',
+        bank: 'S440937738782782',
+        admin_image: "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+        plat_image:"https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+        plat_logo: "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+        address: 'البحيرات قبل محطة ساسكو',
+        Description: 'جمعيه خيرية ..................... ',
+      },
+
+    ]
+
   }
 
   ngOnInit(): void {
