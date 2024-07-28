@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentOrderComponent implements OnInit {
 
+  state1 = false
+  state2 = true
+  state3 = true
+  state4 = true
   constructor() { }
 
   ngOnInit(): void {

@@ -1,5 +1,5 @@
 table {
-    
+
     border-collapse: collapse;
     border-radius: 20px;
     background-color: #FAF9F2;
@@ -17,12 +17,12 @@ table {
     direction: rtl;
     text-align: left;
     padding: 8px;
-  
+
   }
   td{
     border-top: 1px solid #dddddd;
   }
-  
+
 //   ----------------------------------------------------------------
   //
   // table {
@@ -30,27 +30,27 @@ table {
   //   border-collapse: collapse;
   //   width: 100%;
   // }
-  
+
   // td, th {
   //   border: 1px solid #dddddd;
   //   text-align: left;
   //   padding: 8px;
   // }
-  
+
   // tr:nth-child(even) {
   //   background-color: #dddddd;
   // }
   //// here
-  
+
 
 
 
 .step-wizard-list{
 
-   
+
     color: #333;
     list-style-type: none;
-    
+
     display: flex;
     padding: 60px 10px;
     position: relative;
@@ -98,7 +98,7 @@ table {
     content: "";
     height: 40px;
     width: 40px;
-    background: #384F3F;
+    background: #4f384c;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -174,7 +174,38 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-flex-direction: column;  
+flex-direction: column;
 align-items: center;
 
+}
+
+
+.true {
+  background: #384F3F;
+  height: 40px;
+    width:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 auto;
+    position: relative;
+    z-index:10;
+    color: white;
+}
+
+.false{
+  background: #ef4d17;
+  height: 40px;
+    width:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 auto;
+    position: relative;
+    z-index:10;
+    color: transparent;
 }
