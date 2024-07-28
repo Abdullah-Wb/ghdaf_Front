@@ -9,7 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 @NgModule({
@@ -23,8 +23,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
    HttpClientModule,
    FormsModule,
-   BrowserAnimationsModule
+   BrowserAnimationsModule,
+   NgxSpinnerModule,
+
   ],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

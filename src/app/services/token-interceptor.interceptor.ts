@@ -15,7 +15,7 @@ export class TokenInterceptorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
     const accessToken = localStorage.getItem('token');
-    
+
     if (accessToken != null) {
       request = request.clone({
         setHeaders: {

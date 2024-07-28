@@ -40,9 +40,98 @@
         <div class="col-md-4" >
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center experience"><h4>تغيير الاوراق الرسمية</h4></div><br>
-                <button style='font-size:14px'><i class="bi bi-upload"></i>  السجل  التجاري  </button><br>
+                <button style='font-size:14px'><i class="bi bi-upload" (click)="openModal(ubdat_paper)"></i>  السجل  التجاري  </button><br>
+                <button class="normel-button" (click)="openModal(newcard)">اضافة بطاقة جديدة</button>
 
-                <button style='font-size:14px'><i class="bi bi-upload"></i> الشهادة الصحية </button>
+
+
+<!-- ---------------------- -->
+<ng-template #ubdat_paper let-modal>
+  <style>
+    .row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+  </style>
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">sss</button>
+  </div>
+  <div class="modal-body" style="direction: rtl;">
+
+<div class="col-md-12"><label class="labels">السجل التجاري</label><input type="file" class="form-control" placeholder="" value=""></div>
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')" > حسنا</button>
+  </div>
+</ng-template>
+<!-- ---------------- -->
+
+
+
+                <ng-template #newcard let-modal >
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="modal-basic-title">معلومات الدفع</h4>
+                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                  </div>
+                  <div class="modal-body" style="direction: rtl;">
+
+                    <label for="cname">اسم صاحب البطاقة</label>
+                    <input type="text" id="cname" name="cardname" placeholder="Ahmed abdullatif">
+                    <label for="ccnum">رقم البطاقة</label>
+                    <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" >
+                    <label for="expmonth">تاريخ الانتهاء</label>
+                    <input type="text" id="expmonth" name="expmonth" placeholder="9/12">
+                    <div class="row">
+                      <!-- <div class="col-50">
+                        <label for="expyear">Exp Year</label>
+                        <input type="text" id="expyear" name="expyear" placeholder="2018">
+                      </div> -->
+                      <div class="col-50">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="352">
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+                  </div>
+                </ng-template>
+
 
                 <!-- <div class="col-md-12"><label class="labels">الشهادة الصحية</label><input type="file" class="form-control" placeholder="" value=""></div> <br>
                 <div class="col-md-12"><label class="labels">السجل التجاري</label><input type="file" class="form-control" placeholder="" value=""></div> -->
