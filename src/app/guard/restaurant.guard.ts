@@ -10,8 +10,8 @@ export class RestaurantGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      const user = JSON.parse(localStorage.getItem('restaurant'));
-      if (user.user_info.user_type_id == 1) {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user.user.user_type_id == 1) {
         return true;
       } else {
         this.router.navigate(["auth/not-found"]);
