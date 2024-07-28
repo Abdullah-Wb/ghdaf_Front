@@ -9,7 +9,12 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class UserTableComponent implements OnInit {
   arr_userTable: any
   arr_info: any
+  arr_list: any
   constructor(private modalService: NgbModal) {
+    //  state1 = true
+    // // state2 = true
+    // // state3 = true
+    // // state4 = true
 
     this.arr_userTable = [
       {
@@ -40,7 +45,14 @@ export class UserTableComponent implements OnInit {
         address: 'البحيرات قبل محطة ساسكو',
         Description: 'جمعيه خيرية ..................... ',
       },
+    ]
 
+    this.arr_list = [
+      {
+        all:'الكل',
+        bld:'جمعية',
+        tga:'المطعم',
+      },
     ]
 
   }

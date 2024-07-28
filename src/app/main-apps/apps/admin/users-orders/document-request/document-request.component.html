@@ -2,13 +2,17 @@
 
   <h2> طلب تغيير المستندات الرسمية </h2>
 
-  <select class="typ_status" name="" id="">
-    <option value="">اختر نوع المستندت</option>
-    <option value="1">الكل</option>
-    <option value="2">شهادة صحية</option>
-    <option value="3">سجل تجاري</option>
-   
-  </select>
+
+  <div class="search-container">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ابحث عن اسم المنصة....." dir="rtl">
+    <select *ngFor="let i of arr_list" class="typ_status" name="" id="">
+      <option value="">اختر نوع المستندت</option>
+      <option value="1">{{i.all}}</option>
+      <option value="2">{{i.bld}}</option>
+      <option value="3">{{i.tga}}</option>
+    </select>
+  </div>
+
 
   <table dir="rtl">
     <tr>
@@ -44,7 +48,7 @@
     </div>
 
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+      <button type="button" class="btn btn-outline-dark ed_btn" (click)="modal.close('Save click')">حفظ</button>
     </div>
   </ng-template>
 
@@ -61,7 +65,7 @@
     </div>
 
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+      <button type="button" class="btn btn-outline-dark ed_btn" (click)="modal.close('Save click')">حفظ</button>
     </div>
   </ng-template>
 

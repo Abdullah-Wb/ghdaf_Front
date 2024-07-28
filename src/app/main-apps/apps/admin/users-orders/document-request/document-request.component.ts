@@ -8,6 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DocumentRequestComponent implements OnInit {
 arr_userOrd:any
+arr_list:any
   constructor(private modalService: NgbModal) {
 
     this.arr_userOrd = [
@@ -24,10 +25,17 @@ arr_userOrd:any
         Documents: 'سجل تجاري',
       },
 
+    ],
 
+    this.arr_list = [
+      {
+        all:'الكل',
+        bld:'الشهادة الصحية',
+        tga:'السجل التجاري',
+      },
     ]
 
-    
+
 
    }
 

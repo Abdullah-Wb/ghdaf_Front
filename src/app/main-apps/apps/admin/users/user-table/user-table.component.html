@@ -1,6 +1,15 @@
-<div class="container mt-4" dir="rtl">
+<div class="container mt-4">
 
   <h2>المستخدمين</h2>
+  <div class="search-container">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ابحث عن اسم المنصة....." dir="rtl">
+    <select *ngFor="let i of arr_list" class="typ_status" name="" id="">
+      <option value="">نوع المستخدم</option>
+      <option value="1">{{i.all}}</option>
+      <option value="2">{{i.bld}}</option>
+      <option value="3">{{i.tga}}</option>
+    </select>
+  </div>
 
   <table dir="rtl">
     <tr>
@@ -18,7 +27,6 @@
       <td>{{i.platform_name}}</td>
       <td>{{i.admin_name}}</td>
       <td>{{i.num}}</td>
-
       <td><a  (click)="openModal(content)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
 
       <ng-template #content let-modal>
@@ -121,7 +129,7 @@
                   </div>
               </div>
             </div>
-            
+
             </div>
 
           </div>
@@ -143,3 +151,7 @@
       <!-- <td>{{i.age}}</td> -->
     </tr>
     <!-- اول صف-->
+
+    <!--
+        <span  [ngClass]="state1  ? 'true' : 'false'">
+ -->

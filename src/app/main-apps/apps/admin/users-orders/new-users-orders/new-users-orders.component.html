@@ -6,16 +6,16 @@
 
  <div class="search-container">
   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ابحث عن اسم المنصة....." dir="rtl">
-  <select class="typ_status" name="" id="">
+  <select *ngFor="let i of arr_list" class="typ_status" name="" id="">
     <option value="">اختر حالة الطلب</option>
-    <option value="1">الكل</option>
-    <option value="2">مفعل</option>
-    <option value="3">غير مفعل</option>
-    <option value="4">مرفوض</option>
-    <option value="5">تحت المعالجة</option>
-    <option value="6">مجمد</option>
+    <option value="1">{{i.all}}</option>
+    <option value="2">{{i.inactive}}</option>
+    <option value="3">{{i.Rejected}}</option>
+    <option value="4">{{i.Processing}}</option>
+    <option value="5">{{i.Frozen}}</option>
   </select>
 </div>
+
   <table class="all_item" dir="rtl">
     <tr>
       <th class="color-had">اسم المنصة</th>
@@ -127,6 +127,11 @@
                       <div class="col-md-12">
                         <label class="labels">الوصف</label>
                         <textarea type="text"class="form-control" value="{{i.Description}}" readonly></textarea>
+                      </div>
+
+                      <div class="col-md-12">
+                        <label class="labels">السبب</label>
+                        <input type="text" class="form-control" value="{{i.reason}}">
                       </div>
 
                     </div>

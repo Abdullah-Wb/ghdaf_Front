@@ -8,6 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class NewUsersOrdersComponent implements OnInit {
   arr_newOrder: any
+  arr_list: any
   arr_info: any
   constructor(private modalService: NgbModal) {
     this.arr_newOrder = [
@@ -64,8 +65,19 @@ export class NewUsersOrdersComponent implements OnInit {
         plat_logo: "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
         address: 'البحيرات قبل محطة ساسكو',
         Description: 'مطعم للوجبات السريعه ',
+        reason:'',
       },
 
+    ]
+
+    this.arr_list = [
+      {
+        all:'الكل',
+        inactive:'غير مفعل',
+        Rejected:'مرفوض',
+        Processing:'تحت المعالجة',
+        Frozen: 'مجمد',
+      },
     ]
   }
 

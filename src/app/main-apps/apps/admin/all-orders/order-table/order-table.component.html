@@ -1,16 +1,18 @@
-<div class="container mt-4" >
+<div class="container mt-4">
 
 
   <h2>الطلبات</h2>
-  <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
-  <select class="typ_status" name="" id="">
-    <option value="">اختر حالة الطلب</option>
-    <option value="1">الكل</option>
-    <option value="2">تم التوصيل</option>
-    <option value="3">محذوف</option>
-    <option value="4">منتهي الصلاحية</option>
 
-  </select>
+  <div class="search-container">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ابحث عن اسم المنصة....." dir="rtl">
+    <select *ngFor="let i of arr_list" class="typ_status" name="" id="">
+      <option value="">اختر حالة الطلب</option>
+      <option value="1">{{i.all}}</option>
+      <option value="2">{{i.Delivered}}</option>
+      <option value="3">{{i.Deleted}}</option>
+      <option value="4">{{i.Expired}}</option>
+    </select>
+  </div>
 
   <table dir="rtl">
     <tr>
@@ -69,7 +71,8 @@
                     <td> {{i.exp_date}}</td>
                     <td>
                       <div class="order_image">
-                      <i [class]="i.order_image"></i></div>
+                        <i [class]="i.order_image"></i>
+                      </div>
                     </td>
 
                   </tr>
