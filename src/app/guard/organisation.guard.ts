@@ -10,8 +10,8 @@ export class OrganisationGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      const user = JSON.parse(localStorage.getItem('organisation'));
-      if (user.user_info.user_type_id == 2) {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user.user.user_type_id == 2) {
         return true;
       } else {
         this.router.navigate(["auth/not-found"]);
