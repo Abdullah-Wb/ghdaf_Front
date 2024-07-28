@@ -35,6 +35,7 @@ export class OrderTableComponent implements OnInit {
       }
 
     ]
+    
 //pup-up
     this.arr_detils = [
       {
