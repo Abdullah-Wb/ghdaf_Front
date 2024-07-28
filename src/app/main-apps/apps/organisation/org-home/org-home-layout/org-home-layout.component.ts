@@ -74,7 +74,7 @@ export class OrgHomeLayoutComponent implements OnInit {
        price: '500',
 
       },
-    
+
 
 
 

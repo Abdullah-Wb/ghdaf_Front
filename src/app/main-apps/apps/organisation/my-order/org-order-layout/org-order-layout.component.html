@@ -1,81 +1,51 @@
-<div class="container mt-4" dir="rtl">
+<div class="all" >
+  <section class="step-wizard">
+      <ul class="step-wizard-list">
+          <li class="step-wizard-item">
+              <span class="progress-count">1</span>
+              <span class="progress-label">تم  الدفع &nbsp;&nbsp;&nbsp;<i class="bi bi-cash" style="font-size: 30px;"></i></span>
+          </li>
+          <li class="step-wizard-item current-item">
+              <span class="progress-count">2</span>
+              <span class="progress-label"> تم تجهيز الطلب&nbsp;&nbsp;&nbsp;<i class="bi bi-box2-heart"style="font-size: 25px;"></i></span>
+          </li>
+          <li class="step-wizard-item">
+              <span class="progress-count">3</span>
+              <span class="progress-label">تم  استلام الطلب من المطعم&nbsp;&nbsp;<i class="bi bi-box2" style="font-size: 25px;"></i></span>
+          </li>
+          <li class="step-wizard-item">
+              <span class="progress-count">4</span>
+              <span class="progress-label">تم تسليم الطلب &nbsp;&nbsp;<i class="bi bi-truck" style="font-size: 30px;"></i></span>
+          </li>
+      </ul>
+    </section>
 
 
-  <h2>الطلبات</h2>
+     <div    class=" aal">
+    <table>
+        <thead>
+          <tr>
 
-  <table dir="rtl">
-    <tr>
-      <th class="color-had">اسم المطعم</th>
-      <th class="color-had">السعر الاجمالي</th>
-      <th class="color-had">الكمية الاجمالية</th>
-      <th class="color-had">عدد المنتجات</th>
-      <th class="color-had">حالة الطلب</th>
-      <th class="color-had">عرض الطلب</th>
-    <!-- </tr>
+            <th>الكمية </th>
+            <th>اسم المنتج</th>
 
-    <tr *ngFor="let i of arr_allOrder">
-      <td>{{i.rest_name}}</td>
-      <td>{{i.total_price}}</td>
-      <td>{{i.total_quantity}}</td>
-      <td>{{i.Num_products}}</td>
-      <td>{{i.Order_status}}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
 
-      <td><a routerLink="../order-table" (click)="openModal(content)"><i class="bi bi-eye"></i></a></td>
-    </tr> -->
-
-  </table>
-</div>
+            <td>Data 1</td>
+            <td>Data 2</td>
 
 
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">معلومات الطلب</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+          </tr>
+          </tbody>
+      </table>
+
+
+
+    </div>
+
   </div>
-  <div class="modal-body">
 
-
-  </div>
-
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
-  </div>
-</ng-template>
-
-
-
-
-
-<!-- اول صف-->
-
-<!-- <tr>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td>محذوف</td>
-    <td><i class="bi bi-eye"></i></td>
-  </tr>
-
-   ثاني صف
-
-  <tr>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td>تم التوصيل</td>
-    <td><i class="bi bi-eye"></i></td>
-  </tr>
-  ثالث صف
-
-  <tr>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td></td>
-    <td><i class="bi bi-eye"></i></td>
-  </tr>
-  رابع صف -->
 

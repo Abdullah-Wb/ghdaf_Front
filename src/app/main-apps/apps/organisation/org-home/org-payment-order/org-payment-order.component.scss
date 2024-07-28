@@ -1,0 +1,135 @@
+
+table {
+
+  border-collapse: collapse;
+  border-radius: 20px;
+  background-color: #FAF9F2;
+  width: 100%;
+
+}
+
+
+td, th {
+  direction: rtl;
+  text-align: left;
+  padding: 8px;
+
+}
+td{
+  border-top: 1px solid #dddddd;
+}
+
+
+
+button:active {
+transform: scale(0.95);
+
+}
+a {
+color: #333;
+font-size: 14px;
+text-decoration: none;
+margin: 15px 0;
+}
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+.all{
+  display: flex;
+  direction: rtl;
+  justify-content: space-around;
+}
+.allone{
+padding: 30px;
+}
+p{
+padding: 8px;
+  background-color: #FAF9F2;
+  width: 300px;
+  border-radius: 10px;
+  font-size: medium;
+
+}
+.alltwo{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+flex-direction: column;
+align-items: center;
+
+
+}
+.normel-button{
+  background-color: var(--secondary);
+  margin-top: 5px;
+  padding: 5px;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
+// .all{
+
+
+// }
+h2{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card-botton{
+
+  border: none;
+  background-color:#ffffff00;
+}

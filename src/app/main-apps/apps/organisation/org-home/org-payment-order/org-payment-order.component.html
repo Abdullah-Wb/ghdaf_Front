@@ -1,1 +1,117 @@
-<p>org-payment-order works!</p>
+
+
+<h2>الدفع </h2>
+
+
+<div class="all">
+  <div class="allone">
+
+
+
+    <h3>البطاقات</h3>
+    <div class="credit" *ngFor="let i of arr_cards">
+      <button class="card-botton" (click)="openModal(sucssses)"> <p>
+        <i class="bi bi-credit-card" ></i>&nbsp;&nbsp;{{i. card_num}}
+      </p></button>
+<br>
+    </div>
+    <br>
+<button class="normel-button" (click)="openModal(content)">اضافة بطاقة جديدة</button>
+<button  ><a routerLink ="./admin-home/dash-list"> حسنا</a></button>
+<button type="button" class="btn " id="dropdownBasic1" >
+  <a routerLink="./admin-home/dash-list">الرئيسية</a>
+</button>
+<button class="signout" (click)="signout()">تسجيل خروج</button>
+
+<ng-template #sucssses let-modal >
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body" style="direction: rtl;">
+    <!-- <a routerLink ="/main-apps/rest-orders/new-order"><span style="font-size: 20px;">+</span>  اضف طلب جديد</a> -->
+  <h5 >تم الدفع بنجاح</h5>
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')" ><a routerLink ="./admin-home/dash-list"> حسنا</a></button>
+  </div>
+</ng-template>
+
+<!-- kkkk -->
+
+<ng-template #content let-modal >
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">معلومات الدفع</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body" style="direction: rtl;">
+
+    <label for="cname">اسم صاحب البطاقة</label>
+    <input type="text" id="cname" name="cardname" placeholder="Ahmed abdullatif">
+    <label for="ccnum">رقم البطاقة</label>
+    <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" >
+    <label for="expmonth">تاريخ الانتهاء</label>
+    <input type="text" id="expmonth" name="expmonth" placeholder="9/12">
+    <div class="row">
+      <!-- <div class="col-50">
+        <label for="expyear">Exp Year</label>
+        <input type="text" id="expyear" name="expyear" placeholder="2018">
+      </div> -->
+      <div class="col-50">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" placeholder="352">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+  </div>
+</ng-template>
+
+<!-- <button (click)="openModal(content)">dd</button>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">معلومات الدفع</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+
+
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+  </div>
+</ng-template> -->
+    <!--
+
+            -->
+
+  </div>
+  <div class="alltwo">
+    <table>
+      <thead>
+        <tr>
+
+          <th>الكمية     </th>
+          <th>اسم المنتج  </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+          <td>Data 1   </td>
+          <td>Data 2   </td>
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
