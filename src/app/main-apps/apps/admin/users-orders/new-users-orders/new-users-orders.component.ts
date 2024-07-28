@@ -35,7 +35,7 @@ export class NewUsersOrdersComponent implements OnInit {
 
       },
       {
-        platform_name: 'البر',
+        platform_name: 'مكة',
         user_type: 'جمعية',
         admin_name: 'غسان',
         num: '05977387',
@@ -43,7 +43,7 @@ export class NewUsersOrdersComponent implements OnInit {
 
       },
       {
-        platform_name: 'البر',
+        platform_name: 'التقوى',
         user_type: 'جمعية',
         admin_name: 'غسان',
         num: '05977387',

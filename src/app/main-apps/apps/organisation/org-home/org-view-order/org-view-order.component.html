@@ -1,1 +1,63 @@
-<p>org-view-order works!</p>
+<!-- main-apps/org-home/org-view-order -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="container mt-6" dir="rtl">
+
+            <h2>تفاصيل الطلب</h2>
+            <table dir="rtl">
+              <tr>
+                <th class="color-had">اسم المنتج</th>
+                <th class="color-had">الكمية </th>
+                <th class="color-had">السعر</th>
+                <th class="color-had">تاريخ الانتاج </th>
+                <th class="color-had">تاريخ الانتهاء </th>
+                <th class="color-had">صورة المنتج</th>
+              </tr>
+
+              <tr *ngFor="let i of arr_detils">
+                <td>{{i.ord_name}}</td>
+                <td>{{i.quantity}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.pord_date}}</td>
+                <td> {{i.exp_date}}</td>
+                <td>
+                  <div class="order_image">
+                    <i [class]="i.order_image"></i>
+                  </div>
+                </td>
+
+              </tr>
+
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-1">
+  <div *ngFor="let i of arr_price" class="text-section">
+    <h3>
+       السعر الاجمالي بدون التوصيل:
+
+      {{i.total_before}}
+    </h3>
+    <h3>
+      قيمة التوصيل :
+      {{i.delivery_cost}}
+    </h3>
+    <h3>
+      السعر الاجمالي مع التوصيل:
+      {{i.total_after}}
+
+    </h3>
+    <button class="button1">ادفع الآن</button>
+  </div>
+  <button class="button2">العودة</button>
+</div>

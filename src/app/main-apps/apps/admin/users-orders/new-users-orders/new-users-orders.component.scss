@@ -18,16 +18,30 @@ h2 {
   background-image: url('https://www.w3schools.com/howto/searchicon.png'); /* Add a search icon to input */
   background-position: right 10px center; /* Position the search icon on the right */
   background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 50%;
+  width: 35%;
   font-size: 16px;
   padding: 12px 40px 12px 20px;
-  border: 1px solid var(--bg-base);
   margin-bottom: 0px; /* Remove space below the input */
   box-sizing: border-box; /* Ensure padding and width are included in total width */
 }
 
 input[type="text"]::placeholder {
   text-align: right; /* Align placeholder text to the right */
+}
+
+
+.modal-footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.modal-footer .ed_btn {
+  margin: 0 100px; /* تعديل المسافة بين الأزرار */
+  background: var(--secondary);
+  padding: 10px 30px;
+  border: none;
 }
 
 .typ_status {
@@ -37,6 +51,7 @@ input[type="text"]::placeholder {
   border-radius: 5px;
   height: 46px; /* Adjust height to match the input */
   margin: 0 10px 0 0;
+  border: none;
 }
 
 
