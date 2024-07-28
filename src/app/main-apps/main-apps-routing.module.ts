@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthCheckGuard } from '../guard/auth-check.guard';
 
 const routes: Routes = [
   //----------------------ADMIN-----------------------------------------------------------
@@ -27,7 +28,7 @@ const routes: Routes = [
 {path: 'my-order',
   loadChildren: () => import('./apps/organisation/my-order/my-order.module').then(m => m.MyOrderModule)
 },
-{path: 'org-home',
+{path: 'org-home',canActivate:[AuthCheckGuard],
   loadChildren: () => import('./apps/organisation/org-home/org-home.module').then(m => m.OrgHomeModule)
 },
 {path: 'org-profile',

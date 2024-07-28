@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     // let user = JSON.parse(localStorage.getItem('user'))// بدون جيسون بارس يعتبرها تكست
     // console.log(user.user.phone)//يعرض الشيءالي تبغاه
   }
-  login() {
+login() {
     this.spinner.show();
     this.impApiService.post(auth.login, this.login_form).subscribe(data => {
       this.spinner.hide();
@@ -30,6 +30,9 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', (data.user.token))
 
 
+      // if (data.user.user_type_id == 3) {
+      //   this.router.navigate(["main-apps/admin-home/dash-list"]);
+      // }
 
       // this.toaster.success('تم تسجيل الدخول');
       this.router.navigate(['main-apps']);//يوديك للمان الي تبغاه بس تحدد الاسم بس بدون باث

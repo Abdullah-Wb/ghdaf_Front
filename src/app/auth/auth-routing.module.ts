@@ -5,6 +5,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { OtpComponent } from './otp/otp.component';
+import { CheckTokenGuard } from '../guard/check-token.guard';
 
 const routes: Routes = [
   {
