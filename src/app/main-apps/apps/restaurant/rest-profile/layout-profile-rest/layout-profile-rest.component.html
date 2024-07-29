@@ -21,8 +21,8 @@
                 <div class="row mt-3">
                     <div class="col-md-12"><label class="labels"> رقم الهاتف</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
                     <div class="col-md-12"><label class="labels"> الايميل</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
-                    <div class="col-md-12"><label class="labels">  </label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
-                    <div class="col-md-12"><label class="labels">رقم الحساب البنكي</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                    <!-- <div class="col-md-12"><label class="labels">  </label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                    <div class="col-md-12"><label class="labels">رقم الحساب البنكي</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div> -->
                     <div class="col-md-12"><label class="labels">صورة المطعم</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
                     <div class="col-md-12"><label class="labels">صورة المسؤول </label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
                     <div class="col-md-12"><label class="labels"> صورة شعار المطعم</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
@@ -40,28 +40,112 @@
         <div class="col-md-4" >
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center experience"><h4>تغيير الاوراق الرسمية</h4></div><br>
-                <button style='font-size:14px'><i class="bi bi-upload"></i>  السجل  التجاري  </button><br>
+                <button style='font-size:14px'><i class="bi bi-upload" (click)="openModal(ubdat_paper_eco)"></i>  السجل  التجاري  </button><br>
 
-                <button style='font-size:14px'><i class="bi bi-upload"></i> الشهادة الصحية </button>
+                <button style='font-size:14px'><i class="bi bi-upload" (click)="openModal(ubdat_paper_health)"></i> الشهادة الصحية </button>
 
                 <!-- <div class="col-md-12"><label class="labels">الشهادة الصحية</label><input type="file" class="form-control" placeholder="" value=""></div> <br>
                 <div class="col-md-12"><label class="labels">السجل التجاري</label><input type="file" class="form-control" placeholder="" value=""></div> -->
             </div>
            <div>
 
-            <h4>رصيد المحفظة <span  ><p><input type="text" value="5000"  id="amount" readonly  style="padding: 10px; border-radius: 5px;"></p></span></h4>
-            <button style='font-size:14px'><i class="bi bi-wallet2"></i> سحب الرصيد</button>
+            <h4>رصيد المحفظة <span  ><p><input type="text" [value]="the_amount"  id="amount" readonly  style="padding: 10px; border-radius: 5px;"></p></span></h4>
+            <div *ngIf="the_amount >= 500; else do_this">
+              <button style='font-size:14px'  (click)="openModal(withdraw)"   ><i class="bi bi-wallet2">
 
+
+
+              </i> سحب الرصيد</button>
+            </div>
+<ng-template #do_this>
+  <button style='font-size:14px'  (click)="openModal(no_withdraw)"   ><i class="bi bi-wallet2">
+
+
+
+  </i> سحب الرصيد</button>
+</ng-template>
+
+
+           </div>
+           <div>
+<br><br>
+            <h3>مواعيد العمل </h3>
+
+              <button ><i class="bi bi-calendar-day" >  </i>   اضغط لأضافة مواعيد  العمل    <p style="color: white;">
+
+              </p></button>
            </div>
         </div>
 
+        no_withdraw
+
+        <ng-template #no_withdraw let-modal >
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">   طلب سحب من المحفظة</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+          </div>
+          <div class="modal-body" style="direction: rtl;">
+
+<p style="color: red;">رصيك غير كافي </p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+          </div>
+        </ng-template>
+
+        <ng-template #withdraw let-modal >
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">   طلب سحب من المحفظة</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+          </div>
+          <div class="modal-body" style="direction: rtl;">
+
+<p>تم ارسال طلبك بنجاح </p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+          </div>
+        </ng-template>
+
+
+        <ng-template #ubdat_paper_health let-modal >
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title"> ادخل الشهادة الصحية</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+          </div>
+          <div class="modal-body" style="direction: rtl;">
+
+          <div class="col-md-12"><label class="labels"> الشهادة الصحية</label><input type="file" class="form-control" placeholder="" value=""></div>
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+          </div>
+        </ng-template>
+
+        <ng-template #ubdat_paper_eco let-modal >
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title"> ادخل السجل التجاري </h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+          </div>
+          <div class="modal-body" style="direction: rtl;">
+
+          <div class="col-md-12"><label class="labels">السجل التجاري</label><input type="file" class="form-control" placeholder="" value=""></div>
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+          </div>
+        </ng-template>
+
+
 
     </div>
-
   </div>
-
-
-  
-  </div>
+</div>
   <!-- <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="file" class="form-control" placeholder="" value=""></div> <br>
   <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="" value=""></div> -->

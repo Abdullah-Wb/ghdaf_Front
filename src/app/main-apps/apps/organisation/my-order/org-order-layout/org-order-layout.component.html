@@ -1,51 +1,67 @@
-<div class="all" >
+<div class="all">
   <section class="step-wizard">
-      <ul class="step-wizard-list">
-          <li class="step-wizard-item">
-              <span class="progress-count">1</span>
-              <span class="progress-label">تم  الدفع &nbsp;&nbsp;&nbsp;<i class="bi bi-cash" style="font-size: 30px;"></i></span>
-          </li>
-          <li class="step-wizard-item current-item">
-              <span class="progress-count">2</span>
-              <span class="progress-label"> تم تجهيز الطلب&nbsp;&nbsp;&nbsp;<i class="bi bi-box2-heart"style="font-size: 25px;"></i></span>
-          </li>
-          <li class="step-wizard-item">
-              <span class="progress-count">3</span>
-              <span class="progress-label">تم  استلام الطلب من المطعم&nbsp;&nbsp;<i class="bi bi-box2" style="font-size: 25px;"></i></span>
-          </li>
-          <li class="step-wizard-item">
-              <span class="progress-count">4</span>
-              <span class="progress-label">تم تسليم الطلب &nbsp;&nbsp;<i class="bi bi-truck" style="font-size: 30px;"></i></span>
-          </li>
-      </ul>
-    </section>
+    <ul class="step-wizard-list">
+      <li class="step-wizard-item">
+        <span [ngClass]="state1  ? 'true' : 'false'">
+          <i *ngIf="state1 == true" class="bi bi-check-lg" style="font-size: 20px;"></i>
+          <p *ngIf="state1 == false" style="font-size: 20px;">1</p>
+        </span>
+        <span class="progress-label">تم الدفع &nbsp;&nbsp;&nbsp;<i class="bi bi-cash"
+            style="font-size: 30px;"></i></span>
+      </li>
+      <li class="step-wizard-item ">
+        <span [ngClass]="state2  ? 'true' : 'false'">
+          <i *ngIf="state2 == true" class="bi bi-check-lg" style="font-size: 20px;"></i>
+          <p *ngIf="state2 == false" style=" margin-top: 8px;color: #384F3F;">2</p>
+        </span>
+
+        <span class="progress-label"> تم تجهيز الطلب&nbsp;&nbsp;&nbsp;<i class="bi bi-box2-heart"
+            style="font-size: 25px;"></i></span>
+      </li>
+      <li class="step-wizard-item">
+        <span [ngClass]="state3  ? 'true' : 'false'">
+          <i *ngIf="state3 == true" class="bi bi-check-lg"></i>
+          <p *ngIf="state3 == false" style=" margin-top: 8px;color: #384F3F;">3</p>
+        </span>
+        <span class="progress-label">تم استلام الطلب من المطعم&nbsp;&nbsp;<i class="bi bi-box2"
+            style="font-size: 25px;"></i></span>
+      </li>
+      <li class="step-wizard-item">
+        <span [ngClass]="state4  ? 'true' : 'false'">
+          <i *ngIf="state4 == true" class="bi bi-check-lg"></i>
+          <p *ngIf="state4 == false" style=" margin-top: 8px;color: #384F3F;">4</p>
+        </span>
+
+        <span class="progress-label">تم تسليم الطلب &nbsp;&nbsp;<i class="bi bi-truck"
+            style="font-size: 30px;"></i></span>
+      </li>
+    </ul>
+  </section>
 
 
-     <div    class=" aal">
+  <div class=" aal">
     <table>
-        <thead>
-          <tr>
+      <thead>
+        <tr>
 
-            <th>الكمية </th>
-            <th>اسم المنتج</th>
+          <th>الكمية </th>
+          <th>اسم المنتج</th>
 
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
 
-            <td>Data 1</td>
-            <td>Data 2</td>
-
-
-          </tr>
-          </tbody>
-      </table>
+          <td>Data 1</td>
+          <td>Data 2</td>
 
 
+        </tr>
+      </tbody>
+    </table>
 
-    </div>
+
 
   </div>
 
-
+</div>

@@ -1,23 +1,29 @@
 <div class="all" >
-<section class="step-wizard">
+<section class="step-wizard" >
     <ul class="step-wizard-list">
         <li class="step-wizard-item">
             <span  [ngClass]="state1  ? 'true' : 'false'">
-              <i *ngIf="state1 == true" class="bi bi-cash"></i>
-              <p *ngIf="state1 == false">1</p>
+              <i *ngIf="state1 == true" class="bi bi-check-lg" style="font-size: 20px;"></i>
+              <p *ngIf="state1 == false" style="font-size: 20px;">1</p>
             </span>
             <span class="progress-label">تم عرض الطلب &nbsp;&nbsp;&nbsp;<i class="bi bi-box2-heart"style="font-size: 25px;"></i></span>
         </li>
-        <li class="step-wizard-item current-item">
-            <span class="progress-count">2</span>
+        <li class="step-wizard-item">
+            <span [ngClass]="state2  ? 'true' : 'false'">
+            <i *ngIf="state2 == true" class="bi bi-check-lg" style="font-size: 20px;"></i>
+              <p *ngIf="state2 == false" style=" margin-top: 8px;color: #384F3F;">2</p></span>
             <span class="progress-label"> تم الدفع للطلب&nbsp;&nbsp;&nbsp;<i class="bi bi-cash" style="font-size: 30px;"></i></span>
         </li>
         <li class="step-wizard-item">
-            <span class="progress-count">3</span>
+            <span [ngClass]="state3  ? 'true' : 'false'">
+              <i *ngIf="state3 == true" class="bi bi-check-lg"></i>
+              <p *ngIf="state3 == false" style=" margin-top: 8px;color: #384F3F;">3</p></span>
             <span class="progress-label">تم تجهيز الطلب&nbsp;&nbsp;<i class="bi bi-box2" style="font-size: 25px;"></i></span>
         </li>
         <li class="step-wizard-item">
-            <span class="progress-count">4</span>
+            <span [ngClass]="state4  ? 'true' : 'false'">
+              <i *ngIf="state4 == true" class="bi bi-check-lg"></i>
+              <p *ngIf="state4 == false" style=" margin-top: 8px;color: #384F3F;">4</p></span>
             <span class="progress-label">تم تسليم الطلب للمندوب&nbsp;&nbsp;<i class="bi bi-truck" style="font-size: 30px;"></i></span>
         </li>
     </ul>
@@ -47,9 +53,11 @@
         </tr>
         </tbody>
     </table>
-    <button class="class-button" >
+    <div [ngClass]="state2  ? 'hid' : 'ves'" >
+    <button class="class-button"  >
       <a routerLink ="/main-apps/rest-orders/new-order">  احذف الطلب</a>
     </button>
+  </div>
   </div>
 
 </div>
