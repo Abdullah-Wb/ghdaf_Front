@@ -4,10 +4,35 @@ h2{
   padding: 20px;
 }
 
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the right */
+  gap: 15px; /* Space between input and select */
+}
+
+#myInput {
+  direction: rtl;
+  background-color: var(--third);
+  border-radius: 5px;
+  background-image: url('https://www.w3schools.com/howto/searchicon.png'); /* Add a search icon to input */
+  background-position: right 10px center; /* Position the search icon on the right */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 35%;
+  font-size: 16px;
+  padding: 12px 40px 12px 20px;
+  margin-bottom: 0px; /* Remove space below the input */
+  box-sizing: border-box; /* Ensure padding and width are included in total width */
+}
+
+input[type="text"]::placeholder {
+  text-align: right; /* Align placeholder text to the right */
+}
+
 table{
   width: 100%;
   border-collapse: collapse;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 input{
   border: 0;
@@ -19,15 +44,18 @@ i{
 
 .color-had{
   background: var(--secondary);
+  color: var(--third);
 }
 
-.typ_status{
+.typ_status {
   background-color: var(--third);
   color: var(--icons);
-  padding: 5px;
+  padding: 10px; /* Adjust padding to match the input */
   border-radius: 5px;
+  height: 46px; /* Adjust height to match the input */
+  margin: 0 10px 0 0;
+  border: none;
 }
-
 table,th,td{
   border: 5px solid var(--bg-base);
 }

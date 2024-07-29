@@ -7,3 +7,10 @@ export const auth={
 login: BASEURL+'login',
 register:BASEURL+'register'
 }
+
+export const users = {
+
+  allUsers : BASEURL+'index',
+  showUser : BASEURL+'show/',
+
+}

@@ -11,23 +11,23 @@ export class DashListComponent implements OnInit {
   constructor() {
     this.arr_dash = [
       {
-        title: 'عدد المستخدمين',
-        num: '55',
+        title: 'عدد الطلبات الاجمالي',
+        num: '12',
         icon: "bi bi-people-fill"
       },
       {
-        title: 'عدد المستخدمين',
+        title: 'عدد الجمعيات',
         num: '150',
         icon: "bi bi-people-fill"
       },
       {
-        title: 'عدد المستخدمين',
+        title: 'عدد المطاعم',
         num: '120',
         icon: "bi bi-people-fill"
       },
       {
         title: 'عدد المستخدمين',
-        num: '12',
+        num: '55',
         icon: "bi bi-people-fill"
       },
 
@@ -40,25 +40,29 @@ export class DashListComponent implements OnInit {
     var chartDom = document.getElementById('main');
     var myChart = echarts.init(chartDom);
     var option;
-
-    option = {
+    option = { 
+      title: {
+        text: 'مبيعات كل شهر',
+        left: 'center'
+      },
       xAxis: {
+
         type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Des']
       },
       yAxis: {
         type: 'value'
       },
       series: [
         {
-          data: [120, 200, 150, 80, 70, 110, 130],
+          data: [120, 200, 150, 80, 70, 110, 130, 500, 590, 300, 400, 450],
           type: 'bar'
         }
       ]
     };
-
     option && myChart.setOption(option);
 
+// الشارت الثاني
 
     var ROOT_PATH = 'https://echarts.apache.org/examples';
 
@@ -73,8 +77,8 @@ export class DashListComponent implements OnInit {
     };
     option = {
       title: {
-        text: 'Weather Statistics',
-        subtext: 'Fake Data',
+        text: 'Statistics',
+        // subtext: 'Fake Data',
         left: 'center'
       },
       tooltip: {
@@ -84,7 +88,7 @@ export class DashListComponent implements OnInit {
       legend: {
         bottom: 10,
         left: 'center',
-        data: ['CityA', 'CityB', 'CityD', 'CityC', 'CityE']
+        data: ['اللحوم', 'المخبوزات', 'الحلويات', 'المشروبات', 'اخرى']
       },
       series: [
         {
@@ -95,18 +99,9 @@ export class DashListComponent implements OnInit {
           data: [
             {
               value: 1548,
-              name: 'CityE',
+              name: 'اخرى',
               label: {
-                formatter: [
-                  '{title|{b}}{abg|}',
-                  '  {weatherHead|Weather}{valueHead|Days}{rateHead|Percent}',
-                  '{hr|}',
-                  '  {Sunny|}{value|202}{rate|55.3%}',
-                  '  {Cloudy|}{value|142}{rate|38.9%}',
-                  '  {Showers|}{value|21}{rate|5.8%}'
-                ].join('\n'),
-                backgroundColor: '#eee',
-                borderColor: '#777',
+                // backgroundColor: '#eee',
                 borderWidth: 1,
                 borderRadius: 4,
                 rich: {
@@ -178,10 +173,10 @@ export class DashListComponent implements OnInit {
                 }
               }
             },
-            { value: 735, name: 'CityC' },
-            { value: 510, name: 'CityD' },
-            { value: 434, name: 'CityB' },
-            { value: 335, name: 'CityA' }
+            { value: 735, name: 'المشروبات' },
+            { value: 510, name: 'الحلويات' },
+            { value: 434, name: 'المخبوزات' },
+            { value: 335, name: 'اللحوم' }
           ],
           emphasis: {
             itemStyle: {

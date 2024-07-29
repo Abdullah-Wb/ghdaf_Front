@@ -4,18 +4,18 @@
 <div class="container g-4">
   <h2>طلبات انشاء الحساب</h2>
 
- <div class="search-container">
-  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ابحث عن اسم المنصة....." dir="rtl">
-  <select class="typ_status" name="" id="">
-    <option value="">اختر حالة الطلب</option>
-    <option value="1">الكل</option>
-    <option value="2">مفعل</option>
-    <option value="3">غير مفعل</option>
-    <option value="4">مرفوض</option>
-    <option value="5">تحت المعالجة</option>
-    <option value="6">مجمد</option>
-  </select>
-</div>
+  <div class="search-container">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ابحث عن اسم المنصة....." dir="rtl">
+    <select *ngFor="let i of arr_list" class="typ_status" name="" id="">
+      <option value="">اختر حالة الطلب</option>
+      <option value="1">{{i.all}}</option>
+      <option value="2">{{i.inactive}}</option>
+      <option value="3">{{i.Rejected}}</option>
+      <option value="4">{{i.Processing}}</option>
+      <option value="5">{{i.Frozen}}</option>
+    </select>
+  </div>
+
   <table class="all_item" dir="rtl">
     <tr>
       <th class="color-had">اسم المنصة</th>
@@ -40,7 +40,8 @@
 
   <ng-template #content let-modal>
     <div class="header">
-      <button type="button" class="bi bi-x close_btn"  aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      <button type="button" class="bi bi-x close_btn" aria-label="Close"
+        (click)="modal.dismiss('Cross click')"></button>
       <h4>معلومات المستخدم</h4>
     </div>
     <div class="modal-body">
@@ -82,58 +83,59 @@
 
                     <div class="col-md-6">
                       <label class="labels">اسم المنصة</label>
-                      <input type="text"class="form-control" value="{{i.Platform_name}}" readonly>
+                      <input type="text" class="form-control" value="{{i.Platform_name}}" readonly>
                     </div>
 
                   </div>
 
-                  <form action="">
 
-                    <div class="row mt-3">
+                  <div class="row mt-3">
 
-                      <div class="col-md-12">
-                        <label class="labels"> رقم الهاتف</label>
-                        <input type="number"class="form-control" value="{{i.Platform_num}}" readonly>
-                      </div>
-
-                      <div class="col-md-12">
-                        <label class="labels"> الايميل</label>
-                        <input type="email"class="form-control" value="{{i.email}}" readonly>
-                     </div>
-
-                      <div class="col-md-12">
-                        <label class="labels">رقم الحساب البنكي</label>
-                        <input type="text"class="form-control" value="{{i.bank}}" readonly>
-                        </div>
-
-                      <div class="col-md-12"><label class="labels">صورة المطعم</label>
-                        <img class="size_img" [src]="i.plat_image" alt="">
-                      </div>
-
-                      <div class="col-md-12"><label class="labels">صورة المسؤول </label>
-                        <img class="size_img" [src]="i.admin_image" alt="">
-                      </div>
-
-                      <div class="col-md-12">
-                        <label class="labels"> صورة شعار المطعم</label>
-                        <img class="size_img" [src]="i.plat_logo" alt="">
-                      </div>
-
-                      <div class="col-md-12">
-                        <label class="labels">الموقع</label>
-                        <input type="text" class="form-control" value="{{i.address}}" readonly>
-                      </div>
-
-                      <div class="col-md-12">
-                        <label class="labels">الوصف</label>
-                        <textarea type="text"class="form-control" value="{{i.Description}}" readonly></textarea>
-                      </div>
-
+                    <div class="col-md-12">
+                      <label class="labels"> رقم الهاتف</label>
+                      <input type="number" class="form-control" value="{{i.Platform_num}}" readonly>
                     </div>
 
+                    <div class="col-md-12">
+                      <label class="labels"> الايميل</label>
+                      <input type="email" class="form-control" value="{{i.email}}" readonly>
+                    </div>
 
+                    <div class="col-md-12">
+                      <label class="labels">رقم الحساب البنكي</label>
+                      <input type="text" class="form-control" value="{{i.bank}}" readonly>
+                    </div>
 
-                  </form>
+                    <div class="col-md-12"><label class="labels">صورة المطعم</label>
+                      <img class="size_img" [src]="i.plat_image" alt="">
+                    </div>
+
+                    <div class="col-md-12 mb-2"><label class="labels">صورة المسؤول </label>
+                      <img class="size_img" [src]="i.admin_image" alt="">
+                    </div>
+
+                    <div class="col-md-12 mb-2">
+                      <label class="labels"> صورة شعار المطعم</label>
+                      <img class="size_img" [src]="i.plat_logo" alt="">
+                    </div>
+
+                    <div class="col-md-12 mb-2">
+                      <label class="labels">الموقع</label>
+                      <input type="text" class="form-control" value="{{i.address}}" readonly>
+                    </div>
+
+                    <div class="col-md-12 mb-2">
+                      <label class="labels">الوصف</label>
+                      <textarea type="text" class="form-control" value="{{i.Description}}" readonly></textarea>
+                    </div>
+
+                    <div class="col-md-12 mb-2">
+                      <label class="labels">السبب</label>
+                      <input type="text" class="form-control" [(ngModel)]="reason">
+                    </div>
+
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -148,8 +150,8 @@
 
 
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark ed_btn" (click)="modal.close('Save click')">رفض الطلب</button>
-      <button type="button" class="btn btn-outline-dark ed_btn" (click)="modal.close('Save click')">قبول الطلب</button>
+      <button type="button" class="btn btn-outline-dark ed_btn" (click)="reject()">رفض الطلب</button>
+      <button type="button" class="btn btn-outline-dark ed_btn" (click)="approve()">قبول الطلب</button>
     </div>
   </ng-template>
 

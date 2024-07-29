@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -19,13 +21,13 @@ import { NgxSpinnerModule } from "ngx-spinner";
   imports: [
     BrowserModule,
     AppRoutingModule,
-   NgbModule,
+    NgbModule,
 
-   HttpClientModule,
-   FormsModule,
-   BrowserAnimationsModule,
-   NgxSpinnerModule,
-
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule,
+    ToastrModule.forRoot(),
   ],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [

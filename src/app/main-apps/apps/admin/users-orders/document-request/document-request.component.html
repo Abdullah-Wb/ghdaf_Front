@@ -2,13 +2,17 @@
 
   <h2> طلب تغيير المستندات الرسمية </h2>
 
-  <select class="typ_status" name="" id="">
-    <option value="">اختر نوع المستندت</option>
-    <option value="1">الكل</option>
-    <option value="2">شهادة صحية</option>
-    <option value="3">سجل تجاري</option>
-   
-  </select>
+
+  <div class="search-container">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ابحث عن اسم المنصة....." dir="rtl">
+    <select *ngFor="let i of arr_list" class="typ_status" name="" id="">
+      <option value="">اختر نوع المستندت</option>
+      <option value="1">{{i.all}}</option>
+      <option value="2">{{i.bld}}</option>
+      <option value="3">{{i.tga}}</option>
+    </select>
+  </div>
+
 
   <table dir="rtl">
     <tr>
@@ -20,11 +24,12 @@
       <th class="color-had">رفض</th>
     </tr>
 
+
     <tr *ngFor="let i of arr_userOrd">
       <td>{{i.Platform_type}}</td>
       <td>{{i.Platform_name}}</td>
       <td>{{i.Platform_num}}</td>
-      <td>{{i.Documents}}</td>
+      <td [style.color]="i.Documents == 'شهادة صحية' ? 'green' : 'red' ">{{i.Documents}}</td>
       <td><a (click)="openModal(content)"><i class="bi bi-check2-square" style="cursor: pointer;"></i></a></td>
       <td><a (click)="openModal(contentx)"><i class="bi bi-x-square" style="cursor: pointer;"></i></a></td>
 
@@ -44,7 +49,7 @@
     </div>
 
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+      <button type="button" class="btn btn-outline-dark ed_btn" (click)="modal.close('Save click')">حفظ</button>
     </div>
   </ng-template>
 
@@ -61,7 +66,7 @@
     </div>
 
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+      <button type="button" class="btn btn-outline-dark ed_btn" (click)="modal.close('Save click')">حفظ</button>
     </div>
   </ng-template>
 

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -19,7 +20,8 @@ import { TicketsComponent } from './tickets/tickets.component';
   imports: [
     CommonModule,
     UsersOrdersRoutingModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    FormsModule
   ]
 })
 export class UsersOrdersModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-new-users-orders',
@@ -8,8 +9,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class NewUsersOrdersComponent implements OnInit {
   arr_newOrder: any
+  arr_list: any
   arr_info: any
-  constructor(private modalService: NgbModal) {
+  reason = ""
+  constructor(private modalService: NgbModal, private toastr: ToastrService) {
     this.arr_newOrder = [
       {
         platform_name: 'البر',
@@ -54,18 +57,29 @@ export class NewUsersOrdersComponent implements OnInit {
 
     this.arr_info = [
       {
-        admin_name:'ALI',
-        Platform_name:'كنتاكي',
+        admin_name: 'ALI',
+        Platform_name: 'كنتاكي',
         Platform_num: '059099122',
         email: 'ab@gmail.com',
         bank: 'S440937738782782',
         admin_image: "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-        plat_image:"https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+        plat_image: "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
         plat_logo: "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
         address: 'البحيرات قبل محطة ساسكو',
         Description: 'مطعم للوجبات السريعه ',
+        reason: '',
       },
 
+    ]
+
+    this.arr_list = [
+      {
+        all: 'الكل',
+        inactive: 'غير مفعل',
+        Rejected: 'مرفوض',
+        Processing: 'تحت المعالجة',
+        Frozen: 'مجمد',
+      },
     ]
   }
 
@@ -73,5 +87,22 @@ export class NewUsersOrdersComponent implements OnInit {
   }
   openModal(modal) {
     this.modalService.open(modal, { size: 'xl' })
+  }
+
+
+  approve() {
+
+  }
+
+  reject() {
+    console.log(this.reason)
+    if (this.reason == "") {
+      this.toastr.warning('أدخل السبب')
+      return null
+    }
+
+    this.modalService.dismissAll()
+
+    // api
   }
 }

@@ -23,6 +23,7 @@ i{
 
 .color-had{
   background: var(--secondary);
+  color: var(--third);
 }
 
 table,th,td{
@@ -46,6 +47,10 @@ th,td
 }
 .modal-header{
   background: var(--secondary);
+}
+ .ed_btn {
+  background: var(--secondary);
+  border: none;
 }
 
 

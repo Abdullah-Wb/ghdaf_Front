@@ -10,6 +10,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OtpComponent } from './otp/otp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgOtpInputModule } from  'ng-otp-input';
+
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgOtpInputModule,
 
   ]
 })

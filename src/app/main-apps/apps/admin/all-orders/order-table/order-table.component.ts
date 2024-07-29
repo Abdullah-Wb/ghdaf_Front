@@ -9,6 +9,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class OrderTableComponent implements OnInit {
   arr_allOrder: any
   arr_detils: any
+  arr_list: any
   select = "تم التوصيل"
   constructor(private modalService: NgbModal) {
     this.arr_allOrder = [
@@ -35,7 +36,7 @@ export class OrderTableComponent implements OnInit {
       }
 
     ]
-    
+
 //pup-up
     this.arr_detils = [
       {
@@ -78,10 +79,15 @@ export class OrderTableComponent implements OnInit {
         exp_date: '13/12/2024',
         order_image:"bi bi-images",
       },
+    ]
 
-
-
-
+    this.arr_list = [
+      {
+        all:'الكل',
+        Delivered:'تم التوصيل',
+        Deleted:'محذوف',
+        Expired:'منتهي الصلاحية ',
+      }
     ]
 
 
