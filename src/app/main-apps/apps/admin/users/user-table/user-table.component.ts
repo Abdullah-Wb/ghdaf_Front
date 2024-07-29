@@ -77,6 +77,7 @@ export class UserTableComponent implements OnInit {
     this.apiService.get(users.showUser + data.id).subscribe (res=> {
       console.log(res.data);
       this.userById = res.data
+      
 
     })
 
