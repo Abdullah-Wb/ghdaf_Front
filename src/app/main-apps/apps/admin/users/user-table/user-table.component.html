@@ -22,12 +22,12 @@
       <!-- <th class="color-had">العمر</th> -->
     </tr>
 
-    <tr *ngFor="let i of arr_userTable">
-      <td>{{i.user_type}}</td>
-      <td>{{i.platform_name}}</td>
-      <td>{{i.admin_name}}</td>
-      <td>{{i.num}}</td>
-      <td><a  (click)="openModal(content)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
+    <tr *ngFor="let i of usersData">
+      <td>{{i.user_type_id == 1 ? 'المطعم' : 'الجمعية'}}</td>
+      <td>{{i.company_name}}</td>
+      <td>{{i.manager_name}}</td>
+      <td>{{i.phone}}</td>
+      <td><a  (click)="openModal(content , i)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
 
       <ng-template #content let-modal>
         <div class="modal-header">
@@ -70,12 +70,12 @@
 
                     <div class="col-md-6">
                       <label class="labels">اسم المسؤول الثلاثي</label>
-                      <input type="text" class="form-control" value="{{i.admin_name}}" readonly>
+                      <input type="text" class="form-control" value="{{i.manager_name}}" readonly>
                     </div>
 
                     <div class="col-md-6">
                       <label class="labels">اسم المنصة</label>
-                      <input type="text"class="form-control" value="{{i.Platform_name}}" readonly>
+                      <input type="text"class="form-control" value="{{i.company_name}}" readonly>
                     </div>
 
                   </div>
@@ -144,7 +144,7 @@
 
       <td>
         <label class="toggle-switch">
-          <input type="checkbox">
+          <input type="checkbox" [checked]="i.status == '2' ? true : false">
           <span class="slider"></span>
         </label>
       </td>
@@ -152,6 +152,4 @@
     </tr>
     <!-- اول صف-->
 
-    <!--
-        <span  [ngClass]="state1  ? 'true' : 'false'">
- -->
+

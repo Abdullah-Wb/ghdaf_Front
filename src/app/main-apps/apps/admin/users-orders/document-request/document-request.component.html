@@ -24,11 +24,12 @@
       <th class="color-had">رفض</th>
     </tr>
 
+
     <tr *ngFor="let i of arr_userOrd">
       <td>{{i.Platform_type}}</td>
       <td>{{i.Platform_name}}</td>
       <td>{{i.Platform_num}}</td>
-      <td>{{i.Documents}}</td>
+      <td [style.color]="i.Documents == 'شهادة صحية' ? 'green' : 'red' ">{{i.Documents}}</td>
       <td><a (click)="openModal(content)"><i class="bi bi-check2-square" style="cursor: pointer;"></i></a></td>
       <td><a (click)="openModal(contentx)"><i class="bi bi-x-square" style="cursor: pointer;"></i></a></td>
 
