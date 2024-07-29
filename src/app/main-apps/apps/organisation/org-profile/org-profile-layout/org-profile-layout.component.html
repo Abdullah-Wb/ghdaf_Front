@@ -14,24 +14,24 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-6"><label class="labels">اسم المسؤول الثلاثي</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                    <div class="col-md-6"><label class="labels">اسم المطعم</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                    <div class="col-md-6"><label class="labels">اسم الجمعية</label><input type="text" class="form-control" value="" placeholder="surname"></div>
 
                 </div>
                 <form action="">
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels"> رقم الهاتف</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
-                    <div class="col-md-12"><label class="labels"> الايميل</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
-                    <div class="col-md-12"><label class="labels">  </label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
-                    <div class="col-md-12"><label class="labels">رقم الحساب البنكي</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
-                    <div class="col-md-12"><label class="labels">صورة المطعم</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
-                    <div class="col-md-12"><label class="labels">صورة المسؤول </label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
-                    <div class="col-md-12"><label class="labels"> صورة شعار المطعم</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
-                    <div class="col-md-12"><label class="labels">وصف المطعم</label><input type="text" class="form-control" placeholder="education" value=""></div>
+                    <div class="col-md-12"><label class="labels"> رقم الهاتف</label><input type="text" class="form-control" placeholder="  "   value=""></div>
+                    <div class="col-md-12"><label class="labels"> الايميل</label><input type="text" class="form-control"  placeholder="  " value=""></div>
+                    <!-- <div class="col-md-12"><label class="labels">  </label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                    <div class="col-md-12"><label class="labels">رقم الحساب البنكي</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div> -->
+                    <div class="col-md-12"><label class="labels">صورة الجمعية</label><input type="file" class="form-control" placeholder="  " value=""></div>
+                    <div class="col-md-12"><label class="labels">صورة المسؤول </label><input type="file" class="form-control" placeholder="  " value=""></div>
+                    <div class="col-md-12"><label class="labels"> صورة شعار الجمعية</label><input type="file" class="form-control" placeholder="   " value=""></div>
+                    <div class="col-md-12"><label class="labels">وصف المطعم</label><input type="text" class="form-control" placeholder="  " value=""></div>
                 </div>
 
                 <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">الموقع </label><input type="text" class="form-control" placeholder="country" value=""></div>
-                    <div class="col-md-6"><label class="labels">وصف الموقع</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                    <div class="col-md-6"><label class="labels">الموقع </label><input type="text" class="form-control" placeholder=" " value=""></div>
+                    <!-- <div class="col-md-6"><label class="labels">وصف الموقع</label><input type="text" class="form-control" value="" placeholder="وصف الموقع"></div> -->
                 </div>
                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">حفظ التغييرات </button></div>
               </form>
@@ -41,13 +41,10 @@
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center experience"><h4>تغيير الاوراق الرسمية</h4></div><br>
                 <button style='font-size:14px'><i class="bi bi-upload" (click)="openModal(ubdat_paper)"></i>  السجل  التجاري  </button><br>
-                <button class="normel-button" (click)="openModal(newcard)">اضافة بطاقة جديدة</button>
+                <!-- <button class="normel-button" (click)="openModal(newcard)">اضافة بطاقة جديدة</button> -->
 
-
-
-<!-- ---------------------- -->
-<ng-template #ubdat_paper let-modal>
-  <style>
+                <!-- <div class="col-md-12"><label class="labels">السجل التجاري</label><input type="file" class="form-control" placeholder="" value=""></div> -->
+ <!-- <style>
     .row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
@@ -83,24 +80,28 @@
   border: 1px solid lightgrey;
   border-radius: 3px;
 }
-  </style>
+  </style> -->
+<!-- ---------------------- -->
+<ng-template #ubdat_paper let-modal >
   <div class="modal-header">
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">sss</button>
+    <h4 class="modal-title" id="modal-basic-title"> ادخل السجل التجاري </h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body" style="direction: rtl;">
 
-<div class="col-md-12"><label class="labels">السجل التجاري</label><input type="file" class="form-control" placeholder="" value=""></div>
+  <div class="col-md-12"><label class="labels">السجل التجاري</label><input type="file" class="form-control" placeholder="" value=""></div>
 
   </div>
 
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')" > حسنا</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
   </div>
 </ng-template>
+
 <!-- ---------------- -->
 
 
-
+<!--
                 <ng-template #newcard let-modal >
                   <div class="modal-header">
                     <h4 class="modal-title" id="modal-basic-title">معلومات الدفع</h4>
@@ -114,12 +115,12 @@
                     <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" >
                     <label for="expmonth">تاريخ الانتهاء</label>
                     <input type="text" id="expmonth" name="expmonth" placeholder="9/12">
-                    <div class="row">
+                    <div class="row"> -->
                       <!-- <div class="col-50">
                         <label for="expyear">Exp Year</label>
                         <input type="text" id="expyear" name="expyear" placeholder="2018">
                       </div> -->
-                      <div class="col-50">
+                      <!-- <div class="col-50">
                         <label for="cvv">CVV</label>
                         <input type="text" id="cvv" name="cvv" placeholder="352">
                       </div>
@@ -130,19 +131,31 @@
                   <div class="modal-footer">
                     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
                   </div>
-                </ng-template>
+                </ng-template> -->
 
-
+<!-- ----------------------------------------------------------- -->
                 <!-- <div class="col-md-12"><label class="labels">الشهادة الصحية</label><input type="file" class="form-control" placeholder="" value=""></div> <br>
                 <div class="col-md-12"><label class="labels">السجل التجاري</label><input type="file" class="form-control" placeholder="" value=""></div> -->
             </div>
            <div>
 
-            <h4>رصيد المحفظة <span  ><p><input type="text" value="5000"  id="amount" readonly  style="padding: 10px; border-radius: 5px;"></p></span></h4>
-            <button style='font-size:14px'><i class="bi bi-wallet2"></i> سحب الرصيد</button>
-
+            <h3>البطاقات</h3>
+            <div class="credit" *ngFor="let i of arr_cards">
+              <button class="card-botton"  style="background-color:#e8eae6;"> <p >
+                <i class="bi bi-credit-card" ></i>&nbsp;&nbsp;{{i. card_num}}
+              </p></button>
            </div>
         </div>
+
+        <div>
+
+          <h3>مواعيد العمل </h3>
+
+            <button class="card-botton" >اضغط لأضافة مواعيد العمل <p style="color: white;">
+
+            </p></button>
+         </div>
+      </div>
 
 
     </div>
