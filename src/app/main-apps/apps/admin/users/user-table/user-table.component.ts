@@ -1,64 +1,29 @@
+import { log } from 'util';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { users } from 'src/app/constant/Routes';
 import { ImpApiService } from 'src/app/services/imp-api.service';
-
+import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-user-table',
   templateUrl: './user-table.component.html',
   styleUrls: ['./user-table.component.scss']
 })
 export class UserTableComponent implements OnInit {
-  arr_userTable: any
-  arr_info: any
-  arr_list: any
+  status_value = ''
   usersData = null
+  usersData_2 = null
   userById = null
+  loading = false
 
-  constructor(private modalService: NgbModal, private apiService : ImpApiService ) {
+  active_form = {
+
+  };
+
+  constructor(private modalService: NgbModal, private spinner: NgxSpinnerService, private apiService: ImpApiService) {
 
 
-    this.arr_userTable = [
-      {
-        user_type: 'جمعية',
-        platform_name: 'البر',
-        admin_name: 'غسان',
-        num: '05977387',
-        state:"1"
-      },
-      {
-        user_type: 'مطعم',
-        platform_name: 'البيك',
-        admin_name: 'فيصل',
-        num: '058734387',
-        state:"2"
 
-      },
-
-    ]
-
-    this.arr_info = [
-      {
-        admin_name:'ALI',
-        Platform_name:'البر',
-        Platform_num: '059099122',
-        email: 'ab@gmail.com',
-        bank: 'S440937738782782',
-        admin_image: "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-        plat_image:"https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-        plat_logo: "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-        address: 'البحيرات قبل محطة ساسكو',
-        Description: 'جمعيه خيرية ..................... ',
-      },
-    ]
-
-    this.arr_list = [
-      {
-        all:'الكل',
-        bld:'جمعية',
-        tga:'المطعم',
-      },
-    ]
 
 
 
@@ -69,29 +34,82 @@ export class UserTableComponent implements OnInit {
     this.gitAllUsers()
 
 
+
+
   }
 
-  openModal(modal , data) {
-    this.modalService.open(modal, { size: 'xl'})
+  openModal(modal, data) {
+    this.spinner.show();
+    this.modalService.open(modal, { size: 'xl' })
 
-    this.apiService.get(users.showUser + data.id).subscribe (res=> {
-      console.log(res.data);
+    this.apiService.get(users.showUser + data.id).subscribe(res => {
       this.userById = res.data
-      
-
+      this.loading = false
+      console.log(this.userById);
+      this.spinner.hide();
+    }, (error) => {
+      this.spinner.hide();
     })
 
   }
 
 
 
-  gitAllUsers(){
-    this.apiService.get(users.allUsers).subscribe(res =>{
+
+  gitAllUsers() {
+    this.spinner.show()
+    this.apiService.get(users.allUsers).subscribe(res => {
       console.log(res.data);
       this.usersData = res.data
+      this.usersData_2 = res.data
+      console.log(this.usersData_2);
+      this.spinner.hide();
+
+    }, (error) => {
+      this.spinner.hide();
 
     })
   }
+
+  activeUser(user) {
+    this.spinner.show()
+    this.apiService.post(users.activeUser + user.id, null).subscribe(res => {
+      console.log(res.data);
+      this.spinner.hide();
+      this.gitAllUsers();
+
+    }, (error) => {
+      this.spinner.hide();
+
+    })
+  }
+
+  filter_by_user(chose) {
+    console.log(this.usersData_2);
+
+
+    // console.log();
+
+    this.status_value = chose
+
+    if (this.status_value == "") {
+      this.usersData = this.usersData_2
+      console.log(this.usersData)
+
+    }
+
+    if (this.status_value == "2") {
+      this.usersData = this.usersData_2
+      this.usersData = this.usersData.filter(res => res.user_type_id == this.status_value)
+    }
+    if (this.status_value == "1") {
+      this.usersData = this.usersData_2
+      this.usersData = this.usersData.filter(res => res.user_type_id == this.status_value)
+
+    }
+  }
+
+
 
 
 }

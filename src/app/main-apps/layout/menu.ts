@@ -1,14 +1,23 @@
 export const MENU = [
-  // الصفحة الرئيسية HMS
-  {
-    id: 1,
-    label: 'الصفحة الرئيسية',
-    subItems: [
-      {
-        label: 'الفديوهات التعليمية',
-        link: '/apps/videos/list',
-        user_type: [1, 3],
-      },
-    ]
-  }
+// admin
+{
+  label: 'الصفحة الرئيسية',
+  isTitle: false,
+  link: '/main-apps/admin-home/dash-list',
+  user_type_id: [3],
+},
+{
+  label: 'طلبات المستخدمين',
+  isTitle: true,// يعني له اشياء داخلة
+  user_type_id: [3],
+  subItemsAdmin: [
+    {
+      label: 'طلبات انشاء الحساب',
+      link: '/main-apps/users-orders/new-users-orders',
+      user_type_id: [3],
+    },
+  ]
+},
 ]
+
+

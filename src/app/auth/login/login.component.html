@@ -23,7 +23,7 @@
       <input [(ngModel)]="login_form.password" type="password" placeholder="كلمة المرور" />
       <a href="#">هل نسيت كلمة المرور؟</a> <!--بعدين نضيف الرابط-->
       <button (click)="open_modal(otp_popup)">تسجيل الدخول</button>
-      <a href="#"> هل لديك حساب؟ تسجيل الدخول</a> <!--بعدين نضيف الرابط-->
+      <a routerLink="/auth/sign-up"> ليس لديك حساب؟ انشاء حساباً</a> <!--بعدين نضيف الرابط-->
 
 
     </div>
@@ -44,6 +44,9 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="login()">إرسال</button>
+        <button type="button" class="btn btn-outline-dark" (click)="login() ">إرسال</button>
+
+
+
       </div>
     </ng-template>

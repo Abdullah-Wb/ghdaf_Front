@@ -24,14 +24,13 @@
 
 
   <h1 style="padding:1px;">انشاء حساب</h1>
-  <h6>أدخل البريد الالكتروني وكلمة المرور الخاصة بك لتسجيل الدخول</h6>
 
 
 
 
   <!-- ********************************************* -->
   <div style="display: flex; flex-direction: column;" *ngIf="type == null">
-    <h6>ادخل نوع المستخدم</h6>
+    <h4 style="padding:1px;">ادخل نوع المستخدم</h4>
     <div class="type-user">
       <button (click)="selectType(1)">مطعم</button>
       <button (click)="selectType(2) ">جمعية</button>
@@ -62,7 +61,7 @@
         <input formControlName="description"  type="text" placeholder=" وصف المطعم">
 
         <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;width: 600px;">
-          <a href="#"> هل لديك حساب؟ تسجيل الدخول</a>
+          <a routerLink="/auth/login"> هل لديك حساب؟ تسجيل الدخول</a>
 
           <button>تسجيل الدخول</button>
         </div>
@@ -108,7 +107,7 @@
         <input type="email" placeholder=" وصف الجمعية" style="direction: rtl;">
 
         <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;width: 600px;">
-          <a href="#"> هل لديك حساب؟ تسجيل الدخول</a>
+          <a routerLink="/auth/login"> هل لديك حساب؟ تسجيل الدخول</a>
 
           <button>تسجيل الدخول</button>
         </div>
