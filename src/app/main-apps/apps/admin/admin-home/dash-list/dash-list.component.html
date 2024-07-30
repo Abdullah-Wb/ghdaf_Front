@@ -2,23 +2,75 @@
 
   <div class="dash1">
 
-    <div class="child" *ngFor="let i of arr_dash">
 
-      <div class="icon">
-        <i [class]="i.icon"></i>
-      </div>
 
+
+
+
+
+
+    <div class="child">
       <div class="info_card">
-
-        <div class="title">
-          <h3>{{i.title}}</h3>
+        <div class="icon">
+          <i> <i class="bi bi-person"></i></i>
         </div>
-
+        <div class="title">
+          <h3> عدد الطلبات الاجمالي</h3>
+        </div>
         <div class="num">
-          <h4>{{i.num}}</h4>
+          <h4>{{arr_count_user.org}}</h4>
         </div>
       </div>
     </div>
+
+
+
+    <div class="child">
+      <div class="info_card">
+        <div class="icon">
+          <i> <i class="bi bi-person"></i></i>
+        </div>
+        <div class="title">
+          <h3> عدد الجمعيات </h3>
+        </div>
+        <div class="num">
+          <h4>{{arr_count_user.org}}</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="child">
+      <div class="info_card">
+        <div class="icon">
+          <i> <i class="bi bi-person"></i></i>
+        </div>
+        <div class="title">
+          <h3>عدد المطاعم</h3>
+        </div>
+        <div class="num">
+          <h4>{{arr_count_user.rest}}</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="child">
+      <div class="info_card">
+        <div class="icon">
+          <i><i class="bi bi-people"></i></i>
+        </div>
+        <div class="title">
+          <h3>عدد المستخدمين </h3>
+        </div>
+        <div class="num">
+          <h4>{{arr_count_user.all_users}}</h4>
+        </div>
+      </div>
+    </div>
+
+
+
 
   </div>
 
@@ -26,10 +78,10 @@
   <div class="dash2">
 
     <div>
-    <div class="child1" id="main"></div>
+      <div class="child1" id="main"></div>
     </div>
 
-    <div class="child1" id="main1" ></div>
+    <div class="child1" id="main1"></div>
   </div>
 
 </div>

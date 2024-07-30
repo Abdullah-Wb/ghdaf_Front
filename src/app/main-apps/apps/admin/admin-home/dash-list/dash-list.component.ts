@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+// import { admin_home } from 'src/app/constant/Routes';
+import { ImpApiService } from 'src/app/services/imp-api.service';
+
 
 @Component({
   selector: 'app-dash-list',
@@ -7,8 +10,11 @@ import * as echarts from 'echarts';
   styleUrls: ['./dash-list.component.scss']
 })
 export class DashListComponent implements OnInit {
+  arr_count_user:any
   arr_dash: any
-  constructor() {
+  arr_salse_mon:any
+  arr_broduct_type:any
+  constructor(private api_dash : ImpApiService) {
     this.arr_dash = [
       {
         title: 'عدد الطلبات الاجمالي',
@@ -27,7 +33,7 @@ export class DashListComponent implements OnInit {
       },
       {
         title: 'عدد المستخدمين',
-        num: '55',
+        allusers: '55',
         icon: "bi bi-people-fill"
       },
 
@@ -37,10 +43,11 @@ export class DashListComponent implements OnInit {
 
   ngOnInit(): void {
 
+
     var chartDom = document.getElementById('main');
     var myChart = echarts.init(chartDom);
     var option;
-    option = { 
+    option = {
       title: {
         text: 'مبيعات كل شهر',
         left: 'center'
@@ -192,9 +199,37 @@ export class DashListComponent implements OnInit {
     option && myChart.setOption(option);
 
 
-
-
-
+    // this.git_user_num()
+    // this.git_salse_monthly()
+    // this.git_broduct_type()
   }
+
+
+
+//   git_user_num(){
+
+//     this.api_dash.get(admin_home.Count_users).subscribe(res =>{
+//       console.log(res.org);
+//       this.arr_count_user=res
+//     } )
+// }
+
+// git_salse_monthly(){
+//   this.api_dash.get(admin_home.Orders_every_month).subscribe(res =>{
+//     console.log(res);
+//     this.arr_salse_mon=res
+
+//   } )
+
+// }
+
+// git_broduct_type(){
+//   this.api_dash.get(admin_home.Product_By_Type).subscribe(res =>{
+//     console.log(res);
+//     this.arr_broduct_type=res
+
+//   } )
+
+// }
 
 }
