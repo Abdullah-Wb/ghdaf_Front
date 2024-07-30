@@ -35,10 +35,7 @@ button:hover {
   cursor: pointer;
   border: solid 1px #BA68C8
 }
-.container{
-  margin-top: 50px;
-  padding-top: 10px;
-}
+
 input{
   border: none;
 }
@@ -49,4 +46,122 @@ button{
   border: none;
   color: #fff;
   border-radius: 5px;
+}
+
+
+
+
+.header {
+  background: var(--secondary);
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center;
+  height: 70px;
+  padding: 15px;
+}
+
+table{
+width: 100%;
+border-collapse: collapse;
+margin: 20px 0;
+padding:50px;
+
+}
+input{
+border: 0;
+text-align: right;
+}
+
+// i{
+// font-size: 30px;
+// }
+
+.color-had{
+background: var( --secondary);
+color: var(--third);
+}
+
+table,th,td{
+border: 1px solid var(--third);
+}
+
+th,td
+{
+border: 5px solid var(third);
+padding: 10px;
+text-align: center;
+background: var(--bg-base);
+}
+
+
+// table{
+//   width: 100%;
+//   border-collapse: collapse;
+//   margin: 20px 0;
+// }
+
+
+// .color-had{
+//   background: var(--secondary);
+//   color: var(--third);
+// }
+
+
+// table,th,td{
+//   border: 5px solid var(--third);
+// }
+// --third
+// th,td
+// {
+//   padding: 10px;
+//   text-align: center;
+//   background: var(--bg-base);
+// }
+
+
+
+.toggle-switch{
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.toggle-switch input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before{
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--third);
+  transition: .4s;
+  border-radius: 50%;
+
+}
+
+input:checked+.slider{
+  background-color: #4CAF50;
+}
+
+input:checked+.slider:before{
+  transform: translateX(14px);
 }
