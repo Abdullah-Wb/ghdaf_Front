@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
-// import { admin_home } from 'src/app/constant/Routes';
+import { admin_home } from 'src/app/constant/Routes';
 import { ImpApiService } from 'src/app/services/imp-api.service';
 
 
@@ -199,37 +199,37 @@ export class DashListComponent implements OnInit {
     option && myChart.setOption(option);
 
 
-    // this.git_user_num()
-    // this.git_salse_monthly()
-    // this.git_broduct_type()
+    this.git_user_num()
+    this.git_salse_monthly()
+    this.git_broduct_type()
   }
 
 
 
-//   git_user_num(){
+  git_user_num(){
 
-//     this.api_dash.get(admin_home.Count_users).subscribe(res =>{
-//       console.log(res.org);
-//       this.arr_count_user=res
-//     } )
-// }
+    this.api_dash.get(admin_home.Count_users).subscribe(res =>{
+      console.log(res.org);
+      this.arr_count_user=res
+    } )
+}
 
-// git_salse_monthly(){
-//   this.api_dash.get(admin_home.Orders_every_month).subscribe(res =>{
-//     console.log(res);
-//     this.arr_salse_mon=res
+git_salse_monthly(){
+  this.api_dash.get(admin_home.Orders_every_month).subscribe(res =>{
+    console.log(res);
+    this.arr_salse_mon=res
 
-//   } )
+  } )
 
-// }
+}
 
-// git_broduct_type(){
-//   this.api_dash.get(admin_home.Product_By_Type).subscribe(res =>{
-//     console.log(res);
-//     this.arr_broduct_type=res
+git_broduct_type(){
+  this.api_dash.get(admin_home.Product_By_Type).subscribe(res =>{
+    console.log(res);
+    this.arr_broduct_type=res
 
-//   } )
+  } )
 
-// }
+}
 
 }
