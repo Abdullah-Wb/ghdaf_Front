@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
     password: null,
     otp: null,
   };
+  toastr: any;
   constructor(private impApiService: ImpApiService, private router: Router, private spinner: NgxSpinnerService, private modalService: NgbModal, private val : FormBuilder) {
 
   }
@@ -29,11 +30,12 @@ export class LoginComponent implements OnInit {
   }
   login() {
     this.spinner.show();
+
     if (this.login_form.otp.length !== 4) {
       this.spinner.hide();
       return null
     }
-    this.impApiService.post(auth.login, this.login_form).subscribe(data => {
+    this.impApiService.post(auth.login, this.login_form).subscribe(data => {//data متغيرة
       this.spinner.hide();
 
       localStorage.setItem('user', JSON.stringify(data))
@@ -62,6 +64,10 @@ export class LoginComponent implements OnInit {
 
     },
     )
+  }
+
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
   onOtpChange(otp) {

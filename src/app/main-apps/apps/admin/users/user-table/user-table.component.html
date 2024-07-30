@@ -2,14 +2,18 @@
 
   <h2>المستخدمين</h2>
   <div class="search-container">
+
+
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ابحث عن اسم المنصة....." dir="rtl">
-    <select *ngFor="let i of arr_list" class="typ_status" name="" id="">
+
+    <select class="typ_status" name="" (change)="filter_by_user($event.target.value)">
       <option value="">نوع المستخدم</option>
-      <option value="1">{{i.all}}</option>
-      <option value="2">{{i.bld}}</option>
-      <option value="3">{{i.tga}}</option>
+      <option value="">الكل</option>
+      <option value="2">الجمعية</option>
+      <option value="1">المطعم</option>
     </select>
   </div>
+
 
   <table dir="rtl">
     <tr>
@@ -27,56 +31,71 @@
       <td>{{i.company_name}}</td>
       <td>{{i.manager_name}}</td>
       <td>{{i.phone}}</td>
-      <td><a  (click)="openModal(content , i)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
+      <td><a (click)="openModal(content , i)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
 
-      <ng-template #content let-modal>
-        <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">معلومات المستخدم</h4>
-          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-        </div>
-        <div class="modal-body">
 
-          <div class="design_info">
+      <td>
+        <label class="toggle-switch">
+          <input type="checkbox" (change)="activeUser(i)" [checked]="i.status == '2' ? true : false">
+          <span class="slider"></span>
+        </label>
+      </td>
+      <!-- <td>{{i.age}}</td> -->
+    </tr>
+    <!-- اول صف-->
+  </table>
 
-            <div class="container_1 rounded">
 
-            <div class="row">
 
-                <h1 >اهلا بك</h1>
 
-                <div class="col-md-3 border-right">
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">معلومات المستخدم</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
 
-                  <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img class="rounded-circle mt-5" width="150px"
-                      src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
-                      class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span>
-                    </span>
-                  </div>
+      <div class="design_info">
 
+        <div class="container_1 rounded">
+
+          <div class="row">
+
+            <h1>اهلا بك</h1>
+
+            <div class="col-md-3 border-right">
+
+              <!-- <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                  <img class="rounded-circle mt-5" width="150px" [src]="i.manager_pic">
+                  <span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span>
+
+              </div> -->
+
+            </div>
+
+            <div class="col-md-5 border-right">
+
+              <div class="p-3 py-5">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4 class="text-right">معلومات الحساب</h4>
                 </div>
 
-                <div class="col-md-5 border-right">
+                <div>
 
-                  <div class="p-3 py-5">
-
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                      <h4 class="text-right">معلومات الحساب</h4>
-                    </div>
-
-                    <div *ngFor="let i of userById">
-                      {{console_log(i)}}
 
                   <div class="row mt-2">
 
                     <div class="col-md-6">
-                      <label class="labels">اسم المسؤول الثلاثي</label>
-                      <input type="text" class="form-control" value="{{i.manager_name}}" readonly>
+                      <label class="labels">اسم المسؤول</label>
+                      <input type="text" class="form-control" [value]="userById.manager_name" readonly>
                     </div>
 
                     <div class="col-md-6">
                       <label class="labels">اسم المنصة</label>
-                      <input type="text"class="form-control" value="{{i.company_name}}" readonly>
+                      <input type="text" class="form-control" [value]="userById.company_name" readonly>
                     </div>
+
 
                   </div>
 
@@ -86,70 +105,78 @@
 
                       <div class="col-md-12">
                         <label class="labels"> رقم الهاتف</label>
-                        <input type="number"class="form-control" value="{{i.Platform_num}}" readonly>
+                        <input type="number" class="form-control" [value]="userById.phone" readonly>
                       </div>
 
                       <div class="col-md-12">
                         <label class="labels"> الايميل</label>
-                        <input type="email"class="form-control" value="{{i.email}}" readonly>
-                     </div>
+                        <input type="email" class="form-control" [value]="userById.email" readonly>
+                      </div>
 
-                      <div class="col-md-12">
-                        <label class="labels">رقم الحساب البنكي</label>
-                        <input type="text"class="form-control" value="{{i.bank}}" readonly>
-                        </div>
+                      <!-- <div class="col-md-12">
+                      <label class="labels">رقم الحساب البنكي</label>
+                      <input type="text"class="form-control" [value]="userById" readonly>
+                      </div> -->
 
                       <div class="col-md-12"><label class="labels">صورة المطعم</label>
-                        <img class="size_img" [src]="i.plat_image" alt="">
+                        <img class="size_img" [src]="userById.restaurant_pic" alt="">
                       </div>
 
                       <div class="col-md-12"><label class="labels">صورة المسؤول </label>
-                        <img class="size_img" [src]="i.admin_image" alt="">
+                        <img class="size_img" [src]="userById.manager_pic" alt="">
                       </div>
 
                       <div class="col-md-12">
                         <label class="labels"> صورة شعار المطعم</label>
-                        <img class="size_img" [src]="i.plat_logo" alt="">
+                        <img class="size_img" [src]="userById.logo" alt="">
                       </div>
 
-                      <div class="col-md-12">
-                        <label class="labels">الموقع</label>
-                        <input type="text" class="form-control" value="{{i.address}}" readonly>
+                      <div class="file">
+
+                        <label class="labels">السجل التجاري : </label>
+                        <p>افتح الملف<a
+                            [href]="userById.commercial_record">&nbsp;المستند&nbsp;</a>.
+                        </p>
+                        <label class="labels">الشهادة الصحية :</label>
+                        <p>افتح الملف<a [href]="userById.health_certification">&nbsp;المستند&nbsp;</a>.
+                        </p>
+
+                        <div class="col-md-12">
+                          <label class="labels"> الايميل</label>
+                          <input type="email" class="form-control" [value]="userById.email" readonly>
+                        </div>
+
+
                       </div>
+
+                      <!--
+                                        <div class="col-md-12">
+                      <label class="labels">الموقع</label>
+                      <input type="text" class="form-control" [value]="userById." readonly>
+                    </div>  -->
+
 
                       <div class="col-md-12">
                         <label class="labels">الوصف</label>
-                        <textarea type="text"class="form-control" value="{{i.Description}}" readonly></textarea>
+                        <textarea type="text" class="form-control" [value]="userById.description" readonly></textarea>
                       </div>
 
                     </div>
-                        </form>
-                      </div>
+                  </form>
+                </div>
 
-                  </div>
               </div>
             </div>
-
-            </div>
-
           </div>
 
-          </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
         </div>
 
-      </ng-template>
+      </div>
 
-      <td>
-        <label class="toggle-switch">
-          <input type="checkbox" [checked]="i.status == '2' ? true : false">
-          <span class="slider"></span>
-        </label>
-      </td>
-      <!-- <td>{{i.age}}</td> -->
-    </tr>
-    <!-- اول صف-->
+    </div>
 
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+    </div>
 
+  </ng-template>
