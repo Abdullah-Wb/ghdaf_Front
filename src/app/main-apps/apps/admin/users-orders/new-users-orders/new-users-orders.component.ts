@@ -9,6 +9,9 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NewUsersOrdersComponent implements OnInit {
   arr_newOrder: any
+  arr_newOrder_v2: any
+  status_value = ''
+
   arr_list: any
   arr_info: any
   reason = ""
@@ -19,7 +22,7 @@ export class NewUsersOrdersComponent implements OnInit {
         user_type: 'جمعية',
         admin_name: 'غسان',
         num: '05977387',
-        order_status: 'تحت المعالجة ',
+        order_status: 'تحت المعالجة',
       },
       {
         platform_name: 'البر',
@@ -42,7 +45,7 @@ export class NewUsersOrdersComponent implements OnInit {
         user_type: 'جمعية',
         admin_name: 'غسان',
         num: '05977387',
-        order_status: 'غير مفعل ',
+        order_status: 'غير مفعل',
 
       },
       {
@@ -50,10 +53,33 @@ export class NewUsersOrdersComponent implements OnInit {
         user_type: 'جمعية',
         admin_name: 'غسان',
         num: '05977387',
-        order_status: ' مجمد',
-      }
+        order_status: 'مجمد',
+      },
+      {
+        platform_name: 'مكة',
+        user_type: 'جمعية',
+        admin_name: 'غسان',
+        num: '05977387',
+        order_status: 'غير مفعل',
+
+      },{
+        platform_name: 'مكة',
+        user_type: 'جمعية',
+        admin_name: 'غسان',
+        num: '05977387',
+        order_status: 'غير مفعل',
+
+      },{
+        platform_name: 'مكة',
+        user_type: 'جمعية',
+        admin_name: 'غسان',
+        num: '05977387',
+        order_status: 'غير مفعل',
+
+      },
 
     ]
+    this.arr_newOrder_v2 = this.arr_newOrder
 
     this.arr_info = [
       {
@@ -85,17 +111,19 @@ export class NewUsersOrdersComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
   openModal(modal) {
     this.modalService.open(modal, { size: 'xl' })
   }
 
 
   approve() {
+      this.toastr.success('تم الارسال')
 
   }
 
   reject() {
-    console.log(this.reason)
     if (this.reason == "") {
       this.toastr.warning('أدخل السبب')
       return null
@@ -105,4 +133,20 @@ export class NewUsersOrdersComponent implements OnInit {
 
     // api
   }
+
+  filter_by_type(chose){
+    this.status_value = chose
+
+    if(this.status_value !== ''){
+      this.arr_newOrder = this.arr_newOrder_v2
+      this.arr_newOrder = this.arr_newOrder.filter((data) => {
+        return data.order_status == this.status_value
+      })
+
+    }else{
+      this.arr_newOrder = this.arr_newOrder_v2
+    }
+  }
+
+
 }

@@ -8,6 +8,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DocumentRequestComponent implements OnInit {
 arr_userOrd:any
+arr_userOrd_v2:any
+status_value = ''
+
 arr_list:any
   constructor(private modalService: NgbModal) {
 
@@ -22,10 +25,11 @@ arr_list:any
         Platform_type:'جمعية',
         Platform_name:'البر',
         Platform_num: '053449011',
-        Documents: 'سجل تجاري',
+        Documents: 'السجل تجاري',
       },
 
     ],
+    this.arr_userOrd_v2 = this.arr_userOrd
 
     this.arr_list = [
       {
@@ -46,4 +50,19 @@ arr_list:any
     this.modalService.open(modal, { centered: true})
 
 }
+
+filter_by_type(chose){
+  this.status_value = chose
+  if(this.status_value !== '' ){
+    this.arr_userOrd = this.arr_userOrd_v2
+    this.arr_userOrd = this.arr_userOrd.filter((data)=>{
+      return data.Documents == this.status_value
+    })
+  }else{
+    this.arr_userOrd = this.arr_userOrd_v2
+  }
+
+}
+
+
 }

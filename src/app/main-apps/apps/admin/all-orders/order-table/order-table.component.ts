@@ -12,9 +12,7 @@ export class OrderTableComponent implements OnInit {
   arr_allOrder_v2: any
   arr_detils: any
   arr_list = null
-
   status_value = ''
-  // select = "تم التوصيل"
   usersOrder = null
   constructor(private modalService: NgbModal ) {
 
