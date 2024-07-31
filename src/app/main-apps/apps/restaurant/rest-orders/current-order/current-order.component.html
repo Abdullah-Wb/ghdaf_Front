@@ -4,7 +4,7 @@
         <li class="step-wizard-item">
             <span  [ngClass]="state1  ? 'true' : 'false'">
               <i *ngIf="state1 == true" class="bi bi-check-lg" style="font-size: 20px;"></i>
-              <p *ngIf="state1 == false" style="font-size: 20px;">1</p>
+              <i *ngIf="state1 == false" class="bi bi-airplane-fill" style="font-size: 20px; color: black;"></i>
             </span>
             <span class="progress-label">تم عرض الطلب &nbsp;&nbsp;&nbsp;<i class="bi bi-box2-heart"style="font-size: 25px;"></i></span>
         </li>

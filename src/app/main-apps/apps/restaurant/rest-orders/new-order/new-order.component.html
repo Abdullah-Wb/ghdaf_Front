@@ -1,31 +1,41 @@
+
+
+<h2 style="direction: rtl; padding-right: 700px; padding-top: 30px;"> اضافة منتج جديد </h2>
+
 <div class="container" style="width: 100%; height: 100%;">
   <div class="formm">
+<div>
+    <form [formGroup]="formData" (ngSubmit)="submit()"   style="margin: 30px; padding-right: 10px; ">
 
-    <form style="margin: 30px; padding-right: 10px; background-color: ;">
-      <h3> اضافة منتج جديد </h3>
       <label for="product-name">ادخل اسم المنتج: </label>
-      <input type="text" name="product-name" required>
+      <input type="text" formControlName="name" required>
 
-      <select id="type" name="type">
-        <option value="1"> بخصوص طلب</option>
-        <option value="2"> اخرى</option>
+      <label for="price" name="type">   ادخل نوع المنتج : </label>
+      <select id="type" name="type" formControlName="product_type_id"  >
+        <option value="1"> مشروبات </option>
+        <option value="2">  حلويات </option>
+        <option value="3">  لحوم </option>
+        <option value="4">  مخبوزات</option>
+        <option value="5"> اخرى</option>
       </select>
+
       <label for="price"> ادخل سعر المنتج : </label>
-      <input type="number" name="price" required>
+      <input type="number" formControlName="price" required >
+      <span *ngIf="formData.get('price').invalid && formData.get('price').touched" >* مطلوب</span>
 
       <label for="amount">ادخل كمية المنتج: </label>
-      <input type="number" name="amount" required>
+      <input type="number" formControlName="quantity" required>
 
       <label for="date-of-p">تاريخ الانتاج: </label>
-      <input type="date" name="date-of-p" required>
+      <input type="date" formControlName="produce_date" required>
 
       <label for="date-of-e">تاريخ الانتهاء: </label>
-      <input type="date" name="date-of-e" required>
+      <input type="date" formControlName="expire_date" required>
 
       <label for="descreption">وصف المنتج:</label>
-      <textarea name="descreption" id="descreption" cols="30" rows="5"></textarea>
+      <textarea formControlName="description" id="descreption" cols="30" rows="5" ></textarea>
       &nbsp;
-      <!-- <label for="p-image"> ارفع صورة المنتج </label> -->
+
       <div class="mb-3">
         <label for="p-image" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
@@ -34,14 +44,17 @@
             <path
               d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z" />
           </svg>&nbsp;&nbsp;ارفع صورة المنتج</label>
-        <input class="form-control" type="file" id="formFile" name="p-image" required>
+        <input class="form-control" type="file"  formControlName="productPic" required (change)="selectImg($event)" >
       </div>
 
-      <input type="submit" value="اضافة" class="sub">
-      <button class="class-button" style="width:40%;">
+      <button type="submit" value="اضافة" class="sub">add</button>
+      <!-- <button class="class-button" style="width:40%;">
         <a routerLink="/main-apps/rest-orders/current-order"> اضافة الطلب</a>
-      </button>
+      </button> -->
+<br><br>
     </form>
+
+  </div>
 
 
 
@@ -64,10 +77,18 @@
             </button></td>
         </tr>
       </tbody>
+
+
     </table>
+    <br><br>
     <!-- <button class="class-button" >
             <a routerLink ="/main-apps/rest-orders/new-order">  احذف الطلب</a>
           </button> -->
+          <div>
+            <button class="class-button" style="width:40%;">
+              <a routerLink="/main-apps/rest-orders/current-order"> اضافة الطلب</a>
+            </button>
+          </div>
   </div>
 
 
