@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
   selector: 'app-order-table',
   templateUrl: './order-table.component.html',
@@ -8,10 +9,15 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class OrderTableComponent implements OnInit {
   arr_allOrder: any
+  arr_allOrder_v2: any
   arr_detils: any
-  arr_list: any
-  select = "تم التوصيل"
-  constructor(private modalService: NgbModal) {
+  arr_list = null
+
+  status_value = ''
+  // select = "تم التوصيل"
+  usersOrder = null
+  constructor(private modalService: NgbModal ) {
+
     this.arr_allOrder = [
       {
         rest_name: 'البيك',
@@ -25,7 +31,7 @@ export class OrderTableComponent implements OnInit {
         total_price: '980',
         total_quantity: 230,
         Num_products: 22,
-        Order_status: 'منتهي الصلاحية ',
+        Order_status: 'منتهي الصلاحية',
       },
       {
         rest_name: 'كنتاكي',
@@ -36,8 +42,9 @@ export class OrderTableComponent implements OnInit {
       }
 
     ]
+    this.arr_allOrder_v2 = this.arr_allOrder
 
-//pup-up
+      //pup-up
     this.arr_detils = [
       {
         ord_name: 'بيتزاء',
@@ -83,17 +90,13 @@ export class OrderTableComponent implements OnInit {
 
     this.arr_list = [
       {
-        all:'الكل',
-        Delivered:'تم التوصيل',
-        Deleted:'محذوف',
-        Expired:'منتهي الصلاحية ',
+        all:'',
+        Delivered:'2',
+        Deleted:'3',
+        Expired:'4',
       }
     ]
 
-
-    this.arr_allOrder = this.arr_allOrder.filter((d)=>{
-      return d.Order_status == this.select
-    })
 
 
 
@@ -101,9 +104,38 @@ export class OrderTableComponent implements OnInit {
 
 
   ngOnInit(): void {
+
   }
+
 
   openModal(modal) {
     this.modalService.open(modal, { size: 'xl' })
+  }
+
+
+  getViewOrder(){
+
+  }
+
+
+
+
+
+  filter_by_status(chose){
+    this.status_value = chose;
+
+   if(this.status_value !== ''){
+    this.arr_allOrder = this.arr_allOrder_v2
+   this.arr_allOrder =  this.arr_allOrder.filter((data)=>{
+      return data.Order_status == this.status_value
+    })
+
+   }else{
+    this.arr_allOrder = this.arr_allOrder_v2
+   }
+
+
+
+
   }
 }

@@ -5,13 +5,15 @@
 
   <div class="search-container">
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ابحث عن اسم المنصة....." dir="rtl">
-    <select *ngFor="let i of arr_list" class="typ_status" name="" id="">
-      <option value="">اختر حالة الطلب</option>
-      <option value="1">{{i.all}}</option>
-      <option value="2">{{i.Delivered}}</option>
-      <option value="3">{{i.Deleted}}</option>
-      <option value="4">{{i.Expired}}</option>
+
+    <select (change)="filter_by_status($event.target.value)" >
+      <option value="">حالة الطلب</option>
+      <option value="تم التوصيل">تم التوصيل</option>
+      <option value="محذوف">محذوف</option>
+      <option value="منتهي الصلاحية">منتهي الصلاحية</option>
     </select>
+
+
   </div>
 
   <table dir="rtl">
