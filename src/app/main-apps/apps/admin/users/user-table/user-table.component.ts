@@ -14,17 +14,9 @@ export class UserTableComponent implements OnInit {
   usersData = null
   usersData_2 = null
   userById = null
-  loading = false
 
-  active_form = {
-
-  };
 
   constructor(private modalService: NgbModal, private spinner: NgxSpinnerService, private apiService: ImpApiService) {
-
-
-
-
 
 
   }
@@ -32,9 +24,6 @@ export class UserTableComponent implements OnInit {
   ngOnInit(): void {
 
     this.gitAllUsers()
-
-
-
 
   }
 
@@ -44,7 +33,6 @@ export class UserTableComponent implements OnInit {
 
     this.apiService.get(users.showUser + data.id).subscribe(res => {
       this.userById = res.data
-      this.loading = false
       console.log(this.userById);
       this.spinner.hide();
     }, (error) => {
@@ -54,15 +42,12 @@ export class UserTableComponent implements OnInit {
   }
 
 
-
-
   gitAllUsers() {
     this.spinner.show()
     this.apiService.get(users.allUsers).subscribe(res => {
       console.log(res.data);
       this.usersData = res.data
       this.usersData_2 = res.data
-      console.log(this.usersData_2);
       this.spinner.hide();
 
     }, (error) => {
@@ -70,6 +55,7 @@ export class UserTableComponent implements OnInit {
 
     })
   }
+
 
   activeUser(user) {
     this.spinner.show()
@@ -84,6 +70,7 @@ export class UserTableComponent implements OnInit {
     })
   }
 
+
   filter_by_user(chose) {
     console.log(this.usersData_2);
 
@@ -95,7 +82,6 @@ export class UserTableComponent implements OnInit {
     if (this.status_value == "") {
       this.usersData = this.usersData_2
       console.log(this.usersData)
-
     }
 
     if (this.status_value == "2") {
@@ -105,11 +91,8 @@ export class UserTableComponent implements OnInit {
     if (this.status_value == "1") {
       this.usersData = this.usersData_2
       this.usersData = this.usersData.filter(res => res.user_type_id == this.status_value)
-
     }
   }
-
-
 
 
 }

@@ -4,17 +4,42 @@
 
   <table dir="rtl">
     <tr>
+      <th class="color-had"> اسم المستخدم</th>
+      <th class="color-had"> الايميل</th>
       <th class="color-had">عنوان التذكرة</th>
-      <th class="color-had">وصف التذكرة </th>
+      <th class="color-had">نوع التذكرة</th>
+      <th class="color-had">تفاصيل التذكرة</th>
 
     </tr>
 
-    <tr *ngFor="let i of arr_tik">
-      <td>{{i.ticket_add}} </td>
-      <td>{{i.ticket_des}} </td>
+    <tr *ngFor="let i of usersTic">
+      <td>{{i.company_name}} </td>
+      <td>{{i.email}} </td>
+      <td>{{i.title_id}} </td>
+      <td>{{i.ticket_type}} </td>
+      <td><a (click)="openModal(content , i)"><i class="bi bi-eye" style="cursor:pointer;"></i></a></td>
 
     </tr>
     <!-- اول صف-->
   </table>
+
+  <ng-template #content let-modal>
+    <div class="modal-header" >
+      <h4 class="modal-title" id="modal-basic-title" style="width: 100%; padding-left: 35%;">{{ticById.ticket_type}}</h4>
+
+    </div>
+
+    <div class="modal-body">
+
+      <p style="text-align: right">{{ticById?.content}}</p>
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+    </div>
+
+  </ng-template>
+
 
 </div>

@@ -12,7 +12,10 @@ export const users = {
 
   allUsers : BASEURL+'index',
   showUser : BASEURL+'show/',
-  activeUser : BASEURL+'users/activate/'
+  activeUser : BASEURL+'users/activate/',
+  viewOrders: BASEURL+'getProducts',//عرض الطلبات بشكل عام
+  viewTickets: BASEURL+'tickets',
+  showTickets: BASEURL+'tickets/'
 
 }
 

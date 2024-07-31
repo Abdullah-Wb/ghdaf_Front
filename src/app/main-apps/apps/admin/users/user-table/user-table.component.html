@@ -33,7 +33,6 @@
       <td>{{i.phone}}</td>
       <td><a (click)="openModal(content , i)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
 
-
       <td>
         <label class="toggle-switch">
           <input type="checkbox" (change)="activeUser(i)" [checked]="i.status == '2' ? true : false">
@@ -65,11 +64,11 @@
 
             <div class="col-md-3 border-right">
 
-              <!-- <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                  <img class="rounded-circle mt-5" width="150px" [src]="i.manager_pic">
-                  <span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span>
+              <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                  <img class="rounded-circle mt-5" width="150px" [src]="userById.manager_pic">
+                  <span class="font-weight-bold">{{userById.manager_name}}</span><span class="text-black-50">{{userById.email}}</span>
 
-              </div> -->
+              </div>
 
             </div>
 
@@ -133,12 +132,11 @@
 
                       <div class="file">
 
-                        <label class="labels">السجل التجاري : </label>
-                        <p>افتح الملف<a
-                            [href]="userById.commercial_record">&nbsp;المستند&nbsp;</a>.
-                        </p>
-                        <label class="labels">الشهادة الصحية :</label>
-                        <p>افتح الملف<a [href]="userById.health_certification">&nbsp;المستند&nbsp;</a>.
+                        <label  class="labels">السجل التجاري : </label>
+                        <p>افتح الملف<a [href]="userById.commercial_record" target="_blank">&nbsp;المستند&nbsp;</a>.</p>
+
+                        <label *ngIf="userById.health_certification" class="labels">الشهادة الصحية :</label>
+                        <p *ngIf="userById.health_certification" >افتح الملف<a [href]="userById.health_certification" target="_blank">&nbsp;المستند&nbsp;</a>.
                         </p>
 
                         <div class="col-md-12">
@@ -150,7 +148,7 @@
                       </div>
 
                       <!--
-                                        <div class="col-md-12">
+                       <div class="col-md-12">
                       <label class="labels">الموقع</label>
                       <input type="text" class="form-control" [value]="userById." readonly>
                     </div>  -->
