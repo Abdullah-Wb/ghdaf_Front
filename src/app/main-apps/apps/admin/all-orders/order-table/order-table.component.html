@@ -6,7 +6,7 @@
   <div class="search-container">
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ابحث عن اسم المنصة....." dir="rtl">
 
-    <select (change)="filter_by_status($event.target.value)" >
+    <select (change)="filter_by_status($event.target.value)" class="typ_status">
       <option value="">حالة الطلب</option>
       <option value="تم التوصيل">تم التوصيل</option>
       <option value="محذوف">محذوف</option>
