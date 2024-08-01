@@ -1,12 +1,42 @@
 <div class="header">
-  <a routerLink="./admin-home/dash-list" class="header-right"> <img class="logoImage" src="../../../../assets/________-01.png" alt=" Logo"></a>
+  <a routerLink="./admin-home/dash-list" class="header-right"> <img class="logoImage"
+      src="../../../../assets/________-01.png" alt=" Logo"></a>
   <div class="list">
 
+
+    <ng-container *ngFor="let item of menuList">
+      <div class="d-inline-block" *ngIf="item.isTitle == false">
+        <button type="button" class="btn " id="dropdownBasic1">
+          <a routerLink="{{item.link}}">{{item.label}}</a>
+        </button>
+      </div>
+
+
+      <div ngbDropdown class="d-inline-block" *ngIf="item.isTitle == true">
+        <button type="button" class="btn " id="dropdownBasic1" ngbDropdownToggle>
+          {{item.label}}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+
+          <button *ngFor="let item2 of item.subItems" class="text-right" ngbDropdownItem>
+            <a routerLink="{{item2.link}}">{{item2.label}}</a>
+          </button>
+
+        </div>
+      </div>
+
+
+    </ng-container>
+
+
+
+
+
+    <!--
     <div  class="d-inline-block">
       <button type="button" class="btn " id="dropdownBasic1" >
         <a routerLink="./admin-home/dash-list">الرئيسية</a>
       </button>
-
     </div>
 
     <div ngbDropdown class="d-inline-block">
@@ -42,13 +72,13 @@
          <a routerLink="./all-orders/order-table">الطلبات</a>
       </button>
 
-    </div>
+    </div> -->
 
 
   </div>
   <div class="out">
     <button class="signout" (click)="signout()">
-          <a>تسجيل الخروج</a>
+      <a>تسجيل الخروج</a>
     </button>
   </div>
 </div>

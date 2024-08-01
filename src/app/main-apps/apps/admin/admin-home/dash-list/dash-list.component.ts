@@ -10,11 +10,11 @@ import { ImpApiService } from 'src/app/services/imp-api.service';
   styleUrls: ['./dash-list.component.scss']
 })
 export class DashListComponent implements OnInit {
-  arr_count_user:any
+  arr_count_user: any
   arr_dash: any
-  arr_salse_mon:any
-  arr_broduct_type:any
-  constructor(private api_dash : ImpApiService) {
+  arr_salse_mon: any
+  arr_broduct_type: any
+  constructor(private api_dash: ImpApiService) {
     this.arr_dash = [
       {
         title: 'عدد الطلبات الاجمالي',
@@ -69,7 +69,7 @@ export class DashListComponent implements OnInit {
     };
     option && myChart.setOption(option);
 
-// الشارت الثاني
+    // الشارت الثاني
 
     var ROOT_PATH = 'https://echarts.apache.org/examples';
 
@@ -206,30 +206,27 @@ export class DashListComponent implements OnInit {
 
 
 
-  git_user_num(){
+  git_user_num() {
 
-    this.api_dash.get(admin_home.Count_users).subscribe(res =>{
-      console.log(res.org);
-      this.arr_count_user=res
-    } )
-}
+    this.api_dash.get(admin_home.Count_users).subscribe(res => {
+      this.arr_count_user = res
+    })
+  }
 
-git_salse_monthly(){
-  this.api_dash.get(admin_home.Orders_every_month).subscribe(res =>{
-    console.log(res);
-    this.arr_salse_mon=res
+  git_salse_monthly() {
+    this.api_dash.get(admin_home.Orders_every_month).subscribe(res => {
+      this.arr_salse_mon = res
 
-  } )
+    })
 
-}
+  }
 
-git_broduct_type(){
-  this.api_dash.get(admin_home.Product_By_Type).subscribe(res =>{
-    console.log(res);
-    this.arr_broduct_type=res
+  git_broduct_type() {
+    this.api_dash.get(admin_home.Product_By_Type).subscribe(res => {
+      this.arr_broduct_type = res
 
-  } )
+    })
 
-}
+  }
 
 }

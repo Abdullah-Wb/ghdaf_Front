@@ -36,10 +36,33 @@ export const  rest_orders={
   //اضافة منتج في الطلب
   New_Product : BASEURL+'addProduct',
   //تفاصيل الطلب
-  View_single_request_With_products : BASEURL+'request-products/1',
+  View_single_request_With_products : BASEURL+'request-products/',
   //تعرض كل المنتجات في السستم
   View_products : BASEURL+'getProducts',
   View_requests :  BASEURL+'getProducts',
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+export const  rest_profile={
+  AddFile : BASEURL+'AddFile',
+  GetFile :BASEURL+'Agetfile/2/',
+  showUser : BASEURL+'show/',
+  Show_Wallet : BASEURL+'',
+  New_Working_hours : BASEURL+'',
+}
+
+
+export const rest_support ={
+  New_Ticket : BASEURL+'teckets',
+}

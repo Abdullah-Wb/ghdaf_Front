@@ -6,14 +6,21 @@
   <form action="action_page.php">
 
     <label for="country">نوع التذكرة </label>
-    <select id="type" name="type"  (onchange)="getSelectValue()">
+    <select id="type" name="type"  (change)="selectType($event.target.value)">
       <option value="1">   بخصوص طلب</option>
       <option value="2"> اخرى</option>
     </select>
 
-    <div id="order">
-    <label for="fname">رقم الطلب</label>
-    <input type="text" id="fname" name="firstname" placeholder="">
+    <div id="order" class="hiddin">
+      <span  [ngClass]="type  ? 1 : 2">
+      <label for="fname" type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '2'" class="hid">رقم الطلب</label>
+      <label for="fname" type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '1'" class="ves">رقم الطلب</label>
+
+
+        <input  type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '2'" class="hid" >
+        <input type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '1'" class="ves" >
+
+    <input type="text" id="fname" name="firstname" placeholder=""></span>
   </div>
 
     <div id="other">

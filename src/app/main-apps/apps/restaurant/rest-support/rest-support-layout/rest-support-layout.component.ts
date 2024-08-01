@@ -6,16 +6,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rest-support-layout.component.scss']
 })
 export class RestSupportLayoutComponent implements OnInit {
-
+type = ''
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-//-------------
-// selectType(type) {
 
+
+
+
+  // filter_by_user(chose) {
+  //   console.log(this.usersData_2);
+
+
+  //   // console.log();
+
+  //   this.type = chose
+
+//-------------
+selectType(chose) {
+
+this.type = chose}
 //   if (type == 1)  {
 //     // code to be executed if condition is true
 //   } if (type ==2) {
@@ -30,11 +43,11 @@ export class RestSupportLayoutComponent implements OnInit {
 
 
 //-------------
- getSelectValue()
-        {
-            var selectedValue = document.getElementById("type");
-            console.log(selectedValue);
-        }
+//  getSelectValue()
+//         {
+//             var selectedValue = document.getElementById("type");
+//             console.log(selectedValue);
+//         }
 
 
 
