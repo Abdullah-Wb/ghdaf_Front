@@ -19,7 +19,8 @@
       <th class="color-had">اسم المنصة</th>
       <th class="color-had">نوع المنصة</th>
       <th class="color-had">رقم الهاتف</th>
-      <th class="color-had">المستندات</th>
+      <th class="color-had">نوع المستندت</th>
+      <th class="color-had">المستند</th>
       <th class="color-had">قبول</th>
       <th class="color-had">رفض</th>
     </tr>
@@ -30,6 +31,7 @@
       <td>{{i.Platform_name}}</td>
       <td>{{i.Platform_num}}</td>
       <td [style.color]="i.Documents == 'شهادة صحية' ? 'green' : 'red' ">{{i.Documents}}</td>
+      <td><i class="bi bi-filetype-pdf" style="cursor: pointer;"></i></td>
       <td><a (click)="openModal(content)"><i class="bi bi-check2-square" style="cursor: pointer;"></i></a></td>
       <td><a (click)="openModal(contentx)"><i class="bi bi-x-square" style="cursor: pointer;"></i></a></td>
 
