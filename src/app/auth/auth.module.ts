@@ -11,6 +11,7 @@ import { OtpComponent } from './otp/otp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgOtpInputModule } from  'ng-otp-input';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 
@@ -21,6 +22,7 @@ import { NgOtpInputModule } from  'ng-otp-input';
     NotFoundComponent,
     SignUpComponent,
     OtpComponent,
+    ResetPasswordComponent,
 
 
   ],
