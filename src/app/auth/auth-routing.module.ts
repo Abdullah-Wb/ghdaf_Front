@@ -5,6 +5,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { OtpComponent } from './otp/otp.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'OTP',
     component:OtpComponent
+  },
+  {
+    path: 'reset-password',
+    component:ResetPasswordComponent
   },
 
   {
