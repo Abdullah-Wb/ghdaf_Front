@@ -47,6 +47,7 @@ export class OrderTableComponent implements OnInit {
       {
         ord_name: 'بيتزاء',
         quantity: 10,
+        price_one: '100',
         price: '100',
         pord_date: '12/12/2024',
         exp_date: '13/12/2024',
@@ -55,35 +56,22 @@ export class OrderTableComponent implements OnInit {
       {
         ord_name: 'بيتزاء',
         quantity: 10,
+        price_one: '100',
         price: '100',
         pord_date: '12/12/2024',
         exp_date: '13/12/2024',
         order_image:"bi bi-images",
       },
-      {
+         {
         ord_name: 'بيتزاء',
         quantity: 10,
+        price_one: '100',
         price: '100',
         pord_date: '12/12/2024',
         exp_date: '13/12/2024',
         order_image:"bi bi-images",
       },
-      {
-        ord_name: 'بيتزاء',
-        quantity: 10,
-        price: '100',
-        pord_date: '12/12/2024',
-        exp_date: '13/12/2024',
-        order_image:"bi bi-images",
-      },
-      {
-        ord_name: 'بيتزاء',
-        quantity: 10,
-        price: '100',
-        pord_date: '12/12/2024',
-        exp_date: '13/12/2024',
-        order_image:"bi bi-images",
-      },
+
     ]
 
     this.arr_list = [

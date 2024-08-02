@@ -72,16 +72,12 @@ export class UserTableComponent implements OnInit {
 
 
   filter_by_user(chose) {
-    console.log(this.usersData_2);
-
-
-    // console.log();
+    this.spinner.show()
 
     this.status_value = chose
 
     if (this.status_value == "") {
       this.usersData = this.usersData_2
-      console.log(this.usersData)
     }
 
     if (this.status_value == "2") {
@@ -92,6 +88,9 @@ export class UserTableComponent implements OnInit {
       this.usersData = this.usersData_2
       this.usersData = this.usersData.filter(res => res.user_type_id == this.status_value)
     }
+    
+    this.spinner.hide();
+
   }
 
 

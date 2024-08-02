@@ -8,6 +8,20 @@ i{
   font-size: 30px;
 }
 
+.typ_status {
+  background-color: var(--third);
+  color: var(--icons);
+  padding: 10px; /* Adjust padding to match the input */
+  border-radius: 5px;
+  height: 46px; /* Adjust height to match the input */
+  margin: 0 10px 0 0;
+  border: none;
+}
+.filter_des{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .btn {
   background: var(--secondary);
 }

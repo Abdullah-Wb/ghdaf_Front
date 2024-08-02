@@ -1,3 +1,4 @@
+import { filter } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -10,26 +11,13 @@ import { ImpApiService } from 'src/app/services/imp-api.service';
   styleUrls: ['./tickets.component.scss']
 })
 export class TicketsComponent implements OnInit {
-  arr_tik: any
   usersTic = null
   usersTic_2 = null
+  status_value = null
   ticById = null
 
   constructor(private modalService: NgbModal, private spinner: NgxSpinnerService, private apiService: ImpApiService) {
-    this.arr_tik = [
-      {
-        ticket_campny: 'جمعية حفظ النعمة',
-        ticket_email: 'ab@ab.com',
-        ticket_add: 'تسجيل الدخول',
-        ticket_des: 'لا استطيع تسجيل الدخول'
-      },
-      {
-        ticket_campny: 'جمعية حفظ النعمة',
-        ticket_email: 'ab@ab.com',
-        ticket_add: 'تفعيل الحساب',
-        ticket_des: 'حسابي غير مفعل'
-      },
-    ]
+
   }
 
   ngOnInit(): void {
@@ -49,8 +37,13 @@ export class TicketsComponent implements OnInit {
       this.spinner.hide();
     })
 
-  }
+    this.apiService.post(users.updateTicket + data.id , {status_id : 2}).subscribe(res =>{
 
+    })
+
+
+
+  }
 
   gitAllTickets() {
     this.spinner.show()
@@ -66,5 +59,31 @@ export class TicketsComponent implements OnInit {
 
     })
   }
+
+  filter_by_status(chose){
+    this.spinner.show()
+
+    this.status_value = chose
+
+      this.usersTic = this.usersTic_2
+
+    if(this.status_value == '' ){
+      this.usersTic = this.usersTic_2
+      console.log("gg");
+    }
+    if(this.status_value == '1'){
+      this.usersTic = this.usersTic_2
+      this.usersTic = this.usersTic.filter(res => res.status_id == this.status_value)
+      console.log(this.usersTic);
+    }
+    if (this.status_value == '2') {
+      this.usersTic = this.usersTic_2
+      this.usersTic = this.usersTic.filter(res => res.status_id == this.status_value)
+      console.log(this.usersTic_2);
+    }
+    this.spinner.hide()
+
+  }
+
 
 }

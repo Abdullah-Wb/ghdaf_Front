@@ -5,6 +5,7 @@
 
 
     <ng-container *ngFor="let item of menuList">
+
       <div class="d-inline-block" *ngIf="item.isTitle == false">
         <button type="button" class="btn " id="dropdownBasic1">
           <a routerLink="{{item.link}}">{{item.label}}</a>
@@ -16,6 +17,7 @@
         <button type="button" class="btn " id="dropdownBasic1" ngbDropdownToggle>
           {{item.label}}
         </button>
+
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
 
           <button *ngFor="let item2 of item.subItems" class="text-right" ngbDropdownItem>
@@ -23,6 +25,7 @@
           </button>
 
         </div>
+
       </div>
 
 

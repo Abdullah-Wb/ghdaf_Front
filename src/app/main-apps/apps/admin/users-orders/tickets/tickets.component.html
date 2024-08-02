@@ -2,6 +2,16 @@
 
   <h2> التذاكر</h2>
 
+<div class="filter_des" >
+
+  <select class="typ_status" (change)="filter_by_status($event.target.value)">
+    <option value="">الكل</option>
+    <option value="1">غير مقروء</option>
+    <option value="2">مقروء</option>
+  </select>
+
+</div>
+
   <table dir="rtl">
     <tr>
       <th class="color-had"> اسم المستخدم</th>

@@ -6,7 +6,7 @@
 
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ابحث عن اسم المنصة....." dir="rtl">
 
-    <select class="typ_status" name="" (change)="filter_by_user($event.target.value)">
+    <select class="typ_status" (change)="filter_by_user($event.target.value)">
       <option value="">نوع المستخدم</option>
       <option value="">الكل</option>
       <option value="2">الجمعية</option>

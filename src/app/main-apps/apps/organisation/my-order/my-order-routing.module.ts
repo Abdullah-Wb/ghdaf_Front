@@ -5,7 +5,7 @@ import { OrgOrderLayoutComponent } from './org-order-layout/org-order-layout.com
 const routes: Routes = [
 
   {
-    path: '',
+    path: 'my-order',
     component: OrgOrderLayoutComponent,
   }
 ];

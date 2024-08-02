@@ -59,7 +59,8 @@
                   <tr>
                     <th class="color-had">اسم المنتج</th>
                     <th class="color-had">الكمية </th>
-                    <th class="color-had">السعر</th>
+                    <th class="color-had">سعر المنتج </th>
+                    <th class="color-had">السعر الاجمالي</th>
                     <th class="color-had">تاريخ الانتاج </th>
                     <th class="color-had">تاريخ الانتهاء </th>
                     <th class="color-had">صورة المنتج</th>
@@ -68,6 +69,7 @@
                   <tr *ngFor="let i of arr_detils">
                     <td>{{i.ord_name}}</td>
                     <td>{{i.quantity}}</td>
+                    <td>{{i.price_one}}</td>
                     <td>{{i.price}}</td>
                     <td>{{i.pord_date}}</td>
                     <td> {{i.exp_date}}</td>

@@ -15,7 +15,8 @@ export const users = {
   activeUser : BASEURL+'users/activate/',
   viewOrders: BASEURL+'getProducts',//عرض الطلبات بشكل عام
   viewTickets: BASEURL+'tickets',
-  showTickets: BASEURL+'tickets/'
+  showTickets: BASEURL+'tickets/',
+  updateTicket: BASEURL+'tickets/'
 
 }
 
