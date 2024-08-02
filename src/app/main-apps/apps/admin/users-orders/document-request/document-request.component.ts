@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-document-request',
@@ -12,7 +13,7 @@ arr_userOrd_v2:any
 status_value = ''
 
 arr_list:any
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, private toaster: ToastrService) {
 
     this.arr_userOrd = [
       {
@@ -63,6 +64,20 @@ filter_by_type(chose){
   }
 
 }
+
+approve() {
+  this.toaster.success('تم قبول الطلب بنجاح')
+
+}
+
+reject() {
+  this.toaster.error('تم رفض الطلب ')
+
+  this.modalService.dismissAll()
+
+// api
+}
+
 
 
 }
