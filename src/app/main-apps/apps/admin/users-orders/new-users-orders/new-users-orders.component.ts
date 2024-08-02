@@ -15,7 +15,7 @@ export class NewUsersOrdersComponent implements OnInit {
   arr_list: any
   arr_info: any
   reason = ""
-  constructor(private modalService: NgbModal, private toastr: ToastrService) {
+  constructor(private modalService: NgbModal, private toaster: ToastrService) {
     this.arr_newOrder = [
       {
         platform_name: 'البر',
@@ -119,13 +119,13 @@ export class NewUsersOrdersComponent implements OnInit {
 
 
   approve() {
-      this.toastr.success('تم الارسال')
+      this.toaster.success('تم الارسال')
 
   }
 
   reject() {
     if (this.reason == "") {
-      this.toastr.warning('أدخل السبب')
+      this.toaster.warning('أدخل السبب')
       return null
     }
 

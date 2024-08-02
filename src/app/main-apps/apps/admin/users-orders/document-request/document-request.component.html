@@ -32,8 +32,8 @@
       <td>{{i.Platform_num}}</td>
       <td [style.color]="i.Documents == 'شهادة صحية' ? 'green' : 'red' ">{{i.Documents}}</td>
       <td><i class="bi bi-filetype-pdf" style="cursor: pointer;"></i></td>
-      <td><a (click)="openModal(content)"><i class="bi bi-check2-square" style="cursor: pointer;"></i></a></td>
-      <td><a (click)="openModal(contentx)"><i class="bi bi-x-square" style="cursor: pointer;"></i></a></td>
+      <td><a (click)="approve()"><i class="bi bi-check2-square" style="cursor: pointer;"></i></a></td>
+      <td><a (click)="reject()"><i class="bi bi-x-square" style="cursor: pointer;"></i></a></td>
 
     </tr>
     <!-- اول صف-->
@@ -58,7 +58,6 @@
 <!-- الرفض -->
   <ng-template #contentx let-modal>
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">سبب الرفض</h4>
       <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
