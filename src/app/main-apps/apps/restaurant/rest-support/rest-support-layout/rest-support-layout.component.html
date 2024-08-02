@@ -3,7 +3,7 @@
 
 
     <div class="container rounded  mt-5 mb-5 " style="direction: rtl;background-color: #f8f7f5aa;">
-  <form action="action_page.php">
+  <form >
 
     <label for="country">نوع التذكرة </label>
     <select id="type" name="type"  (change)="selectType($event.target.value)">
@@ -13,14 +13,13 @@
 
     <div id="order" class="hiddin">
       <span  [ngClass]="type  ? 1 : 2">
-      <label for="fname" type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '2'" class="hid">رقم الطلب</label>
-      <label for="fname" type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '1'" class="ves">رقم الطلب</label>
+      <label class="ddd" for="fname" type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '2'" class="hid">رقم الطلب</label>
+      <label    class="ddd"   for="fname" type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '1'" class="ves">  عنوان التذكرة</label>
+        <input   class="ddd"  type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '2'" class="hid" >
+        <input   class="ddd"  type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '1'" class="ves" >
 
-
-        <input  type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '2'" class="hid" >
-        <input type="text" id="lname" name="lastname" placeholder="" *ngIf="type == '1'" class="ves" >
-
-    <input type="text" id="fname" name="firstname" placeholder=""></span>
+    <!-- <input type="text" id="fname" name="firstname" placeholder="">-->
+  </span>
   </div>
 
     <div id="other">

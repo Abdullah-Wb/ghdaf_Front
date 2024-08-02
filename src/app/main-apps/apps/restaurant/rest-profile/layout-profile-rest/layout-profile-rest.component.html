@@ -4,13 +4,14 @@
     <div class="row">
       <div style="justify-content: center;align-items: center ;display: flex; padding:20px ;">
         <h4>اهلا بك</h4>
+        <button  (click)="show_profile(5)">xxx</button>
       </div>
 
       <div class="col-md-3 border-right">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
             width="150px"
             src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
-            class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span>
+            class="font-weight-bold"></span><span class="text-black-50">[value]="userById.email</span><span> </span>
         </div>
       </div>
       <div class="col-md-5 border-right">
@@ -20,15 +21,15 @@
           </div>
           <div class="row mt-2">
             <div class="col-md-6"><label class="labels">اسم المسؤول الثلاثي</label><input type="text"
-                class="form-control" placeholder="" value=""></div>
+                class="form-control" placeholder="" ></div>
             <div class="col-md-6"><label class="labels">اسم المطعم</label><input type="text" class="form-control"
-                value="" placeholder=""></div>
+ placeholder=""></div>
 
           </div>
           <form action="">
             <div class="row mt-3">
               <div class="col-md-12"><label class="labels"> رقم الهاتف</label><input type="text" class="form-control"
-                  placeholder="   " value=""></div>
+                  placeholder="   " [value]="userById.phone"></div>
               <div class="col-md-12"><label class="labels"> الايميل</label><input type="text" class="form-control"
                   placeholder=" " value=""></div>
               <!-- <div class="col-md-12"><label class="labels">  </label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
@@ -46,9 +47,24 @@
             <div class="row mt-3">
               <div class="col-md-6"><label class="labels">الموقع </label><input type="text" class="form-control"
                   placeholder="" value=""></div>
+                  <br> <br>
               <div class="col-md-6"><label class="labels">وصف الموقع</label><input type="text" class="form-control"
                   value="" placeholder=""></div>
+                  <br>
+                  <!-- ll -->
+                   <div class="col-md-6">
+                  <label  class="labels">السجل التجاري : </label>
+                        <p>افتح الملف<a [href]="userById.commercial_record" target="_blank">&nbsp;المستند&nbsp;</a>.</p>
+                      </div>
+                       <!-- ll -->
+                      <div class="col-md-6">
+                       <label  class="labels">الشهادة الصحية :</label>
+                       <p >افتح الملف<a [href]="userById.health_certification" target="_blank">&nbsp;المستند&nbsp;</a>.
+                       </p>
+                      </div>
+                        <!-- ll -->
             </div>
+
             <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">حفظ التغييرات
               </button></div>
           </form>

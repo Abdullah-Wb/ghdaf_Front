@@ -66,3 +66,29 @@ export const  rest_profile={
 export const rest_support ={
   New_Ticket : BASEURL+'teckets',
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const  profile={
+  showUser : BASEURL+'show/',
+
+}
+
