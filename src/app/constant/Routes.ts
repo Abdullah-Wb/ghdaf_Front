@@ -77,19 +77,20 @@ export const rest_support ={
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 export const  profile={
   showUser : BASEURL+'show/',
+  Update_file : BASEURL+'update-user',
+  Show_Wallet : BASEURL+'wallets',
+  New_Working_hours : BASEURL+'addWorkingHours',
+  View_working_hours : BASEURL+'workingHours',
+  Update_Working_Hours : BASEURL+'updateWorkingHours/',
+
 
 }
 
+
+
+export const  home_org={
+  View_orders: BASEURL+'orders',
+  View_Available_requests: BASEURL+'getRequest',
+}

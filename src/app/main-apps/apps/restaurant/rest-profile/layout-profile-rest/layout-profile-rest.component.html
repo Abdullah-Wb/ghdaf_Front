@@ -4,71 +4,207 @@
     <div class="row">
       <div style="justify-content: center;align-items: center ;display: flex; padding:20px ;">
         <h4>اهلا بك</h4>
-        <button  (click)="show_profile(5)">xxx</button>
+        <!-- <button (click)="show_profile(userrr)">xxx</button> -->
       </div>
 
       <div class="col-md-3 border-right">
-        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
-            width="150px"
-            src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
-            class="font-weight-bold"></span><span class="text-black-50">[value]="userById.email</span><span> </span>
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <img class="form-control" [src]='userById?.logo' alt="صورة اللوقو" id="avatar"
+            (click)="openModal(ubdat_logo)">
+          <span class="font-weight-bold">
+          </span>
+
+          <span class="text-black-50">
+            <p value="dd"></p>
+          </span><span>
+          </span>
+
         </div>
       </div>
       <div class="col-md-5 border-right">
-        <div class="p-3 py-5">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="text-right"> معلومات الحساب</h4>
-          </div>
-          <div class="row mt-2">
-            <div class="col-md-6"><label class="labels">اسم المسؤول الثلاثي</label><input type="text"
-                class="form-control" placeholder="" ></div>
-            <div class="col-md-6"><label class="labels">اسم المطعم</label><input type="text" class="form-control"
- placeholder=""></div>
+        <!-- --------------------- form ------------------------------------------------------------ -->
+        <form [formGroup]="user_profile_form" (submit)="submit_update()">
+          <div class="p-3 py-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="text-right"> معلومات الحساب</h4>
+            </div>
+            <div class="row mt-2">
+              <div class="col-md-6"><label class="labels">اسم المسؤول الثلاثي</label>
+                <input type="text" class="form-control" placeholder="" formControlName="manager_name">
+              </div>
+              <div class="col-md-6"><label class="labels">اسم المطعم</label>
+                <input type="text" class="form-control" placeholder="" formControlName="company_name">
+              </div>
 
-          </div>
-          <form action="">
+            </div>
+
             <div class="row mt-3">
-              <div class="col-md-12"><label class="labels"> رقم الهاتف</label><input type="text" class="form-control"
-                  placeholder="   " [value]="userById.phone"></div>
-              <div class="col-md-12"><label class="labels"> الايميل</label><input type="text" class="form-control"
-                  placeholder=" " value=""></div>
-              <!-- <div class="col-md-12"><label class="labels">  </label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
-                    <div class="col-md-12"><label class="labels">رقم الحساب البنكي</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div> -->
-              <div class="col-md-12"><label class="labels">صورة المطعم</label><input type="text" class="form-control"
-                  placeholder=" " value=""></div>
-              <div class="col-md-12"><label class="labels">صورة المسؤول </label><input type="text" class="form-control"
-                  placeholder=" " value=""></div>
-              <div class="col-md-12"><label class="labels"> صورة شعار المطعم</label><input type="text"
-                  class="form-control" placeholder=" " value=""></div>
-              <div class="col-md-12"><label class="labels">وصف المطعم</label><input type="text" class="form-control"
-                  placeholder="" value=""></div>
+              <div class="col-md-12"><label class="labels"> رقم الهاتف</label>
+                <input type="text" class="form-control" placeholder="   " formControlName="phone">
+              </div>
+
+              <div class="col-md-12"><label class="labels"> الايميل</label>
+                <input type="text" class="form-control" formControlName="email">
+              </div>
+
+
+
+
+              <div class="row mt-2" style="padding-bottom: 10px;">
+                <div class="col-md-6">
+                  <div class="col-md-12"><label class="labels">صورة المسؤول </label>
+                    <img class="form-control" [src]='userById?.manager_pic' (click)="openModal(ubdat_manager_pic)"
+                      id="avatar2">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="col-md-12"><label class="labels">صورة المطعم</label>
+                    <img class="form-control" [src]='userById?.restaurant_pic' (click)="openModal(ubdat_restaurant_pic)"
+                      id="avatar2">
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="col-md-12"><label class="labels">وصف المطعم</label>
+                <input type="text" class="form-control" formControlName="description">
+              </div>
             </div>
 
             <div class="row mt-3">
               <div class="col-md-6"><label class="labels">الموقع </label><input type="text" class="form-control"
                   placeholder="" value=""></div>
-                  <br> <br>
+              <br> <br>
               <div class="col-md-6"><label class="labels">وصف الموقع</label><input type="text" class="form-control"
                   value="" placeholder=""></div>
-                  <br>
-                  <!-- ll -->
-                   <div class="col-md-6">
-                  <label  class="labels">السجل التجاري : </label>
-                        <p>افتح الملف<a [href]="userById.commercial_record" target="_blank">&nbsp;المستند&nbsp;</a>.</p>
-                      </div>
-                       <!-- ll -->
-                      <div class="col-md-6">
-                       <label  class="labels">الشهادة الصحية :</label>
-                       <p >افتح الملف<a [href]="userById.health_certification" target="_blank">&nbsp;المستند&nbsp;</a>.
-                       </p>
-                      </div>
-                        <!-- ll -->
+              <br>
+              <br><br><br>
+              <div class="row mt-2">
+                <!-- ll -->
+                <div class="col-md-6">
+                  <label class="labels">السجل التجاري : </label>
+
+                  <p>افتح الملف<a [href]="userById?.commercial_record" target="_blank">&nbsp;المستند&nbsp;</a>.</p>
+                </div>
+                <!-- ll -->
+                <div class="col-md-6">
+                  <label class="labels">الشهادة الصحية :</label>
+                  <p>افتح الملف<a [href]="userById?.health_certification" target="_blank">&nbsp;المستند&nbsp;</a>.
+                  </p>
+                </div>
+              </div>
+              <!-- ll -->
             </div>
 
-            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">حفظ التغييرات
+            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">حفظ التغييرات
               </button></div>
-          </form>
-        </div>
+
+          </div>
+
+          <!-- -------------------------------------------------------popip --------------------------------->
+          <!-- 1 -->
+          <ng-template #ubdat_logo let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">تغيير صورة الشعار</h4>
+              <button type="button" class="btn-close" aria-label="Close"
+                (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body" style="direction: rtl;">
+
+              <div class="col-md-12"><label class="labels"> ادخل صورة</label>
+                <input type="file" class="form-control" (change)="uploadFile($event,'logo')">
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+            </div>
+          </ng-template>
+          <!-- 2 -->
+          <ng-template #ubdat_manager_pic let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">تغيير صورة المسؤول</h4>
+              <button type="button" class="btn-close" aria-label="Close"
+                (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body" style="direction: rtl;">
+
+              <div class="col-md-12"><label class="labels"> ادخل صورة</label>
+                <input type="file" class="form-control" (change)="uploadFile($event,'manager_pic')">
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+            </div>
+          </ng-template>
+          <!-- 3 -->
+          <ng-template #ubdat_restaurant_pic let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">تغيير صورة المطعم</h4>
+              <button type="button" class="btn-close" aria-label="Close"
+                (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body" style="direction: rtl;">
+
+              <div class="col-md-12"><label class="labels"> ادخل صورة</label>
+                <input type="file" class="form-control" (change)="uploadFile($event,'restaurant_pic')">
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+            </div>
+          </ng-template>
+          <!-- 4 -->
+          <ng-template #ubdat_paper_health let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title"> ادخل الشهادة الصحية</h4>
+              <button type="button" class="btn-close" aria-label="Close"
+                (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body" style="direction: rtl;">
+
+              <div class="col-md-12"><label class="labels"> الشهادة الصحية</label>
+                <input type="file" (change)="uploadFile($event,'health_certification')" class="form-control">
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+            </div>
+          </ng-template>
+          <!-- 5 -->
+
+          <ng-template #ubdat_paper_eco let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title"> ادخل السجل التجاري </h4>
+              <button type="button" class="btn-close" aria-label="Close"
+                (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body" style="direction: rtl;">
+
+              <div class="col-md-12"><label class="labels">السجل التجاري</label>
+                <input type="file" (change)="uploadFile($event,'commercial_record')" class="form-control">
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
+            </div>
+          </ng-template>
+          <!-- ------------------------------------------------------- end popip --------------------------------->
+
+
+        </form>
+        <!-- -------------------------------------------------- end form------------------------------------------------------- -->
       </div>
       <div class="col-md-4">
         <div class="p-3 py-5">
@@ -84,6 +220,8 @@
           <!-- <div class="col-md-12"><label class="labels">الشهادة الصحية</label><input type="file" class="form-control" placeholder="" value=""></div> <br>
                 <div class="col-md-12"><label class="labels">السجل التجاري</label><input type="file" class="form-control" placeholder="" value=""></div> -->
         </div>
+
+
         <div>
 
           <h4>رصيد المحفظة <span>
@@ -111,7 +249,7 @@
           <br><br>
           <h3>مواعيد العمل </h3>
 
-          <button (click)="openModal(work_hour)"><i class="bi bi-calendar-day" > </i> اضغط لأضافة مواعيد العمل <p
+          <button (click)="openModal(work_hour)"><i class="bi bi-calendar-day"> </i> اضغط لأضافة مواعيد العمل <p
               style="color: white;">
 
             </p></button>
@@ -138,7 +276,7 @@
                       <table dir="rtl">
                         <tr>
                           <th class="color-had">اليوم </th>
-                          <th class="color-had">من  </th>
+                          <th class="color-had">من </th>
                           <th class="color-had">الى </th>
                           <th class="color-had"> هل يوجد دوام </th>
 
@@ -294,39 +432,8 @@
       </ng-template>
 
 
-      <ng-template #ubdat_paper_health let-modal>
-        <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title"> ادخل الشهادة الصحية</h4>
-          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-        </div>
-        <div class="modal-body" style="direction: rtl;">
 
-          <div class="col-md-12"><label class="labels"> الشهادة الصحية</label><input type="file" class="form-control"
-              placeholder="" value=""></div>
 
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
-        </div>
-      </ng-template>
-
-      <ng-template #ubdat_paper_eco let-modal>
-        <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title"> ادخل السجل التجاري </h4>
-          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-        </div>
-        <div class="modal-body" style="direction: rtl;">
-
-          <div class="col-md-12"><label class="labels">السجل التجاري</label><input type="file" class="form-control"
-              placeholder="" value=""></div>
-
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">حفظ</button>
-        </div>
-      </ng-template>
 
 
 

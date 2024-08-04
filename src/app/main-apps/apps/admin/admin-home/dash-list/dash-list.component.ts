@@ -44,30 +44,7 @@ export class DashListComponent implements OnInit {
   ngOnInit(): void {
 
 
-    var chartDom = document.getElementById('main');
-    var myChart = echarts.init(chartDom);
-    var option;
-    option = {
-      title: {
-        text: 'مبيعات كل شهر',
-        left: 'center'
-      },
-      xAxis: {
 
-        type: 'category',
-        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Des']
-      },
-      yAxis: {
-        type: 'value'
-      },
-      series: [
-        {
-          data: [120, 200, 150, 80, 70, 110, 130, 500, 590, 300, 400, 450],
-          type: 'bar'
-        }
-      ]
-    };
-    option && myChart.setOption(option);
 
     // الشارت الثاني
 
@@ -217,8 +194,41 @@ export class DashListComponent implements OnInit {
     this.api_dash.get(admin_home.Orders_every_month).subscribe(res => {
       this.arr_salse_mon = res
 
+
+      this.monthly(this.arr_salse_mon)
     })
 
+  }
+
+
+  monthly(data){
+
+
+
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+    option = {
+      title: {
+        text: 'مبيعات كل شهر',
+        left: 'center'
+      },
+      xAxis: {
+
+        type: 'category',
+        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Des']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          data: data,
+          type: 'bar'
+        }
+      ]
+    };
+    option && myChart.setOption(option);
   }
 
   git_broduct_type() {
