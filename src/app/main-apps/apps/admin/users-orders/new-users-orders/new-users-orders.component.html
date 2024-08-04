@@ -57,7 +57,7 @@
             <div class="col-md-3 border-right">
 
               <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                <img class="rounded-circle mt-5" width="150px"
+                <img id="avatar" class="rounded-circle mt-5" width="150px"
                   src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
                   class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span>
                 </span>
@@ -102,28 +102,49 @@
                       <input type="email" class="form-control" value="{{i.email}}" readonly>
                     </div>
 
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                       <label class="labels">رقم الحساب البنكي</label>
                       <input type="text" class="form-control" value="{{i.bank}}" readonly>
+                    </div> -->
+
+                    <div   class="col-md-12">
+                      <label class="labels">صورة المطعم</label>
+                      <img id="avatar" class="size_img" [src]="i.plat_image" alt="">
                     </div>
 
-                    <div class="col-md-12"><label class="labels">صورة المطعم</label>
-                      <img class="size_img" [src]="i.plat_image" alt="">
+                    <div class="col-md-12">
+                      <label class="labels">صورة المسؤول </label>
+                      <img id="avatar" class="size_img" [src]="i.admin_image" alt="">
                     </div>
 
-                    <div class="col-md-12 mb-2"><label class="labels">صورة المسؤول </label>
-                      <img class="size_img" [src]="i.admin_image" alt="">
+                    <div class="col-md-12">
+                      <label  class="labels"> صورة شعار المطعم</label>
+                      <img id="avatar" class="size_img" [src]="i.plat_logo" alt="">
                     </div>
 
-                    <div class="col-md-12 mb-2">
+
+                    <!-- <div class="col-md-12"><label class="labels">صورة المطعم</label>
+                      <img id="avatar" class="size_img" [src]="userById.restaurant_pic" alt="">
+                    </div>
+
+                    <div class="col-md-12"><label class="labels">صورة المسؤول </label>
+                      <img id="avatar" class="size_img" [src]="userById.manager_pic" alt="">
+                    </div>
+
+                    <div class="col-md-12">
                       <label class="labels"> صورة شعار المطعم</label>
-                      <img class="size_img" [src]="i.plat_logo" alt="">
-                    </div>
+                      <img id="avatar" class="size_img" [src]="userById.logo" alt="">
+                    </div> -->
 
-                    <div class="col-md-12 mb-2">
+
+
+
+
+
+                    <!-- <div  class="col-md-12 mb-2">
                       <label class="labels">الموقع</label>
                       <input type="text" class="form-control" value="{{i.address}}" readonly>
-                    </div>
+                    </div> -->
 
                     <div class="col-md-12 mb-2">
                       <label class="labels">الوصف</label>

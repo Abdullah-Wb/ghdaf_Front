@@ -45,7 +45,6 @@ export class UserTableComponent implements OnInit {
   gitAllUsers() {
     this.spinner.show()
     this.apiService.get(users.allUsers).subscribe(res => {
-      console.log(res.data);
       this.usersData = res.data
       this.usersData_2 = res.data
       this.spinner.hide();
@@ -56,11 +55,9 @@ export class UserTableComponent implements OnInit {
     })
   }
 
-
   activeUser(user) {
     this.spinner.show()
     this.apiService.post(users.activeUser + user.id, null).subscribe(res => {
-      console.log(res.data);
       this.spinner.hide();
       this.gitAllUsers();
 
@@ -69,6 +66,8 @@ export class UserTableComponent implements OnInit {
 
     })
   }
+
+
 
 
   filter_by_user(chose) {
@@ -88,7 +87,7 @@ export class UserTableComponent implements OnInit {
       this.usersData = this.usersData_2
       this.usersData = this.usersData.filter(res => res.user_type_id == this.status_value)
     }
-    
+
     this.spinner.hide();
 
   }

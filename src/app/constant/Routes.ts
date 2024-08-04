@@ -16,7 +16,15 @@ export const users = {
   viewOrders: BASEURL+'getProducts',//عرض الطلبات بشكل عام
   viewTickets: BASEURL+'tickets',
   showTickets: BASEURL+'tickets/',
-  updateTicket: BASEURL+'tickets/'
+  updateTicket: BASEURL+'tickets/',
+  allFile: BASEURL+'file-update',//جدول المستندات
+  fileStatus: BASEURL+'file-update/',// قبول او رفض تغير المستند
+  allOrder: BASEURL+'orders',//جدول الطلبات
+  singleOrder: BASEURL+'request-products/',
+  walletRequests: BASEURL+'withdrawal-requests',//جدول طلبات السحب من الرصيد
+  walletUpdate: BASEURL+'withdrawal-requests/'
+
+
 
 }
 
