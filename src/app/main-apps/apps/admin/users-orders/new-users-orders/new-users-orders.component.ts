@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
+import { ImpApiService } from 'src/app/services/imp-api.service';
+import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
+import { users } from 'src/app/constant/Routes';
 
 @Component({
   selector: 'app-new-users-orders',
@@ -10,12 +13,19 @@ import { ToastrService } from 'ngx-toastr';
 export class NewUsersOrdersComponent implements OnInit {
   arr_newOrder: any
   arr_newOrder_v2: any
+
   status_value = ''
+  newUsersData =null
+  newUsersData_v2 =null
+
+
 
   arr_list: any
   arr_info: any
   reason = ""
-  constructor(private modalService: NgbModal, private toaster: ToastrService) {
+  toaster: any;
+  userById: any;
+  constructor(private modalService: NgbModal, private spinner: NgxSpinnerService, private apiService: ImpApiService) {
     this.arr_newOrder = [
       {
         platform_name: 'البر',
@@ -110,14 +120,52 @@ export class NewUsersOrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.gitNewUsers()
   }
 
 
-  openModal(modal) {
+  openModal(modal , data) {
     this.modalService.open(modal, { size: 'xl' })
+
+
+    this.apiService.get(users.showUser + data.id).subscribe(res => {
+      this.userById = res.data
+      // console.log(this.userById);
+      this.spinner.hide();
+    }, (error) => {
+      this.spinner.hide();
+    })
   }
 
   // '?activation'
+
+  gitNewUsers() {
+    this.spinner.show()
+    this.apiService.get(users.allUsers + '?activation').subscribe(res => {
+      this.newUsersData = res.data
+      this.newUsersData_v2 = res.data
+      this.spinner.hide();
+
+    }, (error) => {
+      this.spinner.hide();
+
+    })
+  }
+
+  userApproved(user) {
+    this.spinner.show()
+    this.apiService.post(users.activeUser + user.id , {status_id : 2}).subscribe(res => {
+      this.toaster.success('تم الارسال بنجاح')
+      this.spinner.hide();
+      this.modalService.dismissAll()
+      this.gitNewUsers();
+
+    }, (error) => {
+      this.spinner.hide();
+
+    })
+  }
 
 
 
@@ -143,13 +191,13 @@ export class NewUsersOrdersComponent implements OnInit {
     this.status_value = chose
 
     if(this.status_value !== ''){
-      this.arr_newOrder = this.arr_newOrder_v2
-      this.arr_newOrder = this.arr_newOrder.filter((data) => {
-        return data.order_status == this.status_value
+      this.newUsersData = this.newUsersData_v2
+      this.newUsersData = this.newUsersData.filter((data) => {
+        return data.status_id == this.status_value
       })
 
     }else{
-      this.arr_newOrder = this.arr_newOrder_v2
+      this.newUsersData = this.newUsersData_v2
     }
   }
 

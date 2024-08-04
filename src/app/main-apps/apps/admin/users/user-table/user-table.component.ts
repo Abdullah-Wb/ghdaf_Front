@@ -9,7 +9,7 @@ import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
   templateUrl: './user-table.component.html',
   styleUrls: ['./user-table.component.scss']
 })
-export class UserTableComponent implements OnInit {
+export class UserTableComponent implements OnInit { 
   status_value = ''
   usersData = null
   usersData_2 = null

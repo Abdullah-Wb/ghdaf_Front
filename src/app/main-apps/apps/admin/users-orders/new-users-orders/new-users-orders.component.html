@@ -9,11 +9,8 @@
 
     <select (change)="filter_by_type($event.target.value)" class="typ_status">
       <option value="">حالة الطلب</option>
-      <option value="تحت المعالجة">تحت المراجعة</option>
-      <option value="مفعل"> مفعل</option>
-      <option value="غير مفعل">غير مفعل</option>
-      <option value="مرفوض">مرفوض</option>
-      <option value="مجمد">مجمد</option>
+      <option value="3">تحت المراجعة</option>
+      <option value="1">غير مفعل</option>
     </select>
   </div>
 
@@ -27,13 +24,13 @@
       <th class="color-had">عرض التفاصيل</th>
     </tr>
 
-    <tr *ngFor="let i of arr_newOrder">
-      <td>{{i.platform_name}} </td>
-      <td>{{i.user_type}} </td>
-      <td>{{i.admin_name}} </td>
-      <td>{{i.num}} </td>
-      <td>{{i.order_status}} </td>
-      <td><a (click)="openModal(content)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
+    <tr *ngFor="let i of newUsersData">
+      <td>{{i.company_name}} </td>
+      <td>{{i.user_type_id == 1 ? 'المطعم' : 'الجمعية'}}</td>
+      <td>{{i.manager_name}} </td>
+      <td>{{i.phone}} </td>
+      <td [style.color]="i.status_id == '1' ? 'red' : 'green'  ">{{i.status_id == 1 ? 'غير مفعل' : 'تحت المراجعة'}} </td>
+      <td><a (click)="openModal(content, i)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
 
     </tr>
     <!-- اول صف-->
@@ -73,18 +70,18 @@
                   <h4 class="text-right">معلومات الحساب</h4>
                 </div>
 
-                <div *ngFor="let i of arr_info">
+                <!-- <div *ngFor="let i of arr_info"> -->
 
                   <div class="row mt-2">
 
                     <div class="col-md-6">
                       <label class="labels">اسم المسؤول الثلاثي</label>
-                      <input type="text" class="form-control" value="{{i.admin_name}}" readonly>
+                      <input type="text" class="form-control" value="{{userById.manager_name}}" readonly>
                     </div>
 
                     <div class="col-md-6">
                       <label class="labels">اسم المنصة</label>
-                      <input type="text" class="form-control" value="{{i.Platform_name}}" readonly>
+                      <input type="text" class="form-control" value="{{userById.company_name}}" readonly>
                     </div>
 
                   </div>
@@ -94,12 +91,12 @@
 
                     <div class="col-md-12">
                       <label class="labels"> رقم الهاتف</label>
-                      <input type="number" class="form-control" value="{{i.Platform_num}}" readonly>
+                      <input type="number" class="form-control" value="{{userById.phone}}" readonly>
                     </div>
 
                     <div class="col-md-12">
                       <label class="labels"> الايميل</label>
-                      <input type="email" class="form-control" value="{{i.email}}" readonly>
+                      <input type="email" class="form-control" value="{{userById.email}}" readonly>
                     </div>
 
                     <!-- <div class="col-md-12">
@@ -109,32 +106,28 @@
 
                     <div   class="col-md-12">
                       <label class="labels">صورة المطعم</label>
-                      <img id="avatar" class="size_img" [src]="i.plat_image" alt="">
+                      <img id="avatar" class="size_img" [src]="userById.restaurant_pic" alt="">
                     </div>
 
                     <div class="col-md-12">
                       <label class="labels">صورة المسؤول </label>
-                      <img id="avatar" class="size_img" [src]="i.admin_image" alt="">
-                    </div>
-
-                    <div class="col-md-12">
-                      <label  class="labels"> صورة شعار المطعم</label>
-                      <img id="avatar" class="size_img" [src]="i.plat_logo" alt="">
-                    </div>
-
-
-                    <!-- <div class="col-md-12"><label class="labels">صورة المطعم</label>
-                      <img id="avatar" class="size_img" [src]="userById.restaurant_pic" alt="">
-                    </div>
-
-                    <div class="col-md-12"><label class="labels">صورة المسؤول </label>
                       <img id="avatar" class="size_img" [src]="userById.manager_pic" alt="">
                     </div>
 
                     <div class="col-md-12">
-                      <label class="labels"> صورة شعار المطعم</label>
+                      <label  class="labels"> صورة شعار المطعم</label>
                       <img id="avatar" class="size_img" [src]="userById.logo" alt="">
-                    </div> -->
+                    </div>
+
+
+                    <label  class="labels">السجل التجاري : </label>
+                    <p>افتح الملف<a [href]="userById.commercial_record" target="_blank">&nbsp;المستند&nbsp;</a>.</p>
+
+
+                    <label *ngIf="userById.health_certification" class="labels">الشهادة الصحية :</label>
+                    <p *ngIf="userById.health_certification" >افتح الملف
+                      <a [href]="userById.health_certification" target="_blank">&nbsp;المستند&nbsp;</a>.
+                    </p>
 
 
 
@@ -148,12 +141,12 @@
 
                     <div class="col-md-12 mb-2">
                       <label class="labels">الوصف</label>
-                      <textarea type="text" class="form-control" value="{{i.Description}}" readonly></textarea>
+                      <textarea type="text" class="form-control" value="{{userById.description}}" readonly></textarea>
                     </div>
 
                     <div class="col-md-12 mb-2">
                       <label class="labels">السبب</label>
-                      <input type="text" class="form-control" [(ngModel)]="reason">
+                      <input type="text" class="form-control" [(ngModel)]="userById.reason">
                     </div>
 
                   </div>
@@ -166,14 +159,14 @@
 
         </div>
       </div>
-    </div>
+    <!-- </div> -->
 
 
 
 
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark ed_btn" (click)="reject()">رفض الطلب</button>
-      <button type="button" class="btn btn-outline-dark ed_btn" (click)="approve()">قبول الطلب</button>
+      <button type="button" class="btn btn-outline-dark ed_btn" (click)="userApproved(userById)">قبول الطلب</button>
     </div>
   </ng-template>
 
