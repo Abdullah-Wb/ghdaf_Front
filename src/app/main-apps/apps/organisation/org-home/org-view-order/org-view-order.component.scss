@@ -6,7 +6,7 @@ h2{
 
 table{
   width: 100%;
-  border-collapse: collapse;
+
   margin: 10px 0;
 }
 
@@ -40,8 +40,8 @@ a{
   margin: 17px auto;
   padding: 20px;
   border-radius: 10px;
-  background-color: #F9F9F9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -63,7 +63,7 @@ h3 {
 .button1, .button2 {
   border-radius: 10px;
   border: none;
-  background-color: #4CAF50;
+  background-color: var(--secondary);
   color: #FFFFFF;
   font-size: 14px;
   font-weight: bold;
@@ -72,11 +72,11 @@ h3 {
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
 }
 
 .button1:hover, .button2:hover {
-  background-color: #2e6030;
+  background: #384F3F
 }
 
 .button1 {
@@ -85,18 +85,21 @@ h3 {
 
 .button2 {
   align-self: flex-start;
-  background-color: #f44336;
+  background-color: var(--secondary);
   margin-top: 20px;
 }
 
 .button2:hover {
-  background-color: #6b0402;
+  background: #384F3F
 }
 
 .button2 {
   align-self: flex-end;
+  border-color: aqua;
 }
 
 
-
+th{
+  color: #FFFFFF;
+}
 

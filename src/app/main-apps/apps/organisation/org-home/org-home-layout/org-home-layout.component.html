@@ -46,26 +46,44 @@
 
         </div> -->
 
+
+<!--
+    <tr *ngFor="let i of usersData">
+      <td>{{i.user_type_id == 1 ? 'المطعم' : 'الجمعية'}}</td>
+      <td>{{i.company_name}}</td>
+      <td>{{i.manager_name}}</td>
+      <td>{{i.phone}}</td>
+      <td><a (click)="openModal(content , i)"><i class="bi bi-eye " style="cursor: pointer;"></i></a></td>
+
+      <td>
+        <label class="toggle-switch">
+          <input type="checkbox" (change)="activeUser(i)" [checked]="i.status == '2' ? true : false">
+          <span class="slider"></span>
+        </label>
+      </td> -->
+      <!-- <td>{{i.age}}</td> -->
+    <!-- </tr> -->
+
         <div class="contanerone">
           <h1 style="margin-left: 680px; padding-top: 30px;">اهلا بك في منصة غدف</h1>
           <div style="direction: rtl;padding: 30px;"><h2>الطلبات المتاحة</h2></div>
           <div class="contanertwo" >
 
 
-            <div style="width: 300px ; direction: rtl; padding-top: 20px;background-color: #ffffff; border-radius: 10px;"*ngFor="let i of arr_userOrd" >
+            <div     style="width: 300px ; direction: rtl; padding-top: 20px;background-color: #ffffff; border-radius: 10px;" *ngFor="let i of arr_userOrd" >
             <div style=" direction: rtl ;border-radius: 10px; ;padding: 20px; " >
               <img src="../../../../../../assets/________-01.png" class="card-img-top" alt="..."><br>
               <div style="display: flex;">
                 <p class="text-amount">اسم المطعم: </p><br>
-                <p class="card-amount"> {{i. name_rest}}</p>
+                <p class="card-amount"> {{i. company_name}}</p>
               </div>
               <div style="display: flex;">
                 <p class="text-amount">عدد الوجبات:  </p><br>
-                <p class="card-amount"> {{i.amount}}</p>
+                <p class="card-amount"> {{i.quantity}}</p>
               </div>
               <div style="display: flex;">
                 <p class="text-amount">السعر: </p><br>
-                <p class="card-amount"> {{i.price}}</p>
+                <p class="card-amount"> {{i.amount}}</p>
               </div>
               <button>اطلب الآن</button>
             </div>

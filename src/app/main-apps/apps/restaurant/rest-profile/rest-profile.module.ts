@@ -5,6 +5,7 @@ import { RestProfileRoutingModule } from './rest-profile-routing.module';
 import { LayoutProfileRestComponent } from './layout-profile-rest/layout-profile-rest.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   ],
   imports: [
     CommonModule,
-    RestProfileRoutingModule
+    RestProfileRoutingModule,
+    ReactiveFormsModule,
+
   ]
 })
 export class RestProfileModule { }
