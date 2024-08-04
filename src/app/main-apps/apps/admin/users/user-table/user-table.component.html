@@ -35,7 +35,7 @@
 
       <td>
         <label class="toggle-switch">
-          <input type="checkbox" (change)="activeUser(i)" [checked]="i.status == '2' ? true : false">
+          <input type="checkbox" (change)="activeUser(i)" [checked]="i.status_id == '2' ? true : false">
           <span class="slider"></span>
         </label>
       </td>
@@ -65,7 +65,7 @@
             <div class="col-md-3 border-right">
 
               <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                  <img class="rounded-circle mt-5" width="150px" [src]="userById.manager_pic">
+                  <img id="avatar" class="rounded-circle mt-5" width="150px" [src]="userById.manager_pic">
                   <span class="font-weight-bold">{{userById.manager_name}}</span><span class="text-black-50">{{userById.email}}</span>
 
               </div>
@@ -118,16 +118,16 @@
                       </div> -->
 
                       <div class="col-md-12"><label class="labels">صورة المطعم</label>
-                        <img class="size_img" [src]="userById.restaurant_pic" alt="">
+                        <img id="avatar" class="size_img" [src]="userById.restaurant_pic" alt="">
                       </div>
 
                       <div class="col-md-12"><label class="labels">صورة المسؤول </label>
-                        <img class="size_img" [src]="userById.manager_pic" alt="">
+                        <img id="avatar" class="size_img" [src]="userById.manager_pic" alt="">
                       </div>
 
                       <div class="col-md-12">
                         <label class="labels"> صورة شعار المطعم</label>
-                        <img class="size_img" [src]="userById.logo" alt="">
+                        <img id="avatar" class="size_img" [src]="userById.logo" alt="">
                       </div>
 
                       <div class="file">
@@ -136,7 +136,8 @@
                         <p>افتح الملف<a [href]="userById.commercial_record" target="_blank">&nbsp;المستند&nbsp;</a>.</p>
 
                         <label *ngIf="userById.health_certification" class="labels">الشهادة الصحية :</label>
-                        <p *ngIf="userById.health_certification" >افتح الملف<a [href]="userById.health_certification" target="_blank">&nbsp;المستند&nbsp;</a>.
+                        <p *ngIf="userById.health_certification" >افتح الملف
+                          <a [href]="userById.health_certification" target="_blank">&nbsp;المستند&nbsp;</a>.
                         </p>
 
                         <div class="col-md-12">

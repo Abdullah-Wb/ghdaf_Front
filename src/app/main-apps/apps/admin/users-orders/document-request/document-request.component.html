@@ -8,10 +8,20 @@
     <select  class="typ_status" (change)="filter_by_type($event.target.value)">
       <option value="">اختر نوع المستندت</option>
       <option value="">الكل</option>
-      <option value="شهادة صحية">شهادة صحية</option>
-      <option value="السجل تجاري">السجل التجاري</option>
+      <option value="4">شهادة صحية</option>
+      <option value="3">السجل التجاري</option>
     </select>
+<!--
+    <select  class="typ_status" (change)="filter_by_type($event.target.value)">
+      <option value="">اختر نوع المستندت</option>
+      <option value="">الكل</option>
+      <option value="4">شهادة صحية</option>
+      <option value="3">السجل التجاري</option>
+    </select> -->
   </div>
+
+
+
 
 
   <table dir="rtl">
@@ -26,49 +36,23 @@
     </tr>
 
 
-    <tr *ngFor="let i of arr_userOrd">
-      <td>{{i.Platform_type}}</td>
-      <td>{{i.Platform_name}}</td>
-      <td>{{i.Platform_num}}</td>
-      <td [style.color]="i.Documents == 'شهادة صحية' ? 'green' : 'red' ">{{i.Documents}}</td>
-      <td><i class="bi bi-filetype-pdf" style="cursor: pointer;"></i></td>
-      <td><a (click)="approve()"><i class="bi bi-check2-square" style="cursor: pointer;"></i></a></td>
-      <td><a (click)="reject()"><i class="bi bi-x-square" style="cursor: pointer;"></i></a></td>
+    <tr *ngFor="let i of updateDemount">
+      <td>{{i.company_name}}</td>
+      <td>{{i.user_type_id == 1 ? 'مطعم' : 'جمعية'}}</td>
+      <td>{{i.phone}}</td>
+      <td [style.color]="i.file_type_id == '4' ? 'green' : 'red' ">{{i.file_type_id == 4 ? 'شهادة الصحية' : 'السجل تجاري'}}</td>
+
+      <!-- <td><i class="bi bi-filetype-pdf" style="cursor: pointer;"></i></td> -->
+      <td>
+        <p *ngIf="i.file" >افتح الملف
+          <a [href]="i.file" target="_blank">&nbsp;المستند&nbsp;</a>.
+        </td>
+      <td><a (click)="approveStatus(i)"><i class="bi bi-check2-square" style="cursor: pointer;"></i></a></td>
+      <td><a (click)="rejectStatus(i)"><i class="bi bi-x-square" style="cursor: pointer;"></i></a></td>
 
     </tr>
     <!-- اول صف-->
 
   </table>
-<!-- الموافقة -->
-  <ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">تم قبول طلب العميل</h4>
-      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-    </div>
-    <div class="modal-body">
-
-
-    </div>
-
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark ed_btn" (click)="modal.close('Save click')">حفظ</button>
-    </div>
-  </ng-template>
-
-<!-- الرفض -->
-  <ng-template #contentx let-modal>
-    <div class="modal-header">
-      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-    </div>
-    <div class="modal-body">
-
-      <input class="input_err" type="text" id="input_err" placeholder="ادخل سبب الرفض" dir="rtl">
-
-    </div>
-
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark ed_btn" (click)="modal.close('Save click')">حفظ</button>
-    </div>
-  </ng-template>
 
 </div>

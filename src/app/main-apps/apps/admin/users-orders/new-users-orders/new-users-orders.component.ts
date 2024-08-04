@@ -117,9 +117,14 @@ export class NewUsersOrdersComponent implements OnInit {
     this.modalService.open(modal, { size: 'xl' })
   }
 
+  // '?activation'
+
+
 
   approve() {
-      this.toaster.success('تم الارسال')
+      this.toaster.success('تم الارسال بنجاح')
+      this.modalService.dismissAll()
+
 
   }
 

@@ -19,21 +19,21 @@
   <table dir="rtl">
     <tr>
       <th class="color-had">اسم المطعم</th>
-      <th class="color-had">السعر الاجمالي</th>
-      <th class="color-had">الكمية الاجمالية</th>
       <th class="color-had">عدد المنتجات</th>
+      <th class="color-had">الكمية الاجمالية</th>
+      <th class="color-had">السعر الاجمالي</th>
       <th class="color-had">حالة الطلب</th>
       <th class="color-had">عرض الطلب</th>
     </tr>
 
-    <tr *ngFor="let i of arr_allOrder">
-      <td>{{i.rest_name}}</td>
-      <td>{{i.total_price}}</td>
+    <tr *ngFor="let i of usersOrder">
+      <td>{{i.company_name}}</td>
+      <td>{{i.quantity}}</td>
       <td>{{i.total_quantity}}</td>
-      <td>{{i.Num_products}}</td>
-      <td>{{i.Order_status}}</td>
+      <td>{{i.total}}</td>
+      <td>{{i.status}}</td>
       <!-- <td>منتهي الصلاحية </td> -->
-      <td><a (click)="openModal(content)"><i class="bi bi-eye" style="cursor:pointer;"></i></a></td>
+      <td><a (click)="openModal(content , i)"><i class="bi bi-eye" style="cursor:pointer;"></i></a></td>
     </tr>
 
   </table>
@@ -59,23 +59,24 @@
                   <tr>
                     <th class="color-had">اسم المنتج</th>
                     <th class="color-had">الكمية </th>
-                    <th class="color-had">سعر المنتج </th>
+                    <th class="color-had">سعر المنتج الواحد </th>
                     <th class="color-had">السعر الاجمالي</th>
                     <th class="color-had">تاريخ الانتاج </th>
                     <th class="color-had">تاريخ الانتهاء </th>
                     <th class="color-had">صورة المنتج</th>
                   </tr>
 
-                  <tr *ngFor="let i of arr_detils">
-                    <td>{{i.ord_name}}</td>
+                  <tr *ngFor="let i of orderById">
+                    <td>{{i.name}}</td>
                     <td>{{i.quantity}}</td>
-                    <td>{{i.price_one}}</td>
                     <td>{{i.price}}</td>
-                    <td>{{i.pord_date}}</td>
-                    <td> {{i.exp_date}}</td>
+                    <td>{{i.total}}</td>
+                    <td>{{i.produce_date}}</td>
+                    <td> {{i.expire_date}}</td>
                     <td>
                       <div class="order_image">
-                        <i [class]="i.order_image"></i>
+                          <img id="avatar" class="size_img" width="60px" height="60px" [src]="i.product_pic" alt="">
+
                       </div>
                     </td>
 
@@ -97,38 +98,3 @@
   </div>
 </ng-template>
 
-
-
-
-<!-- اول صف-->
-
-<!-- <tr>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td>محذوف</td>
-    <td><i class="bi bi-eye"></i></td>
-  </tr>
-
-   ثاني صف
-
-  <tr>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td>تم التوصيل</td>
-    <td><i class="bi bi-eye"></i></td>
-  </tr>
-  ثالث صف
-
-  <tr>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td> <input type="text"></td>
-    <td></td>
-    <td><i class="bi bi-eye"></i></td>
-  </tr>
-  رابع صف -->
